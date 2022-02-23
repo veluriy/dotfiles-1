@@ -27,3 +27,5 @@ nnoremap <C-Up> "zdd<Up>"zP
 nnoremap <C-Down> "zdd"zp
 vnoremap <C-Up> "zx<Up>"zP`[V`]
 vnoremap <C-Down> "zx"zp`[V`]
+" タイポ修正
+inoremap <C-t> <Esc><Left>"zx"zpa
