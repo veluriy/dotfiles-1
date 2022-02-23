@@ -4,3 +4,12 @@ repo = 'Shougo/dein.vim'
 # git差分表示
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+# coc
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev = 'release'
+hool_add = '''
+source ~/.config/nvim/plugins/coc.rc.vim
+'''
