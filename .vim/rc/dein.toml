@@ -12,6 +12,40 @@ merge = 0
 rev = 'release'
 hool_add = '''
 source ~/.config/nvim/plugins/coc.rc.vim
+let g:coc_global_extensions = [
+  \'coc-actions',
+  \'coc-css',
+  \'coc-cspell-dicts',
+  \'coc-deno',
+  \'coc-diagonostic',
+  \'coc-dictionary',
+  \'coc-docker',
+  \'coc-eslint',
+  \'coc-flowterm',
+  \'coc-git',
+  \'coc-highlight',
+  \'coc-html',
+  \'coc-java',
+  \'coc-jedi',
+  \'coc-json',
+  \'coc-lists',
+  \'coc-lua',
+  \'coc-markdownlint',
+  \'coc-metals',
+  \'coc-pairs',
+  \'coc-phpls',
+  \'coc-prettier',
+  \'coc-snippets',
+  \'coc-spell-checker',
+  \'coc-sql',
+  \'coc-toml',
+  \'coc-tslint-plugin',
+  \'coc-tsserver',
+  \'coc-ultisnips',
+  \'coc-vimslp',
+  \'coc-yaml',
+  \'@yaegassy/coc-volar',
+  \]
 '''
 
 # nvimインターフェース統合
