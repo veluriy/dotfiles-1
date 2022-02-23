@@ -1,0 +1,6 @@
+####################
+# Editor
+####################
+
+export VISUAL=nvim
+export EDITOR=nvim
