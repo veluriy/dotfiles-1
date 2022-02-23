@@ -67,3 +67,7 @@ repo = 'markonm/traces.vim'
 # SATySFi
 [[plugins]]
 repo = 'qnighy/satysfi.vim'
+
+# Rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
