@@ -17,3 +17,8 @@ alias vim='nvim'
 
 # tar
 alias tarx='tar -zxvf'
+
+# stack
+alias ghci='stack ghci'
+alias ghc='stack ghc --'
+alias runghc='stack runghc --'
