@@ -22,6 +22,7 @@ nnoremap <Right> <Nop>
 " スペース2回でハイライト、#で置換
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
+nnoremap <silent> <Esc><Esc><Esc> :<C-u>nohlsearch<CR>
 " 行移動
 nnoremap <C-Up> "zdd<Up>"zP
 nnoremap <C-Down> "zdd"zp
