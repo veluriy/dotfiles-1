@@ -63,3 +63,7 @@ repo = 'junegunn/fzf.vim'
 # 置換プレビュー
 [[plugins]]
 repo = 'markonm/traces.vim'
+
+# SATySFi
+[[plugins]]
+repo = 'qnighy/satysfi.vim'
