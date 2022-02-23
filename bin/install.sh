@@ -34,3 +34,7 @@ cd "$HOME/repo"
 git clone https://github.com/b-ryan/powerline-shell
 cd powerline-shell
 python setup.py install
+cd $DOTPATH
+mkdir -p ~/.config/powerline-shell && \
+	powerline-shell --generate-config > ~/.config/powerline-shell/config.json
+ln -snfv "$DOTPATH/powerline-shell/config.json" "$HOME/.config/powerline-shell/config.json"
