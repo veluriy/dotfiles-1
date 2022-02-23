@@ -1,3 +1,9 @@
 [user]
 	name = wurzeit
 	email = hiccap.master.jedi@gmail.com
+
+[alias]
+	s = status
+	c = commit -am
+	co = checkout
+	df = diff --color --color-words
