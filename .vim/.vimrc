@@ -28,3 +28,4 @@ endfunction
 
 " 読み込み
 call s:source_rc('init.rc.vim')
+call s:source_rc('map.rc.vim')
