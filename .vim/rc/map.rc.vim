@@ -33,3 +33,6 @@ inoremap <C-t> <Esc><Left>"zx"zpa
 
 " defx
 nnoremap <silent><Leader>f :<C-u>Defx<CR>
+
+" tagbar
+nmap <Leader>t :TagbarToggle<CR>

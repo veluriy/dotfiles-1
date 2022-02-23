@@ -85,3 +85,7 @@ let g:indentLine_char = '|'
 # 虹
 [[plugins]]
 repo = 'junegunn/rainbow_parentheses.vim'
+
+# tagBar
+[[plugins]]
+repo = 'majutsushi/tagbar'
