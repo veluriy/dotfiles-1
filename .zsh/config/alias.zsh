@@ -14,3 +14,6 @@ alias cp='cp -iv'
 # vim
 alias vi='vim'
 alias vim='nvim'
+
+# tar
+alias tarx='tar -zxvf'
