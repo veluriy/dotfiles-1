@@ -35,3 +35,23 @@ repo = 'kristijanhusak/defx-git'
 hook_add = '''
 source ~/.config/nvim/plugins/defx-git.rc.vim
 '''
+
+# HTMLタグ操作
+[[plugins]]
+repo = 'rstacruz/sparkup'
+
+# 囲い
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# 簡単コメント
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+# Airlineカスタマイズ
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+# Airlineテーマ
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
