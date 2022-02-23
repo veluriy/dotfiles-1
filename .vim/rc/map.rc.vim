@@ -20,3 +20,4 @@ nnoremap <Down> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Right> <Nop>
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
+nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
