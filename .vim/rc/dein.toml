@@ -55,3 +55,11 @@ repo = 'vim-airline/vim-airline'
 # Airlineテーマ
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+
+# インクリメンタルサーチ
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+# 置換プレビュー
+[[plugins]]
+repo = 'markonm/traces.vim'
