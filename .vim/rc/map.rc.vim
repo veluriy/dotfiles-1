@@ -55,3 +55,7 @@ xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F
 nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
+" coc react refactor
+xmap <Leader>a <Plug>(coc-codeaction-selected)
+nmap <Leader>a <Plug>(coc-codeaction-selected)

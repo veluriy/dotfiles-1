@@ -22,6 +22,7 @@ let g:coc_global_extensions = [
   \'coc-pairs',
   \'coc-phpls',
   \'coc-prettier',
+  \'coc-react-refactor',
   \'coc-snippets',
   \'coc-spell-checker',
   \'coc-sql',
