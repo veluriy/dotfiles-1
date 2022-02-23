@@ -13,3 +13,10 @@ rev = 'release'
 hool_add = '''
 source ~/.config/nvim/plugins/coc.rc.vim
 '''
+
+# nvimインターフェース統合
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+source ~/.config/nvim/plugins/denite.rc.vim
+'''
