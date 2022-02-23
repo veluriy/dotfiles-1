@@ -92,5 +92,5 @@ repo = 'junegunn/rainbow_parentheses.vim'
 repo = 'majutsushi/tagbar'
 
 # gruvbox colorscheme
-[[plugins]]
-repo = 'morhetz/gruvbox'
+# [[plugins]]
+# repo = 'morhetz/gruvbox'
