@@ -1,5 +1,5 @@
 function powerline_precmd() {
-	PS1="$(powerline-shell --shell zsh $?)"
+	PS1="$(powerline-shell --shell zsh $?)\n"
 }
 
 function install_powerline_precmd() {
