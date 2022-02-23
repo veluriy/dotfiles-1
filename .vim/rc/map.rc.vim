@@ -19,3 +19,4 @@ nnoremap <Left> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Right> <Nop>
+nnoremap <silent> <Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
