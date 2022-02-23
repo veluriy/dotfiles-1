@@ -48,3 +48,9 @@ set showcmd
 
 " 不可視文字表示
 set list listchars=tab:>-,trail:.
+
+" バックアップを生成しない(git使ってるのでいらない)
+set nobackup
+
+" コマンドラインモードで<tab>によるファイル名補完を有効
+set wildmenu wildmode=list:longest,full
