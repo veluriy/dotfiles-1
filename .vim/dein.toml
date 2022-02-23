@@ -1,6 +1,0 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
-# git差分表示
-[[plugins]]
-repo = 'airblade/vim-gitgutter'

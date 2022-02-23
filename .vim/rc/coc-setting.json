@@ -1,0 +1,15 @@
+{
+  "languageserver": {
+  },
+  "codeLens.enable": true,
+  "jedi.executable.command": "~/.local/bin/jedi-language-server",
+  "eslint.packageManager": "yarn",
+  "coc.preferences.formatOnSaveFiletypes": [
+  "css",
+  "vue",
+  "typescript",
+  "typescriptreact",
+  "javascript",
+  "python"
+  ]
+}
