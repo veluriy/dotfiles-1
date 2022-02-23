@@ -20,3 +20,18 @@ repo = 'Shougo/denite.nvim'
 hook_add = '''
 source ~/.config/nvim/plugins/denite.rc.vim
 '''
+
+# ファイルエクスプローラー
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['defx-git']
+hook_add = '''
+source ~/.config/nvim/plugins/defx.rc.vim
+'''
+
+# defxgitアイコン
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+hook_add = '''
+source ~/.config/nvim/plugins/defx-git.rc.vim
+'''

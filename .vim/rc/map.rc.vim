@@ -30,3 +30,6 @@ vnoremap <C-Up> "zx<Up>"zP`[V`]
 vnoremap <C-Down> "zx"zp`[V`]
 " タイポ修正
 inoremap <C-t> <Esc><Left>"zx"zpa
+
+" defx
+nnoremap <silent><Leader>f :<C-u>Defx<CR>
