@@ -57,10 +57,10 @@ repo = 'vim-airline/vim-airline'
 repo = 'vim-airline/vim-airline-themes'
 
 # インクリメンタルサーチ
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-build = './install --all'
-merged = 0
+# [[plugins]]
+# repo = 'junegunn/fzf.vim'
+# build = './install --all'
+# merged = 0
 
 # 置換プレビュー
 [[plugins]]
@@ -104,7 +104,7 @@ repo = 'pangloss/vim-javascript'
 repo = 'othree/yajs.vim'
 
 [[plugins]]
-repo = 'othree/es.nect.syntax.vim'
+repo = 'othree/es.next.syntax.vim'
 
 [[plugins]]
 repo = 'othree/javascript-libraries-syntax.vim'
