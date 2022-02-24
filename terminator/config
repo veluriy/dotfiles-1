@@ -1,0 +1,91 @@
+[global_config]
+  sticky = True
+  title_transmit_fg_color = "#2e3436"
+  title_transmit_bg_color = "#2e3436"
+  title_receive_fg_color = "#2e3436"
+  title_receive_bg_color = "#2e3436"
+  title_inactive_fg_color = "#2e3436"
+  title_inactive_bg_color = "#2e3436"
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminalShot, CustomCommandsMenu, Logger, TestPlugin, ActivityWatch, InactivityWatch, MavenPluginURLHandler, TerminatorThemes
+  suppress_multiple_term_dialog = True
+[keybindings]
+  go_next = <Alt>w
+  go_prev = <Alt>b
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  split_horiz = <Primary><Shift>d
+  split_vert = <Primary>d
+  close_term = <Primary><Shift>z
+  copy = <Primary><Shift>c
+  paste = <Primary>v
+  scaled_zoom = None
+  hide_window = <Shift>F12
+  layout_launcher = <Primary><Shift>l
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Monospace 12
+    foreground_color = "#839496"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+    copy_on_selection = True
+  [[nord]]
+    background_color = "#2e3440"
+    cursor_color = "#D8DEE9"
+    font = Monospace 12
+    foreground_color = "#d8dee9"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
+    use_system_font = False
+    copy_on_selection = True
+  [[Blitz]]
+    background_color = "#16141e"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#00ecc8"
+    font = Monospace 12
+    foreground_color = "#00ecc8"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2e3436:#f70047:#00ff7d:#fcdd42:#26b3d2:#b055f4:#ff8db4:#d3d7cf:#555753:#ff5555:#55ff55:#ffff55:#729fcf:#ff55ff:#34e2e2:#eeeeec"
+    use_system_font = False
+    copy_on_selection = True
+  [[ayu]]
+    background_color = "#0f1419"
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#f29718"
+    font = Monospace 12
+    foreground_color = "#e6e1cf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 72:27
+      maximised = True
+      fullscreen = False
+      size = 1368, 836
+      title = Terminator
+      last_active_term = 654bb8fb-9182-412e-8060-944e218b507f
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = ayu
+      uuid = 654bb8fb-9182-412e-8060-944e218b507f
+[plugins]
