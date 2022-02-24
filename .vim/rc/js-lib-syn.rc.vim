@@ -6,7 +6,7 @@ function! EnableJavascript()
   let b:javascript_lib_use_flux = 1
   let b:javascript_lib_use_jasmine = 1
   let b:javascript_lib_use_d3 = 1
-endfuncion
+endfunction
 augroup MyVimrc
   autocmd!
 augroup END
