@@ -10,6 +10,9 @@
   "codeLens.enable": true,
   "jedi.executable.command": "~/.local/bin/jedi-language-server",
   "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "vue",
