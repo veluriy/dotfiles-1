@@ -1,0 +1,38 @@
+# SATySFi
+[[plugins]]
+repo = 'qnighy/satysfi.vim'
+on_ft = 'satysfi'
+
+# Rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+# js
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'typescript']
+
+[[plugins]]
+repo = 'ternjs/tern_for_vim'
+on_ft = ['javascript', 'typescript']
