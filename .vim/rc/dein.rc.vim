@@ -3,7 +3,13 @@ if &compatible
   set nocompatible
 endif
 
-let s:dein_dir = expand('$HOME/.cache/dein')
+" vim nvim 分岐
+if has('nvim')
+  let s:dein_dir = expand('$HOME/.nvim/dein')
+else
+  let s:dein_dir = expand('$HOME/.vim/dein')
+endif
+
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
