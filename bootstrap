@@ -33,8 +33,23 @@ download() {
   # dotfiles
   if [ ! -d $DOT_PATH ]; then
     echo "Downloading dotfiles..."
-    git clone --recursive $REMOTE_URL $DOT_PATH
+    if has "git"; then
+      git clone --recursive $REMOTE_URL $DOT_PATH
+    else
+      echo "${RED}Please install git.$NORMAL"
+      exit 1
+    fi
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install git.$NORMAL"
+      exit 1
+    fi
+  else
+    echo "${BOLD}dotfiles already exists.$NORMAL"
+  fi
 }
+
 
 main() {}
 
