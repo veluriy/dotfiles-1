@@ -22,6 +22,8 @@ setcolors() {
     BOLD=""
     NORMAL=""
   fi
+
+  return 0
 }
 
 setcolors
