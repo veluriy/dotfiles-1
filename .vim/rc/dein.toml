@@ -11,14 +11,14 @@ repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'
 hool_add = '''
-source ~/.config/nvim/plugins/coc.rc.vim
+source ~/.vim/rc/coc.rc.vim
 '''
 
 # nvimインターフェース統合
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-source ~/.config/nvim/plugins/denite.rc.vim
+source ~/.vim/rc/denite.rc.vim
 '''
 
 # ファイルエクスプローラー
@@ -26,14 +26,14 @@ source ~/.config/nvim/plugins/denite.rc.vim
 repo = 'Shougo/defx.nvim'
 depends = ['defx-git']
 hook_add = '''
-source ~/.config/nvim/plugins/defx.rc.vim
+source ~/.vim/rc/defx.rc.vim
 '''
 
 # defxgitアイコン
 [[plugins]]
 repo = 'kristijanhusak/defx-git'
 hook_add = '''
-source ~/.config/nvim/plugins/defx-git.rc.vim
+source ~/.vim/rc/defx-git.rc.vim
 '''
 
 # HTMLタグ操作
