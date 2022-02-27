@@ -1,24 +1,38 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "json",
+    "markdown",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "codeLens.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.autoFix": true,
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "jedi.executable.command": "~/.local/bin/jedi-language-server",
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
       "filetypes": ["haskell", "lhaskell"]
+    },
+    "flow": {
+    "command": "flow",
+    "args": ["lsp"],
+    "filetypes": ["javascript", "javascriptreact"],
+    "initializationOptions": {},
+    "requireRootPattern": true,
+    "setting": {},
+    "rootPatterns": [".flowconfig"]
     }
   },
-  "codeLens.enable": true,
-  "jedi.executable.command": "~/.local/bin/jedi-language-server",
-  "eslint.packageManager": "yarn",
-  "eslint.nodePath": ".yarn/sdks",
-  "workspace.workspaceFolderCheckCwd": false,
+  "tsserver.enableJavascript": false,
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "vue",
-    "typescript",
-    "typescriptreact",
-    "javascript",
-    "python"
-  ]
+  "workspace.workspaceFolderCheckCwd": false
 }
