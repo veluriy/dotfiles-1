@@ -47,7 +47,7 @@ set cindent
 set showcmd
 
 " 不可視文字表示
-set list listchars=tab:>-,trail:.
+set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " バックアップを生成しない(git使ってるのでいらない)
 set nobackup
