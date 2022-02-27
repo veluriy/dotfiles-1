@@ -54,3 +54,6 @@ set nobackup
 
 " コマンドラインモードで<tab>によるファイル名補完を有効
 set wildmenu wildmode=list:longest,full
+
+" yank で クリップボード
+set clipboard=unnamedplus
