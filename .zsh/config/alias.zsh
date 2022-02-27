@@ -21,3 +21,11 @@ alias tarx='tar -zxvf'
 alias ghci='stack ghci'
 alias ghc='stack ghc --'
 alias runghc='stack runghc --'
+
+# git
+alias gita='git add'
+alias gits='git status'
+alias gitc='git commit -m'
+alias gitco='git checkout'
+alias gitcob='git checkout -b'
+alias gitb='git branch'
