@@ -1,0 +1,18 @@
+#!/bin/sh -eu
+
+# const
+# ----------
+
+DOT_PATH=~/dotfiles
+
+# function
+# ----------
+
+main () {}
+
+# main
+# ----------
+
+main
+
+exit 0
