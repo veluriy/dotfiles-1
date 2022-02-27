@@ -57,10 +57,10 @@ repo = 'vim-airline/vim-airline'
 repo = 'vim-airline/vim-airline-themes'
 
 # インクリメンタルサーチ
-# [[plugins]]
-# repo = 'junegunn/fzf.vim'
-# build = './install --all'
-# merged = 0
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+build = './install --all'
+merged = 0
 
 # 置換プレビュー
 [[plugins]]
