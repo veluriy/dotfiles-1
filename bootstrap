@@ -27,6 +27,35 @@ fi
 
 # function
 # ----------
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
+dotfiles() {
+  echo $BLUE
+  cat <<\EOF
+
+      _       _    __ _ _           
+   __| | ___ | |_ / _(_) | ___  ___ 
+  / _` |/ _ \| __| |_| | |/ _ \/ __|
+ | (_| | (_) | |_|  _| | |  __/\__ \
+(_)__,_|\___/ \__|_| |_|_|\___||___/
+                                    
+
+EOF
+  echo $NORMAL
+}
+
+usage() {
+  echo $YELLOW
+  cat <<\EOF
+Commands:
+  init (download dotfiles)
+  quit
+EOF
+  echo $NORMAL
+}
+
 download() {
   cd $HOME
 
@@ -52,11 +81,28 @@ download() {
 
 
 main() {
-  download
+  usage
+  echo -n "${BOLD}command: $NORMAL"
+  read command
+  case $command in
+    init)
+      download
+      main
+      ;;
+    quit)
+      echo "bye!"
+      exit 0
+      ;;
+    *)
+      echo "${RED}bootstrap: command not found.$NORMAL"
+      main
+      ;;
+    esac
 }
 
 # main
 # ----------
+dotfiles
 main
 
 exit 0
