@@ -4,8 +4,8 @@ set -ue
 
 # const
 # ----------
-DOT_PATH=~/dotfiles
-REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
+readonly DOT_PATH=~/dotfiles
+readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
 
 # colors
 if which tput >/dev/null 2>&1; then
