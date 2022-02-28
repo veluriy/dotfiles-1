@@ -7,6 +7,6 @@ INIT_PATH=$DOTPATH/.config/vim/.vimrc
 RC_PATH=$DOTPATH/.config/vim/rc
 NVIM_CONFIG_PATH=$HOME/.config/nvim
 
-mkdir -pv $NVIM_CONFIG_PATH/rc
+mkdir -pv $NVIM_CONFIG_PATH
 ln -snfv $INIT_PATH $NVIM_CONFIG_PATH/init.vim
 ln -snfv $RC_PATH $NVIM_CONFIG_PATH/rc
