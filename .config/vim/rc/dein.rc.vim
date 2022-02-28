@@ -5,7 +5,7 @@ endif
 
 let s:dein_dir = expand('$HOME/.config/nvim/dein')
 
-set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(s:dein_dir)
 let s:toml_dir = expand('$HOME/.config/nvim/rc')
 call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
