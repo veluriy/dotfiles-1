@@ -3,12 +3,7 @@ if &compatible
   set nocompatible
 endif
 
-" vim nvim 分岐
-if has('nvim')
-  let s:dein_dir = expand('$HOME/.config/nvim/dein')
-else
-  let s:dein_dir = expand('$HOME/.vim/dein')
-endif
+let s:dein_dir = expand('$HOME/.config/nvim/dein')
 
 set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(s:dein_dir)
