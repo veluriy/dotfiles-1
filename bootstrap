@@ -62,6 +62,23 @@ EOF
   return 0
 }
 
+install_fun() {
+  if has "$1"; then
+    echo "${BOLD}$1 is already exists$NORMAL"
+  else
+    echo "Installing $1..."
+    . $INSTALL_SCRIPTS_LIB/install-$1.sh
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully installed $1.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install $1.$NORMAL"
+      exit 1
+    fi
+  fi
+
+  return 0
+}
+
 download() {
   cd $HOME
 
@@ -97,6 +114,20 @@ download() {
       echo "${GREEN}Successfully installed tmux.$NORMAL"
     else
       echo "${RED}An unexpected error occurred when trying to install tmux.$NORMAL"
+      exit 1
+    fi
+  fi
+
+  # zsh
+  if has "zsh"; then
+    echo "${BOLD}zsh is already exists$NORMAL"
+  else
+    echo "Installing zsh..."
+    . $INSTALL_SCRIPTS_LIB/install-zsh.sh
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully installed zsh.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install zsh.$NORMAL"
       exit 1
     fi
   fi
