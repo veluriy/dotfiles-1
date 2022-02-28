@@ -3,7 +3,7 @@
 set -ue
 
 DOTPATH=~/dotfiles
-INIT_PATH=$DOTPATH/.config/vim/.vimrc
+INIT_PATH=$DOTPATH/.config/vim/init.vim
 RC_PATH=$DOTPATH/.config/vim/rc
 NVIM_CONFIG_PATH=$HOME/.config/nvim
 
