@@ -116,6 +116,9 @@ download() {
   # neovim
   install_fun "nvim"
 
+  # vim-plug
+  install_fun "vim-plug"
+
   return 0
 }
 
