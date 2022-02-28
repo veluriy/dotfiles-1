@@ -116,9 +116,6 @@ download() {
   # neovim
   install_fun "nvim"
 
-  # vim-plug
-  install_fun "vim-plug"
-
   # link init.vim
   . $DOT_PATH/install_scripts/lib/link-nvim.sh
 
