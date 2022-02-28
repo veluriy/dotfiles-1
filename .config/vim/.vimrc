@@ -29,7 +29,7 @@ endfunction
 " 読み込み
 call s:source_rc('init.rc.vim')
 call s:source_rc('map.rc.vim')
-call s:source_rc('plugins.rc.vim')
+call s:source_rc('dein.rc.vim')
 call s:source_rc('coc.rc.vim')
 call s:source_rc('defx.rc.vim')
 call s:source_rc('defx-git.rc.vim')
