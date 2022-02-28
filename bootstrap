@@ -69,8 +69,11 @@ download() {
     if has "git"; then
       git clone --recursive $REMOTE_URL $DOT_PATH
     else
-      echo "${RED}Please install git.$NORMAL"
-      exit 1
+      echo "Installing git..."
+      sudo apt update
+      sudo apt install git
+      echo "${BOLD}The git installation is now complete.$NORMAL"
+    download
     fi
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
