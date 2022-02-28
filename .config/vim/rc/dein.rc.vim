@@ -10,13 +10,7 @@ else
   let s:dein_dir = expand('$HOME/.vim/dein')
 endif
 
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
+set runtimepath+=$HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(s:dein_dir)
 let s:toml_dir = expand('$HOME/.config/nvim/rc')
 call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
