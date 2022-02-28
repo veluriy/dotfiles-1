@@ -7,14 +7,8 @@
 "
 "
 
-" vim nvim 分岐
-if has('nvim')
-  let g:vim_home = expand('~/.config/nvim')
-  let g:rc_dir = expand('~/.config/nvim/rc')
-else
-  let g:vim_home = expand('~/.vim')
-  let g:rc_dir = expand('~/.vim/rc')
-endif
+let g:vim_home = expand('~/.config/nvim')
+let g:rc_dir = expand('~/.config/nvim/rc')
 
 " rcファイル読み込み関数
 function! s:source_rc(rc_file_name)
