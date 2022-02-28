@@ -6,6 +6,8 @@ set -ue
 # ----------
 readonly DOT_PATH=~/dotfiles
 readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
+readonly INSTALL_SCRIPTS=$DOT_PATH/install_scripts
+readonly INSTALL_SCRIPTS_LIB=$INSTALL_SCRIPTS/lib
 
 # colors
 if which tput >/dev/null 2>&1; then
@@ -82,9 +84,23 @@ download() {
       exit 1
     fi
   else
-    echo "${BOLD}dotfiles already exists.$NORMAL"
+    echo "${BOLD}dotfiles is already exists.$NORMAL"
   fi
-  
+
+  # tmux
+  echo "Installing tmux..."
+  if has "tmux"; then
+    echo "${BOLD}tmux is already exists$NORMAL"
+  else
+    . $INSTALL_SCRIPTS_LIB/install-tmux.sh
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully installed tmux.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install tmux.$NORMAL"
+      exit 1
+    fi
+  fi
+
   return 0
 }
 
@@ -106,10 +122,10 @@ main() {
       echo "${RED}bootstrap: command not found.$NORMAL"
       main
       ;;
-    esac
-    
+  esac
+
     return 0
-}
+  }
 
 # main
 # ----------
