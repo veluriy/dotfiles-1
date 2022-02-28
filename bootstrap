@@ -64,14 +64,14 @@ EOF
 
 install_fun() {
   if has "$1"; then
-    echo "${BOLD}$1 is already exists$NORMAL"
+    echo "${BOLD}${1} is already exists$NORMAL"
   else
-    echo "Installing $1..."
+    echo "Installing ${1}..."
     . $INSTALL_SCRIPTS_LIB/install-$1.sh
     if [ $? = 0 ]; then
-      echo "${GREEN}Successfully installed $1.$NORMAL"
+      echo "${GREEN}Successfully installed ${1}.$NORMAL"
     else
-      echo "${RED}An unexpected error occurred when trying to install $1.$NORMAL"
+      echo "${RED}An unexpected error occurred when trying to install ${1}.$NORMAL"
       exit 1
     fi
   fi
