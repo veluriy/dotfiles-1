@@ -113,6 +113,9 @@ download() {
   # vim
   install_fun "vim"
 
+  # neovim
+  install_fun "neovim"
+
   return 0
 }
 
