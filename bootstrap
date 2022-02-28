@@ -64,7 +64,7 @@ EOF
 
 install_fun() {
   if has "$1"; then
-    echo "${BOLD}${1} is already exists$NORMAL"
+    echo "${BOLD}${1} is already exists.$NORMAL"
   else
     echo "Installing ${1}..."
     . $INSTALL_SCRIPTS_LIB/install-$1.sh
@@ -105,10 +105,10 @@ download() {
   fi
 
   # tmux
-  install_fun("tmux")
+  install_fun "tmux"
 
   # zsh
-  install_fun("zsh")
+  install_fun "zsh"
 
   return 0
 }
