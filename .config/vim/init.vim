@@ -9,19 +9,19 @@
 
 " vim nvim 分岐
 if has('nvim')
-	let g:vim_home = expand('~/.config/nvim')
-	let g:rc_dir = expand('~/.config/nvim/rc')
+  let g:vim_home = expand('~/.config/nvim')
+  let g:rc_dir = expand('~/.config/nvim/rc')
 else
-	let g:vim_home = expand('~/.vim')
-	let g:rc_dir = expand('~/.vim/rc')
+  let g:vim_home = expand('~/.vim')
+  let g:rc_dir = expand('~/.vim/rc')
 endif
 
 " rcファイル読み込み関数
 function! s:source_rc(rc_file_name)
-	let rc_file = expand(g:rc_dir . '/' . a:rc_file_name)
-	if filereadable(rc_file)
-		execute 'source' rc_file
-	endif
+  let rc_file = expand(g:rc_dir . '/' . a:rc_file_name)
+  if filereadable(rc_file)
+    execute 'source' rc_file
+  endif
 endfunction
 
 " ----------------------------------------------------------
