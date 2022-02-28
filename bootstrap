@@ -88,10 +88,10 @@ download() {
   fi
 
   # tmux
-  echo "Installing tmux..."
   if has "tmux"; then
     echo "${BOLD}tmux is already exists$NORMAL"
   else
+    echo "Installing tmux..."
     . $INSTALL_SCRIPTS_LIB/install-tmux.sh
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully installed tmux.$NORMAL"
