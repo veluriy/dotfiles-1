@@ -89,3 +89,7 @@ repo = 'majutsushi/tagbar'
 # gruvbox colorscheme
 [[plugins]]
 repo = 'morhetz/gruvbox'
+
+# mysql
+[[plugins]]
+repo = 'kezhenxu94/vim-mysql-plugin'
