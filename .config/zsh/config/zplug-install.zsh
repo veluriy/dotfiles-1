@@ -7,16 +7,20 @@
 
 source ~/.zplug/init.zsh
 
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "mollifier/cd-gitroot"
+zplug "mollifier/anyframe"
 zplug "sindresorhus/pure"
 zplug "hchbaw/auto-fu.zsh"
 zplug "oknowton/zsh-dwim"
 zplug "ascii-soup/zsh-url-highlighter"
 zplug "supercrabtree/k"
 zplug "b4b4r07/enhancd"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
+zplug "sharkdp/bat"
+zplug "mafredri/zsh-async"
+zplug "chrissicool/zsh-256color"
 
 if ! zplug check --verbose; then
   printf "Install zplug plugins? [y/N]: "
