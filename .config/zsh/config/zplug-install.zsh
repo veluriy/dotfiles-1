@@ -8,6 +8,7 @@
 source ~/.zplug/init.zsh
 
 zplug "mollifier/cd-gitroot"
+zplug "sindresorhus/pure"
 
 if ! zplug check --verbose; then
   printf "Install zplug plugins? [y/N]: "
