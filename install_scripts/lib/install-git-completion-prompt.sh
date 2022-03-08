@@ -12,6 +12,7 @@ install_git_completion_prompt() {
 
   rm -f ~/.zcompdump
 
+  exec zsh
   source ~/.zshrc
 }
 
