@@ -9,4 +9,4 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-fpath=(~/.zsh/completion $fpath)
+fpath+=("/usr/local/share/zsh/site-functions")
