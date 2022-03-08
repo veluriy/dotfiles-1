@@ -140,6 +140,9 @@ download() {
   # sl
   install_fun "sl"
 
+  # peco
+  install_fun "peco"
+
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
 
