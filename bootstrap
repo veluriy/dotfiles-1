@@ -146,6 +146,9 @@ download() {
   # link zsh
   . $DOT_PATH/install_scripts/lib/link-zsh.sh
 
+  # install git completion and pronpt
+  . $DOT_PATH/install_scripts/lib/install-git-completion-prompt.sh
+
   return 0
 }
 
