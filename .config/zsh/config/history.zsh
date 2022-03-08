@@ -6,8 +6,8 @@
 HISTFILE=~/.zsh/.zsh_history
 
 # 保存するコマンド数
-HISTSIZE=1024
-SAVEHIST=1024
+HISTSIZE=32768
+SAVEHIST=32768
 
 # 重複する履歴は古い方を削除する
 setopt hist_ignore_all_dups
