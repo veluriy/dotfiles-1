@@ -141,7 +141,7 @@ download() {
   install_fun "sl"
 
   # pure
-  . $DOT_PATH/install_scripts/lib/install-pure.sh
+  # . $DOT_PATH/install_scripts/lib/install-pure.sh
 
   # link init.vim
   . $DOT_PATH/install_scripts/lib/link-nvim.sh
