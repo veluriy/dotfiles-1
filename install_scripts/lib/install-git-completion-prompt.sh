@@ -8,7 +8,7 @@ install_git_completion_prompt() {
   curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.zsh/completion/git-prompt.sh
 
   chmod a+x ~/.zsh/completion/_git
-  chmod a+x ~/.zsh/completion/git-prompt.zsh
+  chmod a+x ~/.zsh/completion/git-prompt.sh
 
   rm -f ~/.zcompdump
 }
