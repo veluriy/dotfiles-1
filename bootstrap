@@ -119,8 +119,29 @@ download() {
   # neovim
   install_fun "nvim"
 
+  # cmatrix
+  install_fun "cmatrix"
+
+  # cowsay
+  install_fun "cowsay"
+
+  # figlet
+  install_fun "figlet"
+
+  # fortune
+  install_fun "fortune"
+
+  # rig
+  install_fun "rig"
+
+  # sl
+  install_fun "sl"
+
   # link init.vim
   . $DOT_PATH/install_scripts/lib/link-nvim.sh
+
+  # link zsh
+  . $DOT_PATH/install_scripts/lib/link-zsh.sh
 
   return 0
 }
