@@ -11,6 +11,8 @@ install_git_completion_prompt() {
   chmod a+x ~/.zsh/completion/git-prompt.sh
 
   rm -f ~/.zcompdump
+
+  source ~/.zshrc
 }
 
 install_git_completion_prompt
