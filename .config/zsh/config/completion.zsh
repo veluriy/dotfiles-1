@@ -6,6 +6,6 @@
 #                     |_|
 
 autoload -Uz compinit
-autoload -U promptinit; promptinit
-prompt pure
 compinit -u
+autoload -U promptinit; promptinit
+prompt pure -s gruvbox
