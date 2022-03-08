@@ -12,3 +12,5 @@ install_git_completion_prompt() {
 
   rm -f ~/.zcompdump
 }
+
+install_git_completion_prompt
