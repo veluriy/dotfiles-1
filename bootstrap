@@ -111,7 +111,7 @@ download() {
   install_fun "zsh"
 
   # zplug
-  install_fun "zplug"
+  # install_fun "zplug"
 
   # pyenv
   install_fun "pyenv"
