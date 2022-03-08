@@ -5,7 +5,7 @@
 #  \__,_|_|_|\__,_|___/
 
 # ls
-alias l='ls -lhpaG'
+alias l='k'
 
 # rm
 alias rm='rm -iv'
