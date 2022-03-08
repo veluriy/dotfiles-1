@@ -5,6 +5,8 @@
 # /___| .__/|_|\__,_|\__, |     |_|_| |_|___/\__\__,_|_|_|
 #     |_|            |___/
 
+source ~/.zplug/init.zsh
+
 if ! zplug check --verbose; then
   printf "Install zplug plugins? [y/N]: "
   if read -q; then

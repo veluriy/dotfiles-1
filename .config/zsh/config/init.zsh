@@ -5,4 +5,3 @@
 # |_|_| |_|_|\__|
 
 fortune
-source ~/.zplug/init.zsh
