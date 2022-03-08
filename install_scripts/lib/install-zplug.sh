@@ -3,8 +3,7 @@
 set -ue
 
 install_zplug() {
-  sudo apt update
-  sudo apt install zplug
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
 install_zplug
