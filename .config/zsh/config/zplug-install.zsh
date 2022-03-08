@@ -7,6 +7,8 @@
 
 source ~/.zplug/init.zsh
 
+zplug "mollifier/cd-gitroot"
+
 if ! zplug check --verbose; then
   printf "Install zplug plugins? [y/N]: "
   if read -q; then

@@ -5,4 +5,5 @@
 #  \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|
 #                     |_|
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+compinit -u
