@@ -9,6 +9,10 @@ source ~/.zplug/init.zsh
 
 zplug "mollifier/cd-gitroot"
 zplug "sindresorhus/pure"
+zplug "hchbaw/auto-fu.zsh"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "oknowton/zsh-dwim"
+zplug "zsh-users/zsh-syntax-highlighting"
 
 if ! zplug check --verbose; then
   printf "Install zplug plugins? [y/N]: "
