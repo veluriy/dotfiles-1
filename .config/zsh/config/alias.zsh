@@ -32,12 +32,12 @@ alias runghc='stack runghc --'
 alias g='git'
 
 alias ga='git add'
-alias gaa='git add -a'
+alias gaa='git add --all'
 
 alias gs='git status'
 
-alias gc='git commit -m'
-alias gac='git commit -a -m'
+alias gc='git commit -vm'
+alias gac='git commit -a -vm'
 
 alias gb='git branch'
 alias gba='git branch -a'
