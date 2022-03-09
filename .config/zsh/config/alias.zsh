@@ -5,6 +5,7 @@
 #  \__,_|_|_|\__,_|___/
 
 # ls
+alias ls = 'ls -lhpaG'
 alias l='k -a'
 
 # rm
