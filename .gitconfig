@@ -2,6 +2,9 @@
 	name = wurzeit
 	email = hiccap.master.jedi@gmail.com
 
+[commit]
+  template = ~/dotfiles/.gitmessage
+
 [alias]
 	s = status
 	c = commit -am
