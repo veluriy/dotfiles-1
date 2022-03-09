@@ -32,7 +32,7 @@ alias runghc='stack runghc --'
 alias g='git'
 
 alias ga='git add'
-alias gaa='git add -all'
+alias gaa='git add -a'
 
 alias gs='git status'
 
