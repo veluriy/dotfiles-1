@@ -45,4 +45,4 @@ alias gbr='git branch -r'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 
-alias gitp='git push'
+alias gp='git push'
