@@ -20,6 +20,9 @@ alias vi='nvim'
 # tar
 alias tarx='tar -zxvf'
 
+# figlet
+alias aa='figlet'
+
 # stack
 alias ghci='stack ghci'
 alias ghc='stack ghc --'
