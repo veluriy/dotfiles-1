@@ -110,6 +110,9 @@ download() {
   # zsh
   install_fun "zsh"
 
+  # zplug
+  # install_fun "zplug"
+
   # pyenv
   install_fun "pyenv"
 
@@ -137,11 +140,23 @@ download() {
   # sl
   install_fun "sl"
 
+  # peco
+  install_fun "peco"
+
+  # terminator
+  install_fun "terminator"
+
+  # pure
+  # . $DOT_PATH/install_scripts/lib/install-pure.sh
+
   # link init.vim
   . $DOT_PATH/install_scripts/lib/link-nvim.sh
 
   # link zsh
   . $DOT_PATH/install_scripts/lib/link-zsh.sh
+
+  # link terminator
+  # . $DOT_PATH/install_scripts/lib/link-terminator.sh
 
   return 0
 }
