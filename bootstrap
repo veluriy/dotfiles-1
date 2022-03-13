@@ -110,9 +110,6 @@ download() {
   # zsh
   install_fun "zsh"
 
-  # zplug
-  # install_fun "zplug"
-
   # vim
   install_fun "vim"
 
@@ -142,6 +139,9 @@ download() {
 
   # terminator
   install_fun "terminator"
+
+  # zplug
+  install_fun "zplug"
 
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
