@@ -38,6 +38,9 @@ Jetpack 'vim-airline/vim-airline-themes'
 Jetpack 'junegunn/fzf.vim', {'build': './install --all', 'marged': 0}
 Jetpack 'junegunn/fzf', {'do': {-> fzf#install()}}
 
+" filetype
+Jetpack 'nathom/filetype.nvim'
+
 " replacement preview
 Jetpack 'markonm/traces.vim'
 
