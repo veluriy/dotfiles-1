@@ -17,3 +17,18 @@ space
 - 基本移動
   - h, j, k, l
   - H, J, K, L
+  - gj, gk
+  - w, b, e
+  - W, B, E
+  - -, Enter
+  - gg, G
+  - %
+  - g;, g,
+  前回編集した位置に戻る、進む
+  - f, F, t, T
+  fは前方、Fは後方で検索し移動
+  t、Tは直前の文字に移動
+  - ;, ,
+  次の一致に移動、前の一致に移動
+- Cut Yank Paste
+  - dd, d0, d$, dgg, dG
