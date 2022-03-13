@@ -49,6 +49,9 @@ set cindent
 " 入力中のコマンド
 set showcmd
 
+" regular expressions
+set regexpengine=1
+
 " 不可視文字表示
 set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
