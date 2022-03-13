@@ -32,6 +32,9 @@ set title
 " 折返し
 set display=lastline
 
+" 余裕を持ってスクロール
+set scrolloff=3
+
 " 補完メニューの高さ
 set pumheight=10
 
@@ -46,6 +49,9 @@ set cindent
 " 入力中のコマンド
 set showcmd
 
+" regular expressions
+set regexpengine=1
+
 " 不可視文字表示
 set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
@@ -56,7 +62,7 @@ set nobackup
 set wildmenu wildmode=list:longest,full
 
 " yank で クリップボード
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " 高速化
 let g:did_install_default_menus = 1

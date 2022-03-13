@@ -7,12 +7,24 @@
 # ls
 alias ls='ls -lhpaG'
 alias l='k -a'
+alias ll='clear && l'
+
+# cd
+alias d='cd ~/dotfiles'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # rm
 alias rm='rm -iv'
 
 # cp
 alias cp='cp -iv'
+
+# apt
+alias agu='sudo apt update'
+alias agi='sudo apt install'
+alias agr='sudo apt remove'
 
 # vim
 alias vim='nvim'
