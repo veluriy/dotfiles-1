@@ -8,6 +8,9 @@ Jetpack 'airblade/vim-gitgutter'
 " color scheme
 Jetpack 'morhetz/gruvbox'
 
+" color
+Jetpack 'norcalli/nvim-colorizer.lua'
+
 " coc
 Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
 Jetpack 'neoclide/coc.nvim', {'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim', 'do': 'yarn install --frozen-lockfile'}
