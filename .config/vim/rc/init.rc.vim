@@ -57,6 +57,3 @@ set wildmenu wildmode=list:longest,full
 
 " yank で クリップボード
 set clipboard=unnamedplus
-
-" neovim python
-let g:python3_host_prog = '$HOME/.pyenv/versions/neovim3/bin/python'
