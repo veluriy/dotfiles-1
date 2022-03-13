@@ -9,6 +9,9 @@ alias ls='ls -lhpaG'
 alias l='k -a'
 alias ll='clear && l'
 
+# cd
+alias d='cd ~/dotfiles'
+
 # rm
 alias rm='rm -iv'
 
