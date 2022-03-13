@@ -110,12 +110,15 @@ download() {
   # zsh
   install_fun "zsh"
 
+<<<<<<< HEAD
   # zplug
   # install_fun "zplug"
 
   # pyenv
   # install_fun "pyenv"
 
+=======
+>>>>>>> 484dc60121a99526d88a1d90f03f03074ff892a6
   # vim
   install_fun "vim"
 
@@ -145,6 +148,9 @@ download() {
 
   # terminator
   install_fun "terminator"
+
+  # zplug
+  # install_fun "zplug"
 
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
