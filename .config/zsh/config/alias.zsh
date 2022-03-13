@@ -11,6 +11,9 @@ alias ll='clear && l'
 
 # cd
 alias d='cd ~/dotfiles'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # rm
 alias rm='rm -iv'
