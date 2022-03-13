@@ -141,7 +141,7 @@ download() {
   install_fun "terminator"
 
   # zplug
-  install_fun "zplug"
+  # install_fun "zplug"
 
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
