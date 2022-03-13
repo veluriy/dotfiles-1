@@ -156,7 +156,7 @@ download() {
   . $DOT_PATH/install_scripts/lib/link-zsh.sh
 
   # link terminator
-  . $DOT_PATH/install_scripts/lib/link-terminator.sh
+  # . $DOT_PATH/install_scripts/lib/link-terminator.sh
 
   return 0
 }
