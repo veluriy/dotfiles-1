@@ -143,6 +143,9 @@ download() {
   # peco
   install_fun "peco"
 
+  # terminator
+  install_fun "terminator"
+
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
 
@@ -154,6 +157,9 @@ download() {
 
   # install git completion and pronpt
   . $DOT_PATH/install_scripts/lib/install-git-completion-prompt.sh
+
+  # link terminator
+  . $DOT_PATH/install_scripts/lib/link-terminator.sh
 
   return 0
 }
