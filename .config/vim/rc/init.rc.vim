@@ -59,7 +59,7 @@ set nobackup
 set wildmenu wildmode=list:longest,full
 
 " yank で クリップボード
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " 高速化
 let g:did_install_default_menus = 1
