@@ -21,6 +21,11 @@ alias rm='rm -iv'
 # cp
 alias cp='cp -iv'
 
+# apt
+alias agu='sudo apt update'
+alias agi='sudo apt install'
+alias agr='sudo apt remove'
+
 # vim
 alias vim='nvim'
 
