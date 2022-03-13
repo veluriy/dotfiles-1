@@ -114,7 +114,7 @@ download() {
   # install_fun "zplug"
 
   # pyenv
-  install_fun "pyenv"
+  # install_fun "pyenv"
 
   # vim
   install_fun "vim"
