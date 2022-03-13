@@ -32,6 +32,9 @@ set title
 " 折返し
 set display=lastline
 
+" 余裕を持ってスクロール
+set scrolloff=3
+
 " 補完メニューの高さ
 set pumheight=10
 
