@@ -1,3 +1,5 @@
+let g:jetpack#optimization=2
+
 call jetpack#begin()
 
 " gitdiff
@@ -34,6 +36,7 @@ Jetpack 'vim-airline/vim-airline-themes'
 
 " fzf
 Jetpack 'junegunn/fzf.vim', {'build': './install --all', 'marged': 0}
+Jetpack 'junegunn/fzf', {'do': {-> fzf#install()}}
 
 " replacement preview
 Jetpack 'markonm/traces.vim'
@@ -46,5 +49,27 @@ Jetpack 'junegunn/rainbow_parentheses.vim'
 
 " tagbar
 Jetpack 'majutsushi/tagbar'
+
+" === lang ===
+
+" mysql
+Jetpack 'kezhenxu94/vim-mysql-plugin'
+
+" SATySFi
+Jetpack 'qnighy/satysfi.vim'
+
+" Rust
+Jetpack 'rust-lang/rust.vim'
+
+" js
+Jetpack 'pangloss/vim-javascript'
+Jetpack 'othree/yajs.vim'
+Jetpack 'othree/es.next.syntax.vim'
+Jetpack 'othree/javascript-libraries-syntax.vim'
+Jetpack 'othree/html5.vim'
+Jetpack 'maxmellon/vim-jsx-pretty'
+Jetpack 'ternjs/tern_for_vim'
+Jetpack 'yuezk/vim-js'
+Jetpack 'elzr/vim-json'
 
 call jetpack#end()
