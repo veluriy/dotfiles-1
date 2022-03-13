@@ -7,4 +7,4 @@ Dotfiles
 - zsh
   - zplug
 - Neovim
-  - vim-plug
+  - jetpack
