@@ -1,4 +1,4 @@
-fpath+=
+fpath+=~/.zplug/repos/sindresorhus/pure
 autoload -U promptinit; promptinit
 prompt pure -s gruvbox
 zstyle :prompt:pure:path color green
