@@ -56,6 +56,9 @@ Jetpack 'junegunn/rainbow_parentheses.vim'
 " tagbar
 Jetpack 'majutsushi/tagbar'
 
+" CheatSheet
+Jetpack 'reireias/vim-cheatsheet'
+
 " === lang ===
 
 " mysql
