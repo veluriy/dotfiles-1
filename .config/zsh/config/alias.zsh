@@ -15,7 +15,7 @@ alias rm='rm -iv'
 alias cp='cp -iv'
 
 # vim
-alias vi='nvim'
+alias vim='nvim'
 
 # tar
 alias tarx='tar -zxvf'
