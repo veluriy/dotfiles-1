@@ -7,6 +7,7 @@
 # ls
 alias ls='ls -lhpaG'
 alias l='k -a'
+alias ll='clear && l'
 
 # rm
 alias rm='rm -iv'
