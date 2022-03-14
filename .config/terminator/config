@@ -37,16 +37,6 @@
     palette = "#181818:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
     use_system_font = False
     copy_on_selection = True
-  [[nord]]
-    background_color = "#2e3440"
-    cursor_color = "#D8DEE9"
-    font = Ricty Diminished 15
-    foreground_color = "#d8dee9"
-    show_titlebar = False
-    scrollbar_position = hidden
-    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
-    use_system_font = False
-    copy_on_selection = True
   [[ayu]]
     background_color = "#0f1419"
     background_darkness = 1.0
