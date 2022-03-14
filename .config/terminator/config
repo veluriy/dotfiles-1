@@ -30,7 +30,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7c6f64"
-    font = Monospace 12
+    font = Ricty Diminished 15
     foreground_color = "#ebdbb2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -40,7 +40,7 @@
   [[nord]]
     background_color = "#2e3440"
     cursor_color = "#D8DEE9"
-    font = Monospace 12
+    font = Ricty Diminished 15
     foreground_color = "#d8dee9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -52,7 +52,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f29718"
-    font = Monospace 12
+    font = Ricty Diminished 15
     foreground_color = "#e6e1cf"
     show_titlebar = False
     scrollbar_position = hidden
