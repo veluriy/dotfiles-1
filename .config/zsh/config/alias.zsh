@@ -11,6 +11,7 @@ alias ll='clear && l'
 
 # cd
 alias d='cd ~/dotfiles'
+alias p='cd ~/projects'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
