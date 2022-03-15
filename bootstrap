@@ -141,7 +141,7 @@ download() {
   install_fun "terminator"
 
   # z
-  install_fun "z"
+  # install_fun "z"
 
   # zplug
   # install_fun "zplug"
