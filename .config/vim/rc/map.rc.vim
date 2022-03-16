@@ -32,14 +32,14 @@ vnoremap <Leader>n "zx"zp`[V`]
 inoremap <C-t> <Esc><Left>"zx"zpa
 
 " defx
-nnoremap <silent><Leader>f :<C-u>Defx<CR>
+nnoremap <silent> <Leader>f :<C-u>Defx<CR>
 
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 
 " fzf-preview
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
+nmap <Leader>z [fzf-p]
+xmap <Leader>z [fzf-p]
 nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
