@@ -31,9 +31,6 @@ vnoremap <Leader>n "zx"zp`[V`]
 " タイポ修正
 inoremap <C-t> <Esc><Left>"zx"zpa
 
-" defx
-nnoremap <silent> <Leader>f :<C-u>Defx<CR>
-
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 
