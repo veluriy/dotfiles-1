@@ -137,6 +137,9 @@ download() {
   # peco
   install_fun "peco"
 
+  # hyper
+  install_fun "hyper"
+
   # z
   # install_fun "z"
 
@@ -154,6 +157,9 @@ download() {
 
   # link zsh
   . $DOT_PATH/install_scripts/lib/link-zsh.sh
+
+  # link hyper
+  . $DOT_PATH/install_scripts/lib/link-hyper.sh
 
   return 0
 }
