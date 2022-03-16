@@ -5,9 +5,10 @@
 #  \__,_|_|_|\__,_|___/
 
 # ls
-alias ls='ls -lhpaG'
-alias l='k -a'
+alias l='ls -lhpaG'
 alias ll='clear && l'
+alias k='k -a'
+alias kk='clear && k -a'
 
 # cd
 alias d='cd ~/dotfiles'
