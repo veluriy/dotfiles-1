@@ -10,6 +10,10 @@ Jetpack 'morhetz/gruvbox'
 
 " color
 Jetpack 'norcalli/nvim-colorizer.lua'
+"
+" fzf
+Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
 
 " coc
 Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -37,10 +41,6 @@ Jetpack 'rstacruz/sparkup'
 " Airline customize
 Jetpack 'vim-airline/vim-airline'
 Jetpack 'vim-airline/vim-airline-themes'
-
-" fzf
-Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
-Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " filetype
 Jetpack 'nathom/filetype.nvim'
