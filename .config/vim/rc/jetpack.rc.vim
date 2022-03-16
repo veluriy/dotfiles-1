@@ -12,18 +12,18 @@ Jetpack 'morhetz/gruvbox'
 Jetpack 'norcalli/nvim-colorizer.lua'
 
 " coc
-Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
-Jetpack 'neoclide/coc.nvim', {'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim', 'do': 'yarn install --frozen-lockfile'}
+Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
+Jetpack 'neoclide/coc.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim', 'do': 'yarn install --frozen-lockfile' }
 Jetpack 'antoinemadec/coc-fzf'
 
 " denite
-Jetpack 'Shougo/denite.nvim', {'branch': 'release'}
-Jetpack 'Shougo/denite.nvim', {'branch': 'master', 'source': '~/.config/nvim/rc/denite.rc.vim'}
+Jetpack 'Shougo/denite.nvim', { 'branch': 'release' }
+Jetpack 'Shougo/denite.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/denite.rc.vim' }
 
 " defx
-Jetpack 'Shougo/defx.nvim', {'branch': 'release'}
-Jetpack 'Shougo/defx.nvim', {'branch': 'master', 'source': '~/.config/nvim/rc/defx.rc.vim'}
-Jetpack 'kristijanhusak/defx-git', {'source': '~/.config/nvim/rc/defx-git.rc.vim'}
+Jetpack 'Shougo/defx.nvim', { 'branch': 'release' }
+Jetpack 'Shougo/defx.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/defx.rc.vim' }
+Jetpack 'kristijanhusak/defx-git', { 'source': '~/.config/nvim/rc/defx-git.rc.vim' }
 
 " easy comment
 Jetpack 'tpope/vim-commentary'
@@ -39,8 +39,8 @@ Jetpack 'vim-airline/vim-airline'
 Jetpack 'vim-airline/vim-airline-themes'
 
 " fzf
-Jetpack 'junegunn/fzf.vim', {'build': './install --all', 'marged': 0}
-Jetpack 'junegunn/fzf'
+Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
+Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " filetype
 Jetpack 'nathom/filetype.nvim'
