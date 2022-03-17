@@ -8,7 +8,8 @@
 alias ls='ls -lhpaG'
 alias l='ls'
 alias ll='clear && l'
-alias kk='clear && k'
+alias ka='k -a'
+alias kk='clear && k -a'
 
 # cd
 alias d='cd ~/dotfiles'
