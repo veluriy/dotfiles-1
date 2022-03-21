@@ -6,7 +6,7 @@ call jetpack#begin()
 Jetpack 'airblade/vim-gitgutter'
 
 " color scheme
-Jetpack 'morhetz/gruvbox'
+" Jetpack 'morhetz/gruvbox'
 
 " color
 Jetpack 'norcalli/nvim-colorizer.lua'
