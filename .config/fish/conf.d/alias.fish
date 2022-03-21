@@ -7,8 +7,8 @@
 # ls
 alias l "exa -la --grid"
 alias ll "exa -la --tree"
-alias lall "exa -abghHliS"
-alias llall "exa -abghHliS --tree"
+alias la "exa -abghHliS"
+alias lla "exa -abghHliS --tree"
 
 # cd
 alias d "cd ~/dotfiles"
