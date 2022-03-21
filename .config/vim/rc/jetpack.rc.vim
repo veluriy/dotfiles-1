@@ -60,6 +60,9 @@ Jetpack 'majutsushi/tagbar'
 " CheatSheet
 Jetpack 'reireias/vim-cheatsheet'
 
+" fish highlight
+Jetpack 'dag/vim-fish'
+
 " === lang ===
 
 " mysql
