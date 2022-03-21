@@ -39,7 +39,7 @@ set scrolloff=3
 set pumheight=10
 
 " カーソル
-set cursorline cursorcolumn ruler
+set cursorline
 
 " インデント
 set autoindent
