@@ -1,4 +1,5 @@
 [global_config]
+  borderless = True
   sticky = True
   title_transmit_fg_color = "#2e3436"
   title_transmit_bg_color = "#2e3436"
@@ -26,23 +27,23 @@
   layout_launcher = <Primary><Shift>l
 [profiles]
   [[default]]
-    background_color = "#282828"
-    background_darkness = 1.0
+    background_color = "#0f1419"
+    background_darkness = 0.7
     background_type = transparent
-    cursor_color = "#7c6f64"
-    font = Ricty Diminished 15
-    foreground_color = "#ebdbb2"
+    cursor_color = "#f29718"
+    font = Ricty Diminished 10
+    foreground_color = "#e6e1cf"
     show_titlebar = False
     scrollbar_position = hidden
-    palette = "#181818:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
     use_system_font = False
     copy_on_selection = True
   [[ayu]]
     background_color = "#0f1419"
-    background_darkness = 1.0
+    background_darkness = 0.7
     background_type = transparent
     cursor_color = "#f29718"
-    font = Ricty Diminished 15
+    font = Ricty Diminished 10
     foreground_color = "#e6e1cf"
     show_titlebar = False
     scrollbar_position = hidden

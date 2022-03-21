@@ -31,9 +31,6 @@ vnoremap <Leader>n "zx"zp`[V`]
 " タイポ修正
 inoremap <C-t> <Esc><Left>"zx"zpa
 
-" defx
-nnoremap <silent><Leader>f :<C-u>Defx<CR>
-
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 
@@ -66,4 +63,4 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <Leader>? :Cheat<CR>
+nmap <silent> <Leader>? :Cheat<CR>
