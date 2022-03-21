@@ -39,6 +39,9 @@ alias tarx='tar -zxvf'
 # figlet
 alias aa='figlet'
 
+# clear
+alias c='clear'
+
 # stack
 alias ghci='stack ghci'
 alias ghc='stack ghc --'
