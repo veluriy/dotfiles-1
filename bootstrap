@@ -146,6 +146,9 @@ download() {
   # zplug
   # install_fun "zplug"
 
+  # fish
+  install_fun "fish"
+
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
 
@@ -160,6 +163,9 @@ download() {
 
   # link hyper
   . $DOT_PATH/install_scripts/lib/link-hyper.sh
+
+  # link fish
+  . $DOT_PATH/install_scripts/lib/link-fish.sh
 
   return 0
 }
