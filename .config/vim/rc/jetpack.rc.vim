@@ -54,16 +54,13 @@ Jetpack 'Yggdroot/indentLine'
 " rainbow
 Jetpack 'junegunn/rainbow_parentheses.vim'
 
-" tagbar
-Jetpack 'majutsushi/tagbar'
-
 " CheatSheet
 Jetpack 'reireias/vim-cheatsheet'
 
+" === lang ===
+
 " fish highlight
 Jetpack 'dag/vim-fish'
-
-" === lang ===
 
 " mysql
 Jetpack 'kezhenxu94/vim-mysql-plugin'
