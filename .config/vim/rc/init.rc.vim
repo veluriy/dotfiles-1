@@ -66,6 +66,7 @@ set clipboard+=unnamed
 
 " redrawtime
 set redrawtime=10000
+set re=0
 
 " 高速化
 let g:did_install_default_menus = 1
