@@ -64,6 +64,9 @@ set wildmenu wildmode=list:longest,full
 " yank で クリップボード
 set clipboard+=unnamed
 
+" redrawtime
+set redrawtime=10000
+
 " 高速化
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
