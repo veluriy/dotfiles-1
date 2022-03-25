@@ -12,6 +12,6 @@ typedef vector<vi> vvi;
 #define pb push_back
 
 int main() {
-  cout << "Hello, world!" << endl;
+  cout << \"Hello, world!\" << endl;
 }" > $argv
 end
