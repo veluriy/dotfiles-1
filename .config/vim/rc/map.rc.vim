@@ -64,3 +64,13 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 nmap <silent> <Leader>? :Cheat<CR>
+
+" indent
+function! AddIndentWhenEnter()
+  if getline(".")[col(".")-1] == "}" && getline(".")[col(".")-2] == "{"
+    return "\n\t\n\<UP>\<END>"
+  else
+    return "\n"
+  endif
+endfunction
+inoremap <silent> <expr> <CR> AddIndentWhenEnter()
