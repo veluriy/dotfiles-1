@@ -59,7 +59,7 @@ alias gaa "git add --all"
 alias gs "git status"
 
 alias gc "git commit -vm"
-alias gac "git commit -a -vm"
+alias gac "git add --all && git commit -vm"
 
 alias gb "git branch"
 alias gba "git branch -a"
