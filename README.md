@@ -1,6 +1,6 @@
 Dotfiles
 ===
-**tmux + zsh + Neovim**
+**tmux + fish + Neovim**
 
 - tmux
   - tpm
