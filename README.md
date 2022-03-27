@@ -4,7 +4,7 @@ Dotfiles
 
 - tmux
   - tpm
-- zsh
-  - zplug
+- fish
+  - fisher
 - Neovim
   - jetpack
