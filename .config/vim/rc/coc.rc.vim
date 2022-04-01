@@ -10,6 +10,7 @@ let g:coc_global_extensions = [
   \'coc-floaterm',
   \'coc-fzf-preview',
   \'coc-git',
+  \'coc-go',
   \'coc-highlight',
   \'coc-html',
   \'coc-java',
