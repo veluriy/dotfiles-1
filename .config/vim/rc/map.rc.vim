@@ -69,6 +69,8 @@ nmap <silent> <Leader>? :Cheat<CR>
 function! AddIndentWhenEnter()
   if getline(".")[col(".")-1] == "}" && getline(".")[col(".")-2] == "{"
     return "\n\t\n\<UP>\<END>"
+  elseif getline(".")[col(".")-1] == ")" && getline(".")[col(".")-2] == "("
+    return "\n\t\n\<UP>\<END>"
   else
     return "\n"
   endif
