@@ -72,3 +72,6 @@ alias gp "git push"
 alias gl "git pull"
 
 alias gd "git diff"
+
+# shutdown
+alias shutnow "shutdown -h now"
