@@ -36,7 +36,7 @@ Jetpack 'tpope/vim-commentary'
 Jetpack 'tpope/vim-surround'
 
 " HTMLtag
-Jetpack 'rstacruz/sparkup'
+" Jetpack 'rstacruz/sparkup'
 
 " Airline customize
 Jetpack 'vim-airline/vim-airline'
