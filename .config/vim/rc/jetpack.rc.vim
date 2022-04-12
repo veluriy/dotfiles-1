@@ -82,4 +82,7 @@ Jetpack 'ternjs/tern_for_vim'
 Jetpack 'yuezk/vim-js'
 Jetpack 'elzr/vim-json'
 
+" C/C++
+Jetpack 'justmao945/vim-clang'
+
 call jetpack#end()

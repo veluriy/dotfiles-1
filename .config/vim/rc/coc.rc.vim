@@ -1,5 +1,6 @@
 let g:coc_global_extensions = [
   \'coc-actions',
+  \'coc-clangd',
   \'coc-css',
   \'coc-cspell-dicts',
   \'coc-deno',
