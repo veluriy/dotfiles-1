@@ -88,3 +88,6 @@ let g:loaded_tarPlugin          = 1
 let g:loaded_tutor_mode_plugin  = 1
 let g:zipPlugin                 = 1
 let g:skip_loading_mswin        = 1
+
+" checkhealth
+let g:loaded_node_provider = 0
