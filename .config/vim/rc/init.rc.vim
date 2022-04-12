@@ -91,3 +91,4 @@ let g:skip_loading_mswin        = 1
 
 " checkhealth
 let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = -
