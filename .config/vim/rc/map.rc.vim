@@ -34,16 +34,16 @@ inoremap <C-t> <Esc><Left>"zx"zpa
 " buffer関連
 nnoremap <Leader>e :e<Space>
 nnoremap <Leader>b :b<Space>
-nnoremap <silent> <Leader>bn :b n<CR>
-nnoremap <silent> <Leader>bp :b p<CR>
+nnoremap <Leader>bn :bn<CR>
+nnoremap <Leader>bp :bp<CR>
 nnoremap <silent> <Leader>l :ls<CR>
 
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
 
 " fzf-preview
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
+nmap <Leader>z [fzf-p]
+xmap <Leader>z [fzf-p]
 nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
