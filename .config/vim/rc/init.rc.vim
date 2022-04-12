@@ -68,6 +68,9 @@ set clipboard+=unnamed
 set redrawtime=10000
 set re=0
 
+" 保存されていないファイルがあっても別ファイルが開ける
+set hidden
+
 " 高速化
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
