@@ -71,6 +71,10 @@ set re=0
 " 保存されていないファイルがあっても別ファイルが開ける
 set hidden
 
+" 文字コードとか
+set fileformat=unix
+set fileencodings=utf-8,sjis
+
 " 高速化
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
@@ -91,4 +95,4 @@ let g:skip_loading_mswin        = 1
 
 " checkhealth
 let g:loaded_node_provider = 0
-let g:loaded_ruby_provider = -
+let g:loaded_ruby_provider = 0
