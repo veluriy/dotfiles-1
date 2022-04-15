@@ -18,3 +18,4 @@ for file in `find . -name "RictyDiminished*.ttf"`; do
   echo $file
   sudo fontforge $/HOME/repo/nerd-fonts/font-patcher -c $file
 done
+find /usr/share/fonts/truetype/ricty-diminished -name "* *" | sed -e 's/.*/"&"/; p; s/ //g' | xargs -n2 sudo mv
