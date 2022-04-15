@@ -5,10 +5,10 @@
 #  \__,_|_|_|\__,_|___/
 
 # ls
-alias l "exa -la --grid"
-alias ll "exa -la --tree"
-alias la "exa -abghHliS"
-alias lla "exa -abghHliS --tree"
+alias l "exa -la --icons"
+alias ll "exa -la --icons --tree"
+alias la "exa -abghHliS --icons"
+alias lla "exa -abghHliS --icons --tree"
 alias lc "clear && l"
 alias llc "clear && ll"
 alias lac "clear && la"
