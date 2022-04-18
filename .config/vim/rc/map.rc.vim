@@ -37,6 +37,8 @@ nnoremap <Leader>b :b<Space>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <silent> <Leader>l :ls<CR>
+nmap <silent> <C-p> <Plug>AirlineSelectPrevTab
+nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 
 " tagbar
 nmap <Leader>t :TagbarToggle<CR>
