@@ -8,7 +8,6 @@ let g:coc_global_extensions = [
   \'coc-dictionary',
   \'coc-docker',
   \'coc-eslint',
-  \'coc-floaterm',
   \'coc-fzf-preview',
   \'coc-git',
   \'coc-go',
@@ -37,3 +36,4 @@ let g:coc_global_extensions = [
   \'coc-yaml',
   \'@yaegassy/coc-volar',
   \]
+  " \'coc-floaterm',
