@@ -85,4 +85,7 @@ Jetpack 'elzr/vim-json'
 " C/C++
 Jetpack 'justmao945/vim-clang'
 
+" Coq
+Jetpack 'LumaKernel/coqpit.vim'
+
 call jetpack#end()
