@@ -21,12 +21,6 @@ nnoremap <C-l> <C-w>l
 " === 戻る ===
 nnoremap U <c-r>
 
-" === 矢印キーを無効化 ===
-nnoremap <Left> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Up> <Nop>
-nnoremap <Right> <Nop>
-
 " === スペース2回でハイライト、#で置換、Esc3回でハイライトオフ ===
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
