@@ -9,10 +9,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap U <c-r>
-nnoremap J 10j
-nnoremap K 10k
-nnoremap H 0
-nnoremap L $
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+nnoremap <C-h> 0
+nnoremap <C-l> $
 nnoremap p ]p
 nnoremap P ]P
 nnoremap <Left> <Nop>
@@ -24,10 +24,10 @@ nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:s
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 nnoremap <silent> <Esc><Esc><Esc> :<C-u>nohlsearch<CR>
 " 行移動
-nnoremap <Leader>m "zdd<Up>"zP
-nnoremap <Leader>n "zdd"zp
-vnoremap <Leader>m "zx<Up>"zP`[V`]
-vnoremap <Leader>n "zx"zp`[V`]
+nnoremap <C-m> "zdd<Up>"zP
+nnoremap <C-n> "zdd"zp
+vnoremap <C-m> "zx<Up>"zP`[V`]
+vnoremap <C-n> "zx"zp`[V`]
 " タイポ修正
 inoremap <Leader>t <Esc><Left>"zx"zpa
 
