@@ -9,10 +9,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap U <c-r>
-nnoremap J 10j
-nnoremap K 10k
-nnoremap H 0
-nnoremap L $
+nnoremap <Leader>l 10j
+nnoremap <Leader>k 10k
+nnoremap <Leader>h 0
+nnoremap <Leader>l $
 nnoremap p ]p
 nnoremap P ]P
 nnoremap <Left> <Nop>
