@@ -46,7 +46,6 @@ nnoremap <silent> <Leader><S-l> :vsplit<CR>
 nnoremap <Bar> $:let pos = getpos(".")<CR>:join<CR>:call setpos('.', pos)<CR>
 
 " buffer関連
-nnoremap <Leader>e :e<Space>
 nnoremap <Leader>b :b<Space>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
