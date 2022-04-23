@@ -44,14 +44,14 @@ Jetpack 'reireias/vim-cheatsheet'
 " expand region
 Jetpack 'terryma/vim-expand-region'
 
-" tab補完
-Jetpack 'evandew/supertab'
-
 " vim doc ja
 Jetpack 'vim-jp/vimdoc-ja'
 
 " NERDTree
 Jetpack 'preservim/nerdtree'
+
+" NERDICONS
+Jetpack 'ryanoasis/vim-devicons'
 
 " === lang ===
 
