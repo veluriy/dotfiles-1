@@ -4,10 +4,10 @@ let mapleader = "\<space>"
 inoremap jk <ESC>:<C-u>w<CR>
 nnoremap <Leader>z ZZ<CR>
 nnoremap <Leader>w :w<CR>
-nnoremap <silent> j gj
-nnoremap <silent> k gk
-vnoremap <silent> j gj
-vnoremap <silent> k gk
+nnoremap <silent>j gj
+nnoremap <silent>k gk
+vnoremap <silent>j gj
+vnoremap <silent>k gk
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
