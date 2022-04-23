@@ -33,8 +33,6 @@ nnoremap <C-Up> "zdd<Up>"zP
 nnoremap <C-Down> "zdd"zp
 vnoremap <C-Up> "zx<Up>"zP`[V`]
 vnoremap <C-Down> "zx"zp`[V`]
-" タイポ修正
-inoremap <Leader>t <Esc><Left>"zx"zpa
 
 " buffer関連
 nnoremap <Leader>e :e<Space>
