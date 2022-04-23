@@ -1,7 +1,7 @@
 " normal map
 
 let mapleader = "\<space>"
-inoremap jk <ESC>:<C-u>w<CR>
+inoremap <silent>jk <ESC>:w<CR>
 nnoremap <Leader>z ZZ<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <silent>j gj
