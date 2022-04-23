@@ -35,9 +35,6 @@ Jetpack 'vim-airline/vim-airline-themes'
 " filetype
 Jetpack 'nathom/filetype.nvim'
 
-" indent
-" Jetpack 'Yggdroot/indentLine'
-
 " rainbow
 Jetpack 'junegunn/rainbow_parentheses.vim'
 
