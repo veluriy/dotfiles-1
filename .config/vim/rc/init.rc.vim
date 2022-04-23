@@ -13,6 +13,9 @@ set incsearch
 " ハイライトサーチ
 set hlsearch
 
+" インタラクティブ置換
+set inccommand=split
+
 " ファイル先頭まで検索したら先頭から再検索
 set wrapscan
 
