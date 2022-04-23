@@ -8,10 +8,10 @@ nnoremap <silent>j gj
 nnoremap <silent>k gk
 vnoremap <silent>j gj
 vnoremap <silent>k gk
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap H <C-w>h
+nnoremap J <C-w>j
+nnoremap K <C-w>k
+nnoremap L <C-w>l
 nnoremap U <c-r>
 nnoremap <C-j> 10j
 nnoremap <C-k> 10k
@@ -19,15 +19,18 @@ nnoremap <C-h> 0
 nnoremap <C-l> $
 nnoremap p ]p
 nnoremap P ]P
+
 " 矢印キーを無効化
 nnoremap <Left> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Right> <Nop>
+
 " スペース2回でハイライト、#で置換
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 nnoremap <silent> <Esc><Esc><Esc> :<C-u>nohlsearch<CR>
+
 " 行移動
 nnoremap <C-Up> "zdd<Up>"zP
 nnoremap <C-Down> "zdd"zp
