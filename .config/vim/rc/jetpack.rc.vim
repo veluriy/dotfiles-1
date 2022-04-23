@@ -12,7 +12,7 @@ Jetpack 'airblade/vim-gitgutter'
 Jetpack 'norcalli/nvim-colorizer.lua'
 "
 " fzf
-Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Jetpack 'junegunn/fzf'
 Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
 
 " coc
@@ -36,7 +36,7 @@ Jetpack 'vim-airline/vim-airline-themes'
 Jetpack 'nathom/filetype.nvim'
 
 " indent
-Jetpack 'Yggdroot/indentLine'
+" Jetpack 'Yggdroot/indentLine'
 
 " rainbow
 Jetpack 'junegunn/rainbow_parentheses.vim'
