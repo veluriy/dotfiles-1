@@ -20,11 +20,9 @@ Jetpack 'neoclide/coc.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/
 Jetpack 'antoinemadec/coc-fzf'
 
 " denite
-Jetpack 'Shougo/denite.nvim', { 'branch': 'release' }
 Jetpack 'Shougo/denite.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/denite.rc.vim' }
 
 " defx
-Jetpack 'Shougo/defx.nvim', { 'branch': 'release' }
 Jetpack 'Shougo/defx.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/defx.rc.vim' }
 Jetpack 'kristijanhusak/defx-git', { 'source': '~/.config/nvim/rc/defx-git.rc.vim' }
 
@@ -58,6 +56,9 @@ Jetpack 'terryma/vim-expand-region'
 
 " tab補完
 Jetpack 'evandew/supertab'
+
+" vim doc ja
+Jetpack 'vim-jp/vimdoc-ja'
 
 " === lang ===
 
