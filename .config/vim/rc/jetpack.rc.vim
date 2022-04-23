@@ -54,6 +54,9 @@ Jetpack 'junegunn/rainbow_parentheses.vim'
 " CheatSheet
 Jetpack 'reireias/vim-cheatsheet'
 
+" expand region
+Jetpack 'terryma/vim-expand-region'
+
 " === lang ===
 
 " fish highlight
