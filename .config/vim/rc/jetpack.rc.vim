@@ -50,6 +50,9 @@ Jetpack 'evandew/supertab'
 " vim doc ja
 Jetpack 'vim-jp/vimdoc-ja'
 
+" NERDTree
+Jetpack 'preservim/nerdtree'
+
 " === lang ===
 
 " fish highlight
