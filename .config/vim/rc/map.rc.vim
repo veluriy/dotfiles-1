@@ -26,7 +26,7 @@ nnoremap <Down> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Right> <Nop>
 
-" スペース2回でハイライト、#で置換
+" スペース2回でハイライト、#で置換、Esc3回でハイライトオフ
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 nnoremap <silent> <Esc><Esc><Esc> :<C-u>nohlsearch<CR>
@@ -37,12 +37,16 @@ nnoremap <C-Down> "zdd"zp
 vnoremap <C-Up> "zx<Up>"zP`[V`]
 vnoremap <C-Down> "zx"zp`[V`]
 
+" split関連
+nnoremap <silent> <Leader><S-j> :split<CR>
+nnoremap <silent> <Leader><S-l> :vsplit<CR>
+
 " buffer関連
 nnoremap <Leader>e :e<Space>
 nnoremap <Leader>b :b<Space>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
-nnoremap <silent> <Leader>l :ls<CR>
+nnoremap <silent> <Leader>ls :ls<CR>
 nmap <silent> <C-p> <Plug>AirlineSelectPrevTab
 nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 
