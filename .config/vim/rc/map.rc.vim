@@ -53,6 +53,9 @@ nnoremap <silent> <Leader>ls :ls<CR>
 nmap <silent> <C-p> <Plug>AirlineSelectPrevTab
 nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 
+" 範囲拡大
+vmap v <Plug>(expand_region_expand)
+
 " coc rls
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
