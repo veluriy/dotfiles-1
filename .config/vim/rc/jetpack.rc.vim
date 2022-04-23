@@ -7,6 +7,7 @@ Jetpack 'airblade/vim-gitgutter'
 
 " color scheme
 Jetpack 'morhetz/gruvbox'
+Jetpack 'aty-theme/ayu-vim'
 
 " color
 Jetpack 'norcalli/nvim-colorizer.lua'
