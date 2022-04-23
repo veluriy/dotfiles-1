@@ -4,6 +4,10 @@ let mapleader = "\<space>"
 inoremap jk <ESC>:<C-u>w<CR>
 nnoremap <Leader>z ZZ<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -15,6 +19,7 @@ nnoremap <C-h> 0
 nnoremap <C-l> $
 nnoremap p ]p
 nnoremap P ]P
+" 矢印キーを無効化
 nnoremap <Left> <Nop>
 nnoremap <Down> <Nop>
 nnoremap <Up> <Nop>
@@ -24,10 +29,10 @@ nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:s
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
 nnoremap <silent> <Esc><Esc><Esc> :<C-u>nohlsearch<CR>
 " 行移動
-nnoremap <C-m> "zdd<Up>"zP
-nnoremap <C-n> "zdd"zp
-vnoremap <C-m> "zx<Up>"zP`[V`]
-vnoremap <C-n> "zx"zp`[V`]
+nnoremap <C-Up> "zdd<Up>"zP
+nnoremap <C-Down> "zdd"zp
+vnoremap <C-Up> "zx<Up>"zP`[V`]
+vnoremap <C-Down> "zx"zp`[V`]
 " タイポ修正
 inoremap <Leader>t <Esc><Left>"zx"zpa
 
