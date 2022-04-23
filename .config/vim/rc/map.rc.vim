@@ -53,10 +53,6 @@ nnoremap <silent> <Leader>ls :ls<CR>
 nmap <silent> <C-p> <Plug>AirlineSelectPrevTab
 nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 
-" coc react refactor
-xmap <Leader>a <Plug>(coc-codeaction-selected)
-nmap <Leader>a <Plug>(coc-codeaction-selected)
-
 " coc rls
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
