@@ -1,7 +1,6 @@
 " normal map
 
 let mapleader = "\<space>"
-inoremap <expr><CR> pumvisible() ? "<C-y>" : "<CR>"
 inoremap jk <ESC>:<C-u>w<CR>
 nnoremap <Leader>z ZZ<CR>
 nnoremap <C-h> <C-w>h
