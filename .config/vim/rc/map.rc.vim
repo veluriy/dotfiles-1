@@ -41,6 +41,9 @@ vnoremap <C-Down> "zx"zp`[V`]
 nnoremap <silent> <Leader><S-j> :split<CR>
 nnoremap <silent> <Leader><S-l> :vsplit<CR>
 
+" 行結合
+nnoremap <Bar> $:let pos = getpos(".")<CR>:join<CR>:call setpos('.', pos)<CR>
+
 " buffer関連
 nnoremap <Leader>e :e<Space>
 nnoremap <Leader>b :b<Space>
