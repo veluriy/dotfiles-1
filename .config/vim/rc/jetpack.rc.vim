@@ -16,7 +16,6 @@ Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
 
 " coc
-Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 Jetpack 'neoclide/coc.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim', 'do': 'yarn install --frozen-lockfile' }
 Jetpack 'antoinemadec/coc-fzf'
 
@@ -56,6 +55,9 @@ Jetpack 'reireias/vim-cheatsheet'
 
 " expand region
 Jetpack 'terryma/vim-expand-region'
+
+" tab補完
+Jetpack 'evandew/supertab'
 
 " === lang ===
 
