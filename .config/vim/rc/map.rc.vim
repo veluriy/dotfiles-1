@@ -57,12 +57,6 @@ nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 " 範囲拡大
 vmap v <Plug>(expand_region_expand)
 
-" coc rls
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 nmap <silent> <Leader>? :Cheat<CR>
 
 " indent
