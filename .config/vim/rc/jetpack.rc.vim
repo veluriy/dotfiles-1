@@ -45,9 +45,6 @@ Jetpack 'vim-airline/vim-airline-themes'
 " filetype
 Jetpack 'nathom/filetype.nvim'
 
-" replacement preview
-Jetpack 'markonm/traces.vim'
-
 " indent
 Jetpack 'Yggdroot/indentLine'
 
