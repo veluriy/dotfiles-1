@@ -1,6 +1,7 @@
-" normal map
-
+" Leader key
 let mapleader = "\<space>"
+
+" 移動系
 inoremap <silent>jk <ESC>:w<CR>
 nnoremap <Leader>z ZZ<CR>
 nnoremap <Leader>w :w<CR>
@@ -16,9 +17,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" 戻る
 nnoremap U <c-r>
-nnoremap p ]p
-nnoremap P ]P
 
 " 矢印キーを無効化
 nnoremap <Left> <Nop>
