@@ -16,7 +16,7 @@ Jetpack 'junegunn/fzf'
 Jetpack 'junegunn/fzf.vim', { 'build': './install --all', 'marged': 0 }
 
 " coc
-Jetpack 'neoclide/coc.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim', 'do': 'yarn install --frozen-lockfile' }
+Jetpack 'neoclide/coc.nvim', { 'branch': 'master', 'source': '~/.config/nvim/rc/coc.rc.vim' }
 Jetpack 'antoinemadec/coc-fzf'
 
 " easy comment
