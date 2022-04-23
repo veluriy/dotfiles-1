@@ -17,6 +17,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <Left> <C-w><
+nnoremap <Down> <C-w>-
+nnoremap <Up> <C-w>+
+nnoremap <Right> <C-w>>
 
 " === 戻る ===
 nnoremap U <c-r>
