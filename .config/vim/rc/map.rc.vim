@@ -56,7 +56,11 @@ nmap <silent> <C-n> <Plug>AirlineSelectNextTab
 " 範囲拡大
 vmap v <Plug>(expand_region_expand)
 
+" cheat
 nmap <silent> <Leader>? :Cheat<CR>
+
+" NERDTree
+nnoremap <Leader>e :NERDTreeToggle<CR>
 
 " indent
 function! AddIndentWhenEnter()
