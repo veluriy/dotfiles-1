@@ -8,15 +8,15 @@ nnoremap <silent>j gj
 nnoremap <silent>k gk
 vnoremap <silent>j gj
 vnoremap <silent>k gk
-nnoremap H <C-w>h
-nnoremap J <C-w>j
-nnoremap K <C-w>k
-nnoremap L <C-w>l
+nnoremap J 10j
+nnoremap K 10k
+nnoremap H 0
+nnoremap L $
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 nnoremap U <c-r>
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
-nnoremap <C-h> 0
-nnoremap <C-l> $
 nnoremap p ]p
 nnoremap P ]P
 
