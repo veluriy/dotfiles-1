@@ -9,9 +9,9 @@ using namespace std;
 int main() {
   cout << \"Hello, world!\" << endl;
 }" > a.echop
-  cp -f a.cpp > b.cpp
-  cp -f a.cpp > c.cpp
-  cp -f a.cpp > d.cpp
-  cp -f a.cpp > e.cpp
-  cp -f a.cpp > f.cpp
+  cp -f a.cpp b.cpp
+  cp -f a.cpp c.cpp
+  cp -f a.cpp d.cpp
+  cp -f a.cpp e.cpp
+  cp -f a.cpp f.cpp
 end
