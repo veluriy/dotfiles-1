@@ -3,6 +3,9 @@
 " 行番号
 set number relativenumber
 
+" キー表示
+set showmode
+
 " 大文字小文字区別なし検索
 set ignorecase
 set smartcase
