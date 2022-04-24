@@ -24,3 +24,6 @@ let g:airline#extensions#tabline#buffer_idx_format = {
       \ '8': '8 ',
       \ '9': '9 '
       \ }
+
+" Rust.vim auto fmt
+let g:rustfmt_autosave = 1
