@@ -1,5 +1,4 @@
 function tcppabc
-  touch a.cpp b.cpp c.cpp d.cpp e.cpp f.cpp
   echo \
   "#include <bits/stdc++.h>
 using namespace std;
@@ -8,5 +7,10 @@ using namespace std;
 
 int main() {
   cout << \"Hello, world!\" << endl;
-}" > a.cpp > b.cpp > c.cpp > d.cpp > e.cpp > f.cpp
+}" > a.echop
+  echo a.cpp > b.cpp
+  echo a.cpp > c.cpp
+  echo a.cpp > d.cpp
+  echo a.cpp > e.cpp
+  echo a.cpp > f.cpp
 end
