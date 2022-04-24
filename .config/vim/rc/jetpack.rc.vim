@@ -26,7 +26,7 @@ Jetpack 'tpope/vim-commentary'
 Jetpack 'tpope/vim-surround'
 
 " HTMLtag
-Jetpack 'rstacruz/sparkup'
+" Jetpack 'rstacruz/sparkup'
 
 " Airline customize
 Jetpack 'vim-airline/vim-airline'
@@ -36,7 +36,7 @@ Jetpack 'vim-airline/vim-airline-themes'
 Jetpack 'nathom/filetype.nvim'
 
 " rainbow
-Jetpack 'junegunn/rainbow_parentheses.vim'
+" Jetpack 'junegunn/rainbow_parentheses.vim'
 
 " CheatSheet
 Jetpack 'reireias/vim-cheatsheet'
