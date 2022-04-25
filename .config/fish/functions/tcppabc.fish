@@ -1,8 +1,8 @@
 function tcppabc
-  tcpp a.cpp
-  tcpp b.cpp
-  tcpp c.cpp
-  tcpp d.cpp
-  tcpp e.cpp
-  tcpp f.cpp
+  tcpp a.cc
+  tcpp b.cc
+  tcpp c.cc
+  tcpp d.cc
+  tcpp e.cc
+  tcpp f.cc
 end
