@@ -25,6 +25,9 @@ nnoremap <Right> <C-w>>
 " === 戻る ===
 nnoremap U <c-r>
 
+" === 改行挿入 ===
+nnoremap <CR> i<CR><ESC>
+
 " === スペース2回でハイライト、#で置換、Esc3回でハイライトオフ ===
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 nmap # <Space><Space>:%s/<C-r>///g<Left><Left>
