@@ -35,6 +35,7 @@ alias agr "sudo apt remove"
 
 # vim
 alias vim "nvim"
+alias v "nvim"
 
 # tar
 alias tarx "tar -zxvf"
