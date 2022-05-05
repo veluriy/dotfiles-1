@@ -11,15 +11,15 @@
   suppress_multiple_term_dialog = True
 [keybindings]
   zoom_out = <Primary>minus
-  go_next = <Alt>w
-  go_prev = <Alt>b
-  go_up = <Alt>k
-  go_down = <Alt>j
-  go_left = <Alt>h
-  go_right = <Alt>l
-  split_horiz = <Primary><Shift>d
-  split_vert = <Primary>d
-  close_term = <Primary><Shift>z
+  go_next = Disabled
+  go_prev = Disabled
+  go_up = Disabled
+  go_down = Disabled
+  go_left = Disabled
+  go_right = Disabled
+  split_horiz = Disabled
+  split_vert = Disabled
+  close_term = Disabled
   copy = <Primary><Shift>c
   paste = <Primary>v
   scaled_zoom = None
