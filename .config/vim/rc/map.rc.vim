@@ -28,7 +28,7 @@ nnoremap U <c-r>
 " === 改行挿入 ===
 nnoremap <CR> i<CR><ESC>
 
-" source %
+" === source % ===
 nnoremap % :source<Space>%<CR>
 
 " === スペース2回でハイライト、#で置換、Esc3回でハイライトオフ ===
