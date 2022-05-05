@@ -1,4 +1,5 @@
 [global_config]
+  window_state = fullscreen
   borderless = True
   sticky = True
   title_transmit_fg_color = "#2e3436"
