@@ -1,11 +1,12 @@
 Dotfiles
 ===
-**Hyper(or Terminator) + tmux + zsh + Neovim**
+**tmux + fish + Neovim**
 
 - Hyper
 - Terminator
 - tmux
-- zsh
-  - zplug
+  - tpm
+- fish
+  - fisher
 - Neovim
   - jetpack

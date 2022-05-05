@@ -4,7 +4,7 @@ set -ue
 
 # const
 # ----------
-readonly DOT_PATH=~/dotfiles
+readonly DOT_PATH=$HOME/dotfiles
 readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
 readonly INSTALL_SCRIPTS=$DOT_PATH/install_scripts
 readonly INSTALL_SCRIPTS_LIB=$INSTALL_SCRIPTS/lib
@@ -39,12 +39,12 @@ dotfiles() {
   echo $BLUE
   cat <<\EOF
 
-      _       _    __ _ _           
-   __| | ___ | |_ / _(_) | ___  ___ 
+      _       _    __ _ _
+   __| | ___ | |_ / _(_) | ___  ___
   / _` |/ _ \| __| |_| | |/ _ \/ __|
  | (_| | (_) | |_|  _| | |  __/\__ \
 (_)__,_|\___/ \__|_| |_|_|\___||___/
-                                    
+
 
 EOF
   echo $NORMAL

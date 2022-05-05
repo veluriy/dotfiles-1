@@ -5,10 +5,10 @@
 #  \__,_|_|_|\__,_|___/
 
 # ls
-alias l "exa -la --grid"
-alias ll "exa -la --tree"
-alias la "exa -abghHliS"
-alias lla "exa -abghHliS --tree"
+alias l "exa -la --icons"
+alias ll "exa -la --icons --tree"
+alias la "exa -abghHliS --icons"
+alias lla "exa -abghHliS --icons --tree"
 alias lc "clear && l"
 alias llc "clear && ll"
 alias lac "clear && la"
@@ -35,6 +35,7 @@ alias agr "sudo apt remove"
 
 # vim
 alias vim "nvim"
+alias v "nvim"
 
 # tar
 alias tarx "tar -zxvf"
@@ -59,7 +60,7 @@ alias gaa "git add --all"
 alias gs "git status"
 
 alias gc "git commit -vm"
-alias gac "git commit -a -vm"
+alias gac "git add --all && git commit -vm"
 
 alias gb "git branch"
 alias gba "git branch -a"
@@ -72,3 +73,9 @@ alias gp "git push"
 alias gl "git pull"
 
 alias gd "git diff"
+
+# shutdown
+alias shutnow "shutdown -h now"
+
+# clipboard copy
+alias clip "xsel --clipboard --input"
