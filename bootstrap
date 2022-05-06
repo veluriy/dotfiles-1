@@ -80,7 +80,7 @@ install_fun() {
     echo "${BOLD}${1} is already exists.$NORMAL"
   else
     echo "Installing ${1}..."
-    . $INSTALL_SCRIPTS_LIB/install-$1.sh
+    . $INSTALL_SCRIPTS_INSTALL/install-$1.sh
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully installed ${1}.$NORMAL"
     else
@@ -120,14 +120,35 @@ install_dotfiles() {
   fi
 }
 
+install_tools_for_ubuntu() {
+  install_fun "tmux"
+  install_fun "fish"
+  install_fun "vim"
+  install_fun "nvim"
+  install_fun "cmatrix"
+  install_fun "cowsay"
+  install_fun "figlet"
+  install_fun "fortune"
+  install_fun "rig"
+  install_fun "sl"
+  install_fun "htop"
+  install_fun "fzf"
+}
+
 # === main ===
 # ------------
 
 main() {
   get_os
   dotfiles_logo
-  echo "You use $OS"
   install_dotfiles
+  echo "You use $OS"
+  if [ "${OS}" = "Ubuntu" ]; then
+    install_tools_for_ubuntu
+  else
+    echo "${RED}Your OS is not supported $NORMAL"
+    exit 1
+  fi
 }
 
 main
