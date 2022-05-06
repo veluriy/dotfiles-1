@@ -2,7 +2,6 @@ Dotfiles
 ===
 **tmux + fish + Neovim**
 
-- Hyper
 - Terminator
 - tmux
   - tpm
