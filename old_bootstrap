@@ -1,0 +1,204 @@
+#!/bin/sh
+
+set -ue
+
+# const
+# ----------
+readonly DOT_PATH=$HOME/dotfiles
+readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
+readonly INSTALL_SCRIPTS=$DOT_PATH/install_scripts
+readonly INSTALL_SCRIPTS_LIB=$INSTALL_SCRIPTS/lib
+
+# colors
+if which tput >/dev/null 2>&1; then
+  ncolors=$(tput colors)
+fi
+if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+  RED="$(tput setaf 1)"
+  GREEN="$(tput setaf 2)"
+  YELLOW="$(tput setaf 3)"
+  BLUE="$(tput setaf 4)"
+  BOLD="$(tput bold)"
+  NORMAL="$(tput sgr0)"
+else
+  RED=""
+  GREEN=""
+  YELLOW=""
+  BLUE=""
+  BOLD=""
+  NORMAL=""
+fi
+
+# function
+# ----------
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
+dotfiles() {
+  echo $BLUE
+  cat <<\EOF
+
+      _       _    __ _ _
+   __| | ___ | |_ / _(_) | ___  ___
+  / _` |/ _ \| __| |_| | |/ _ \/ __|
+ | (_| | (_) | |_|  _| | |  __/\__ \
+(_)__,_|\___/ \__|_| |_|_|\___||___/
+
+
+EOF
+  echo $NORMAL
+}
+
+usage() {
+  echo $YELLOW
+  cat <<\EOF
+Commands:
+  init (download dotfiles)
+  quit
+EOF
+  echo $NORMAL
+
+  return 0
+}
+
+install_fun() {
+  if has "$1"; then
+    echo "${BOLD}${1} is already exists.$NORMAL"
+  else
+    echo "Installing ${1}..."
+    . $INSTALL_SCRIPTS_LIB/install-$1.sh
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully installed ${1}.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install ${1}.$NORMAL"
+      exit 1
+    fi
+  fi
+
+  return 0
+}
+
+download() {
+  cd $HOME
+
+  # dotfiles
+  if [ ! -d $DOT_PATH ]; then
+    echo "Downloading dotfiles..."
+    if has "git"; then
+      git clone --recursive $REMOTE_URL $DOT_PATH
+    else
+      echo "Installing git..."
+      sudo apt update
+      sudo apt install git
+      echo "${BOLD}The git installation is now complete.$NORMAL"
+    download
+    fi
+    if [ $? = 0 ]; then
+      echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
+    else
+      echo "${RED}An unexpected error occurred when trying to install git.$NORMAL"
+      exit 1
+    fi
+  else
+    echo "${BOLD}dotfiles is already exists.$NORMAL"
+  fi
+
+  # tmux
+  install_fun "tmux"
+
+  # zsh
+  install_fun "zsh"
+
+  # vim
+  install_fun "vim"
+
+  # neovim
+  install_fun "nvim"
+
+  # cmatrix
+  install_fun "cmatrix"
+
+  # cowsay
+  install_fun "cowsay"
+
+  # figlet
+  install_fun "figlet"
+
+  # fortune
+  install_fun "fortune"
+
+  # rig
+  install_fun "rig"
+
+  # sl
+  install_fun "sl"
+
+  # peco
+  install_fun "peco"
+
+  # hyper
+  install_fun "hyper"
+
+  # z
+  # install_fun "z"
+
+  # zplug
+  # install_fun "zplug"
+
+  # fish
+  install_fun "fish"
+
+  # htop
+  install_fun "htop"
+
+  # pure
+  # . $DOT_PATH/install_scripts/lib/install-pure.sh
+
+  # font
+  # . $DOT_PATH/install_scripts/lib/install-font.sh
+
+  # link init.vim
+  . $DOT_PATH/install_scripts/lib/link-nvim.sh
+
+  # link zsh
+  . $DOT_PATH/install_scripts/lib/link-zsh.sh
+
+  # link hyper
+  . $DOT_PATH/install_scripts/lib/link-hyper.sh
+
+  # link fish
+  . $DOT_PATH/install_scripts/lib/link-fish.sh
+
+  return 0
+}
+
+
+main() {
+  usage
+  echo -n "${BOLD}command: $NORMAL"
+  read command
+  case $command in
+    init)
+      download
+      main
+      ;;
+    quit)
+      echo "bye!"
+      exit 0
+      ;;
+    *)
+      echo "${RED}bootstrap: command not found.$NORMAL"
+      main
+      ;;
+  esac
+
+    return 0
+  }
+
+# main
+# ----------
+dotfiles
+main
+
+exit 0
