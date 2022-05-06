@@ -149,6 +149,9 @@ download() {
   # fish
   install_fun "fish"
 
+  # htop
+  install_fun "htop"
+
   # pure
   # . $DOT_PATH/install_scripts/lib/install-pure.sh
 

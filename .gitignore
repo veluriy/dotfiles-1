@@ -3,3 +3,6 @@
 
 # .swp
 *.swp
+
+# fish underbar
+_*.fish
