@@ -29,7 +29,7 @@ nnoremap U <c-r>
 nnoremap <CR> i<CR><ESC>
 
 " === source % ===
-nnoremap % :source<Space>%<CR>
+nnoremap <Leader>% :source<Space>%<CR>
 
 " === スペース2回でハイライト、#で置換、Esc3回でハイライトオフ ===
 nnoremap <silent> <Space><Space> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
