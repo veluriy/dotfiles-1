@@ -2,9 +2,9 @@
 
 set -ue
 
-install_lib6c_dev() {
+install_libc6_dev() {
   sudo apt update
-  sudo apt install lib6c-dev -y
+  sudo apt install libc6-dev -y
 }
 
-install_lib6c_dev
+install_libc6_dev
