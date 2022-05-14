@@ -30,7 +30,31 @@
     "initializationOptions": {},
     "requireRootPattern": true,
     "setting": {},
-    "rootPatterns": [".flowconfig"]
+    "rootPatterns": [".flowconfig"],
+    "vimls": {
+      "module": "/home/wur/.config/coc/extensions/node_modules/coc-vimlsp/out/index.js",
+      "args": ["--node-ipc"],
+      "initializationOptions": {
+        "isNeovim": true,
+        "iskeyword": "@,48-57,_,192-255,-#",
+        "vimruntime": "",
+        "runtimepath": "",
+        "diagonostic": {
+          "enable": true
+        },
+        "indexjs": {
+          "runtimepath": true,
+          "gap": 100,
+          "count": 3,
+          "projectRootPatterns": ["strange-root-pattern", ".git", "autoload", "plugin"]
+        },
+        "suggest": {
+          "fromVimruntime": true,
+          "fromRuntimePath": false
+        }
+      },
+      "filetypes": [ "vim" ]
+    }
     }
   },
   "tsserver.enableJavascript": false,
