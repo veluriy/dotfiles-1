@@ -5,6 +5,9 @@ let g:cheatsheet#cheat_file = '/home/wurzeit/dotfiles/.config/vim/rc/cheetsheet.
 autocmd FileType sass setl iskeyword+=@-@
 autocmd FileType scss setl iskeyword+=@-@
 
+" coc vim
+let g:markdown_fenced_languages = ['vim', 'help']
+
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#default#layout = [
