@@ -13,14 +13,14 @@ nnoremap J 10j
 nnoremap K 10k
 nnoremap H 0
 nnoremap L $
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <Left> <C-w><
-nnoremap <Down> <C-w>-
-nnoremap <Up> <C-w>+
-nnoremap <Right> <C-w>>
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <Left> <C-w><
+nnoremap <silent> <Down> <C-w>-
+nnoremap <silent> <Up> <C-w>+
+nnoremap <silent> <Right> <C-w>>
 
 " === 戻る ===
 nnoremap U <c-r>
