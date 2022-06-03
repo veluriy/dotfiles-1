@@ -82,7 +82,7 @@ set fileencodings=utf-8,sjis
 set spell
 
 " NERDTree
-let NERDTreeShowBookMark = 1
+let NERDTreeShowBookMarks = 1
 
 " 高速化
 let g:did_install_default_menus = 1
