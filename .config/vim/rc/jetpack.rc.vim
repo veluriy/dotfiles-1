@@ -53,6 +53,9 @@ Jetpack 'preservim/nerdtree'
 " NERDICONS
 Jetpack 'ryanoasis/vim-devicons'
 
+" vimwiki
+Jetpack 'vimwiki/vimwiki'
+
 " === lang ===
 
 " fish highlight
@@ -60,6 +63,9 @@ Jetpack 'dag/vim-fish'
 
 " mysql
 Jetpack 'kezhenxu94/vim-mysql-plugin'
+
+" sql
+Jetpack 'lighttiger2505/sqls.vim'
 
 " SATySFi
 Jetpack 'qnighy/satysfi.vim'
