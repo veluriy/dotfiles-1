@@ -56,6 +56,9 @@ Jetpack 'ryanoasis/vim-devicons'
 " vimwiki
 Jetpack 'vimwiki/vimwiki'
 
+" copilot
+Jetpack 'github/copilot.vim'
+
 " === lang ===
 
 " fish highlight
