@@ -59,6 +59,9 @@ Jetpack 'vimwiki/vimwiki'
 " copilot
 Jetpack 'github/copilot.vim'
 
+" clang-format requirement
+Jetpack 'kana/vim-operator-user'
+
 " === lang ===
 
 " fish highlight
@@ -89,6 +92,7 @@ Jetpack 'elzr/vim-json'
 
 " C/C++
 Jetpack 'justmao945/vim-clang'
+Jetpack 'rhysd/vim-clang-format'
 
 " Coq
 Jetpack 'LumaKernel/coqpit.vim'

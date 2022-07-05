@@ -16,3 +16,6 @@ let g:airline#extensions#tabline#buffer_idx_format = {'0': '0 ','1': '1 ','2': '
 
 " Rust.vim auto fmt
 let g:rustfmt_autosave = 1
+
+" clang format
+autocmd Filetype c ClangFormatAutoEnable
