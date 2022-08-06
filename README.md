@@ -51,12 +51,20 @@ Dotfiles
 
 ### Set Default Headphone
 
-Get your headphone device name
+Get your input device name
 
 ```shell
 
 $ pactl list short sinks
 
+
+```
+
+Get your input device name
+
+```shell
+
+$ pactl list short sources
 
 ```
 
