@@ -46,3 +46,19 @@ Dotfiles
     - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
     - [vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
     - [yuezk/vim-js](https://github.com/yuezk/vim-js)
+
+## Set startup applications
+
+### Set Default Headphone
+
+Get your headphone device name
+
+```shell
+
+$ pactl list short sinks
+
+
+```
+
+Add startup-command to 'Startup Applications'
+
