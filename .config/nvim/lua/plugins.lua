@@ -7,4 +7,5 @@ require('jetpack').startup(function(use)
   use { 'rust-lang/rust.vim' }
   use { 'justmao945/vim-clang' }
   use { 'rhysd/vim-clang-format' }
+  use { 'airblade/vim-gitgutter' }
 end)
