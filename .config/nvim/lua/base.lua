@@ -102,6 +102,10 @@ opt.winblend = 20
 opt.pumblend = 20
 opt.termguicolors = true
 
+---- shell
+
+opt.shell = 'fish'
+
 ---- disable default plugins
 
 -- g.did_install_default_menus = 1
