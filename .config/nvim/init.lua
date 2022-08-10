@@ -1,5 +1,5 @@
 require('base')
 require('map')
-require('plugin/plugins')
+require('plugins')
 
 print('>>> init.lua loaded')
