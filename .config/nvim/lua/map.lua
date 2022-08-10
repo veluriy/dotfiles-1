@@ -22,11 +22,9 @@ map('v', '<C-Down>', '"zx"zp`[V`]')
 ---- window
 
 map('n', 'te', ':tabedit<CR>', { silent = true })
-map('n', 'tn', ':tabnext<CR>', { silent = true })
-map('n', 'tp', ':tabprevious<CR>', { silent = true })
 map('n', 'tc', ':tabclose<CR>', { silent = true })
-map('n', 'ss', ':split<CR>', { silent = true})
-map('n', 'sv', ':vsplit<CR>' { silent = true})
+map('n', 'ss', ':split<CR>', { silent = true })
+map('n', 'sv', ':vsplit<CR>', { silent = true })
 map('n', '<C-h>', '<C-w>h', { silent = true })
 map('n', '<C-j>', '<C-w>j', { silent = true })
 map('n', '<C-k>', '<C-w>k', { silent = true })
