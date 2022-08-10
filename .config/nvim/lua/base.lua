@@ -43,7 +43,7 @@ opt.display = 'lastline'
 
 ---- scroll
 
-opt.scrolloff = 3
+opt.scrolloff = 7
 
 ---- menu height
 

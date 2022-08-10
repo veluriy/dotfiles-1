@@ -21,8 +21,12 @@ map('v', '<C-Down>', '"zx"zp`[V`]')
 
 ---- window
 
-map('n', '<Leader><S-j>', ':split<CR>')
-map('n', '<Leader><S-l>', ':vsplit<CR>')
+map('n', 'te', ':tabedit<CR>', { silent = true })
+map('n', 'tn', ':tabnext<CR>', { silent = true })
+map('n', 'tp', ':tabprevious<CR>', { silent = true })
+map('n', 'tc', ':tabclose<CR>', { silent = true })
+map('n', 'ss', ':split<CR>')
+map('n', 'sv', ':vsplit<CR>')
 map('n', '<C-h>', '<C-w>h', { silent = true })
 map('n', '<C-j>', '<C-w>j', { silent = true })
 map('n', '<C-k>', '<C-w>k', { silent = true })
@@ -53,3 +57,7 @@ map('n', '<Leader>%', ':source<Space>%<CR>')
 
 map('n', '+', '<C-a>')
 map('n', '-', '<C-x>')
+
+---- Select all
+
+map('n', '<C-a>', 'gg<S-v>G')
