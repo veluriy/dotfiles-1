@@ -48,3 +48,8 @@ map('n', '<Esc><Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = true})
 ---- source %
 
 map('n', '<Leader>%', ':source<Space>%<CR>')
+
+---- Increment/decrement
+
+map('n', '+', '<C-a>')
+map('n', '-', '<C-x>')
