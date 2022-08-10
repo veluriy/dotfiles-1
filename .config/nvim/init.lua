@@ -3,4 +3,4 @@ require('map')
 require('plugins')
 require('color')
 
-print('>>> init.lua loaded')
+print('init.lua loaded')
