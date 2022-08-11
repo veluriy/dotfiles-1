@@ -12,5 +12,6 @@ require('bl')
 require('saga')
 require('nullls')
 require('pret')
+require('gsign')
 
 print('init.lua loaded')
