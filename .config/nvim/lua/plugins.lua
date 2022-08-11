@@ -2,6 +2,8 @@ vim.cmd('packadd vim-jetpack')
 require('jetpack').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 }-- bootstrap
   use { 'morhetz/gruvbox' }-- color scheme
+  use { 'svrana/neosolarized.nvim' }-- color scheme
+  use { 'nvim-lualine/lualine.nvim' }-- status line
   use { 'junegunn/fzf', run = vim.fn['fzf#install'] }
   use { 'junegunn/fzf.vim' }
   use { 'rust-lang/rust.vim' }
