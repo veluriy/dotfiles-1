@@ -17,18 +17,9 @@ end })
 
 -- 2. build-in LSP function
 -- keyboard shortcut
-vim.keymap.set('n', '<C-b>K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
-vim.keymap.set('n', '<C-b>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-vim.keymap.set('n', '<C-b>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-vim.keymap.set('n', '<C-b>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-vim.keymap.set('n', '<C-b>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-vim.keymap.set('n', '<C-b>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-vim.keymap.set('n', '<C-b>gk', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-vim.keymap.set('n', '<C-b>gn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-vim.keymap.set('n', '<C-b>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-vim.keymap.set('n', '<C-b>ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-vim.keymap.set('n', '<C-b>g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-vim.keymap.set('n', '<C-b>g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+-- -> saga.lua
+
+
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
