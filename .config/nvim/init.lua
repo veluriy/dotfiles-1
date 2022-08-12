@@ -1,7 +1,7 @@
 require('base')
 require('map')
-require('color')
 require('plugins')
+require('color')
 require('autopair')
 require('autotag')
 require('statusline')
