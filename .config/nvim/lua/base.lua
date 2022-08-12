@@ -7,6 +7,10 @@ local fn = vim.fn
 local g = vim.g
 local opt = vim.opt
 
+---- mouse
+
+opt.mouse = ''
+
 ---- line number
 
 opt.number = true
