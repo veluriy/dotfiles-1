@@ -39,6 +39,7 @@ require('jetpack').startup(function(use)
   use { 'f-person/git-blame.nvim' }-- git blame
   use { 'TimUntersberger/neogit' }-- work in progress vim
   use { 'norcalli/nvim-colorizer.lua' }-- high performance color highlighter
+  use { 'phaazon/hop.nvim' }--easymotion
 end)
 
 -- git-blame

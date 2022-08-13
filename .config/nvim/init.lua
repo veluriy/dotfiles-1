@@ -13,5 +13,6 @@ require('saga')
 require('nullls')
 require('pret')
 require('gsign')
+require('motion')
 
 print('init.lua loaded')
