@@ -36,4 +36,10 @@ require('jetpack').startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim' }
   use { 'MunifTanjim/prettier.nvim' }
   use { 'lewis6991/gitsigns.nvim' }-- git
+  use { 'f-person/git-blame.nvim' }-- git blame
 end)
+
+-- git-blame
+vim.g.gitblame_enabled = 1
+vim.g.gitblame_date_format = '%r'
+vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
