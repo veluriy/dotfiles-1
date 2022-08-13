@@ -48,3 +48,4 @@ vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
 -- neogit
 local neogit = require('neogit')
 neogit.setup {}
+vim.keymap.set('n', 'git', '<Cmd>Neogit<CR>')
