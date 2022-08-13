@@ -45,7 +45,7 @@ map('n', 'U', '<C-r>')
 
 ---- highlight
 
-map('n', '<Esc><Esc><Esc>', ':<C-u>nohlsearch<CR>', { silent = true})
+map('n', '<Leader><Esc>', ':<C-u>nohlsearch<CR>', { silent = true})
 
 ---- source %
 
