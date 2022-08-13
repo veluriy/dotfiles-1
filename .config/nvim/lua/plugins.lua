@@ -38,6 +38,7 @@ require('jetpack').startup(function(use)
   use { 'lewis6991/gitsigns.nvim' }-- git
   use { 'f-person/git-blame.nvim' }-- git blame
   use { 'TimUntersberger/neogit' }-- work in progress vim
+  use { 'norcalli/nvim-colorizer.lua' }-- high performance color highlighter
 end)
 
 -- git-blame
@@ -49,3 +50,6 @@ vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
 local neogit = require('neogit')
 neogit.setup {}
 vim.keymap.set('n', 'git', '<Cmd>Neogit<CR>')
+
+-- colorrizer
+require('colorizer').setup()
