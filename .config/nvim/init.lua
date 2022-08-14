@@ -14,5 +14,6 @@ require('nullls')
 require('pret')
 require('gsign')
 require('motion')
+require('rust')
 
 print('init.lua loaded')
