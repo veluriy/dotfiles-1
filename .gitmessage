@@ -1,1 +1,20 @@
-[branchname]
+# ==== Format ====
+# [One word] refs #issue No. Subject
+#
+# ==== Example ====
+# [fix] refs #110 add関数の戻り値の型をintに修正
+#
+# ==== One word ====
+# [add] - Additional partial feature
+# [fix] - Fix bug, fixing of error found by lint
+# [up]  - Updates, such as dependent package
+# [rem] - Removal of obsolete functions or features
+# [ref] - Refactoring
+# [dis] - Commentout
+#
+# ==== Commit rules ====
+# 1. Write one line
+# 2. Don't use period in one-line sentences
+# 3. Commit to as much detail as you can
+# 4. Follow the format. Don't slack off
+# 5. If you don't understand English, write in Japanese. If you understand, you can write in English
