@@ -6,3 +6,4 @@
 # |_|
 
 set PATH $HOME/.cargo/bin $PATH
+set PATH $HOME/.ghcup/bin $PATH
