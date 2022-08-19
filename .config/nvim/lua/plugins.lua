@@ -40,6 +40,7 @@ require('jetpack').startup(function(use)
   use { 'TimUntersberger/neogit' }-- work in progress vim
   use { 'norcalli/nvim-colorizer.lua' }-- high performance color highlighter
   use { 'phaazon/hop.nvim' }--easymotion
+  use { 'mfussenegger/nvim-dap' }
   use { 'scalameta/nvim-metals', requires = { 'mfussenegger/nvim-dap' } }-- scala lsp
 end)
 
