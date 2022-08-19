@@ -1,5 +1,27 @@
 -- 1. LSP Sever management
 require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'clang-format',
+    'clangd',
+    'cmake-language-server',
+    'cmakelang',
+    'cpplint',
+    'cspell',
+    'css-lsp',
+    'eslint-lsp',
+    'eslint_d',
+    'gitlint',
+    'haskell-language-server',
+    'html-lsp',
+    'json-lsp',
+    'lua-language-server',
+    'pylint',
+    'pyright',
+    'rust-analyzer',
+    'typescript-language-server'
+  }
+})
 require('mason-lspconfig').setup_handlers({ function(server)
   local opt = {
     -- -- Function executed when the LSP server startup
