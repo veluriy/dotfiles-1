@@ -7,6 +7,11 @@ metals_config.setting = {
   excludePackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
+metals_config.init_options.statusBarProvider = "on"
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+metals_config.capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
 -- Debug settings if you're using nvim-dap
 local dap = require("dap")
 
