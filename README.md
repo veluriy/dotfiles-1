@@ -56,6 +56,7 @@ Dotfiles
     - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
     - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)
     - [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
+    - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
 
 ## Set startup applications
 
