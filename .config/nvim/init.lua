@@ -15,5 +15,6 @@ require('pret')
 require('gsign')
 require('motion')
 require('rust')
+require('metals')
 
 print('init.lua loaded')
