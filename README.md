@@ -54,7 +54,8 @@ Dotfiles
     - [f-person/git-blame.nvim](https://github.com/f-person/git-blame.nvim)
     - [TimUntersberger/neogit](https://github.com/TimUntersberger/neogit)
     - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
-    - [phaazon/hop.nvim](https://github.comphaazon/hop.nvim/)
+    - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)
+    - [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
 
 ## Set startup applications
 
