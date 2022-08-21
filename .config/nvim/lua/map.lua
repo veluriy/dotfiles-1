@@ -59,3 +59,7 @@ map('n', '-', '<C-x>')
 ---- Select all
 
 map('n', '<C-a>', 'gg<S-v>G')
+
+---- terminal mode Esc
+
+map('t', '<Esc>', '<C-\\><C-n>')
