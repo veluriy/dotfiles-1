@@ -63,3 +63,4 @@ map('n', '<C-a>', 'gg<S-v>G')
 ---- terminal mode Esc
 
 map('t', '<Esc>', '<C-\\><C-n>')
+map('t', 'jk', '<C-\\><C-n>')
