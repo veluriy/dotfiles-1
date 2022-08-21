@@ -16,5 +16,6 @@ require('gsign')
 require('motion')
 require('rust')
 require('metal')
+require('runsbt')
 
 print('init.lua loaded')
