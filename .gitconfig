@@ -3,7 +3,7 @@
 	email = hiccap.master.jedi@gmail.com
 
 [init]
-	defaultBranch = main
+	defaultbranch = main
 
 [commit]
 	template = ~/dotfiles/.gitmessage
