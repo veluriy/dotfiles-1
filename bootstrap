@@ -2,14 +2,20 @@
 
 set -ue
 
-# const
-# ----------
+# === const ===
+# -------------
+
 readonly DOT_PATH=$HOME/dotfiles
 readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
-readonly INSTALL_SCRIPTS=$DOT_PATH/install_scripts
-readonly INSTALL_SCRIPTS_LIB=$INSTALL_SCRIPTS/lib
+readonly INSTALL_SCRIPTS=$HOME/dotfiles/install_scripts
+readonly INSTALL_SCRIPTS_INSTALL=$HOME/dotfiles/install_scripts/install
+readonly INSTALL_SCRIPTS_LINK=$HOME/dotfiles/install_scripts/link
+readonly INSTALL_SCRIPTS_LIB=$HOME/dotfiles/install_scripts/lib
+OS=''
 
-# colors
+# === colors ===
+# --------------
+
 if which tput >/dev/null 2>&1; then
   ncolors=$(tput colors)
 fi
@@ -29,13 +35,14 @@ else
   NORMAL=""
 fi
 
-# function
-# ----------
+# === functions ===
+# -----------------
+
 has() {
   type "$1" > /dev/null 2>&1
 }
 
-dotfiles() {
+dotfiles_logo() {
   echo $BLUE
   cat <<\EOF
 
@@ -47,18 +54,24 @@ dotfiles() {
 
 
 EOF
-  echo $NORMAL
+echo $NORMAL
 }
 
-usage() {
-  echo $YELLOW
-  cat <<\EOF
-Commands:
-  init (download dotfiles)
-  quit
-EOF
-  echo $NORMAL
-
+get_os() {
+  if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
+    if [ -e /etc/lsb-release ]; then
+      OS='Ubuntu'
+    else
+      OS='Debian'
+    fi
+  elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+    OS='Linux'
+  elif [ "$(uname)" == 'Darwin' ]; then
+    OS='Mac'
+  else
+    echo "Your platform ($(uname -a)) is not supported."
+    exit 1
+  fi
   return 0
 }
 
@@ -67,7 +80,7 @@ install_fun() {
     echo "${BOLD}${1} is already exists.$NORMAL"
   else
     echo "Installing ${1}..."
-    . $INSTALL_SCRIPTS_LIB/install-$1.sh
+    . $INSTALL_SCRIPTS_INSTALL/install-$1.sh
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully installed ${1}.$NORMAL"
     else
@@ -79,20 +92,22 @@ install_fun() {
   return 0
 }
 
-download() {
-  cd $HOME
+install_git_for_ubuntu() {
+  sudo apt update
+  sudo apt install git -y
+}
 
-  # dotfiles
+install_dotfiles() {
+  cd $HOME
   if [ ! -d $DOT_PATH ]; then
     echo "Downloading dotfiles..."
     if has "git"; then
       git clone --recursive $REMOTE_URL $DOT_PATH
     else
       echo "Installing git..."
-      sudo apt update
-      sudo apt install git
+      install_git_for_ubuntu
       echo "${BOLD}The git installation is now complete.$NORMAL"
-    download
+      install_dotfiles
     fi
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
@@ -103,102 +118,39 @@ download() {
   else
     echo "${BOLD}dotfiles is already exists.$NORMAL"
   fi
-
-  # tmux
-  install_fun "tmux"
-
-  # zsh
-  install_fun "zsh"
-
-  # vim
-  install_fun "vim"
-
-  # neovim
-  install_fun "nvim"
-
-  # cmatrix
-  install_fun "cmatrix"
-
-  # cowsay
-  install_fun "cowsay"
-
-  # figlet
-  install_fun "figlet"
-
-  # fortune
-  install_fun "fortune"
-
-  # rig
-  install_fun "rig"
-
-  # sl
-  install_fun "sl"
-
-  # peco
-  install_fun "peco"
-
-  # hyper
-  install_fun "hyper"
-
-  # z
-  # install_fun "z"
-
-  # zplug
-  # install_fun "zplug"
-
-  # fish
-  install_fun "fish"
-
-  # htop
-  install_fun "htop"
-
-  # pure
-  # . $DOT_PATH/install_scripts/lib/install-pure.sh
-
-  # font
-  # . $DOT_PATH/install_scripts/lib/install-font.sh
-
-  # link init.vim
-  . $DOT_PATH/install_scripts/lib/link-nvim.sh
-
-  # link zsh
-  . $DOT_PATH/install_scripts/lib/link-zsh.sh
-
-  # link hyper
-  . $DOT_PATH/install_scripts/lib/link-hyper.sh
-
-  # link fish
-  . $DOT_PATH/install_scripts/lib/link-fish.sh
-
-  return 0
 }
 
+install_tools_for_ubuntu() {
+  install_fun "tmux"
+  install_fun "fish"
+  install_fun "vim"
+  install_fun "nvim"
+  install_fun "cmatrix"
+  install_fun "cowsay"
+  install_fun "figlet"
+  install_fun "fortune"
+  install_fun "rig"
+  install_fun "sl"
+  install_fun "htop"
+  install_fun "fzf"
+}
+
+# === main ===
+# ------------
 
 main() {
-  usage
-  echo -n "${BOLD}command: $NORMAL"
-  read command
-  case $command in
-    init)
-      download
-      main
-      ;;
-    quit)
-      echo "bye!"
-      exit 0
-      ;;
-    *)
-      echo "${RED}bootstrap: command not found.$NORMAL"
-      main
-      ;;
-  esac
+  get_os
+  dotfiles_logo
+  install_dotfiles
+  echo "You use $OS"
+  if [ "${OS}" = "Ubuntu" ]; then
+    install_tools_for_ubuntu
+  else
+    echo "${RED}Your OS is not supported $NORMAL"
+    exit 1
+  fi
+}
 
-    return 0
-  }
-
-# main
-# ----------
-dotfiles
 main
 
 exit 0

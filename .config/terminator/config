@@ -21,15 +21,15 @@
   split_horiz = Disabled
   split_vert = Disabled
   close_term = Disabled
-  copy = <Primary><Shift>c
-  paste = <Primary>v
+  copy = Disabled
+  paste = Disabled
   scaled_zoom = None
   hide_window = <Shift>F12
   layout_launcher = <Primary><Shift>l
 [profiles]
   [[default]]
-    background_color = "#0f1419"
-    background_darkness = 1.0
+    background_color = "#2e3436"
+    background_darkness = 0.9
     background_type = transparent
     cursor_color = "#f29718"
     font = RictyDiminished Nerd Font 16
@@ -40,11 +40,11 @@
     use_system_font = False
     copy_on_selection = True
   [[ayu]]
-    background_color = "#0f1419"
-    background_darkness = 1.0
+    background_color = "#2e3436"
+    background_darkness = 0.9
     background_type = transparent
     cursor_color = "#f29718"
-    font = Ricty Diminished 16
+    font = RictyDiminished Nerd Font 16
     foreground_color = "#e6e1cf"
     show_titlebar = False
     scrollbar_position = hidden

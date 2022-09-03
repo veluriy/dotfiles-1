@@ -76,6 +76,7 @@ alias gd "git diff"
 
 # shutdown
 alias shutnow "shutdown -h now"
+alias gmo "shutdown -h now"
 
 # clipboard copy
 alias clip "xsel --clipboard --input"

@@ -81,6 +81,9 @@ set fileencodings=utf-8,sjis
 " spell check
 set spell
 
+" NERDTree
+let NERDTreeShowBookMarks = 1
+
 " 高速化
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1

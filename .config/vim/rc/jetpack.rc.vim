@@ -53,6 +53,15 @@ Jetpack 'preservim/nerdtree'
 " NERDICONS
 Jetpack 'ryanoasis/vim-devicons'
 
+" vimwiki
+Jetpack 'vimwiki/vimwiki'
+
+" copilot
+Jetpack 'github/copilot.vim'
+
+" clang-format requirement
+Jetpack 'kana/vim-operator-user'
+
 " === lang ===
 
 " fish highlight
@@ -60,6 +69,9 @@ Jetpack 'dag/vim-fish'
 
 " mysql
 Jetpack 'kezhenxu94/vim-mysql-plugin'
+
+" sql
+Jetpack 'lighttiger2505/sqls.vim'
 
 " SATySFi
 Jetpack 'qnighy/satysfi.vim'
@@ -80,6 +92,7 @@ Jetpack 'elzr/vim-json'
 
 " C/C++
 Jetpack 'justmao945/vim-clang'
+Jetpack 'rhysd/vim-clang-format'
 
 " Coq
 Jetpack 'LumaKernel/coqpit.vim'
