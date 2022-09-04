@@ -97,9 +97,22 @@ main() {
   install "terminator" "brew install terminator"
   mkdir -pv $HOME/.config/terminator
   ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
+  echo "${GREEN}Successfully link terminator settings.$NORMAL"
   install "fish" "brew install fish"
+  mkdir -pv $HOME/.config/fish
+  ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
+  ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
+  ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
+  ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/functions
+  echo "${GREEN}Successfully link fish shell settings.$NORMAL"
   install "tmux" "brew install tmux"
+  ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
+  echo "${GREEN}Successfully link tmux settings.$NORMAL"
   install "nvim" "brew install neovim"
+  mkdir -pv $HOME/.config/nvim
+  ln -snfv $DOTFILES_PATH/.config/nvim/init.lua $HOME/.config/nvim/init.lua
+  ln -snfv $DOTFILES_PATH/.config/nvim/lua $HOME/.config/nvim/lua
+  echo "${GREEN}Successfully link nvim settings.$NORMAL"
 }
 
 main
