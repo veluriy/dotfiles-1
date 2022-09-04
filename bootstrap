@@ -1,17 +1,10 @@
-#!/bin/sh
-
-set -ue
+#!bin/bash
 
 # === const ===
 # -------------
 
-readonly DOT_PATH=$HOME/dotfiles
-readonly REMOTE_URL="https://github.com/wurzeit/dotfiles.git"
-readonly INSTALL_SCRIPTS=$HOME/dotfiles/install_scripts
-readonly INSTALL_SCRIPTS_INSTALL=$HOME/dotfiles/install_scripts/install
-readonly INSTALL_SCRIPTS_LINK=$HOME/dotfiles/install_scripts/link
-readonly INSTALL_SCRIPTS_LIB=$HOME/dotfiles/install_scripts/lib
-OS=''
+readonly DOTFILES_PATH=$HOME/dotfiles
+readonly REMOTE_URL="https://github.com/Wurzeit/ditfiles.git"
 
 # === colors ===
 # --------------
@@ -45,42 +38,21 @@ has() {
 dotfiles_logo() {
   echo $BLUE
   cat <<\EOF
-
       _       _    __ _ _
    __| | ___ | |_ / _(_) | ___  ___
   / _` |/ _ \| __| |_| | |/ _ \/ __|
  | (_| | (_) | |_|  _| | |  __/\__ \
 (_)__,_|\___/ \__|_| |_|_|\___||___/
-
-
 EOF
 echo $NORMAL
 }
 
-get_os() {
-  if [ -e /etc/debian_version ] || [ -e /etc/debian_release ]; then
-    if [ -e /etc/lsb-release ]; then
-      OS='Ubuntu'
-    else
-      OS='Debian'
-    fi
-  elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    OS='Linux'
-  elif [ "$(uname)" == 'Darwin' ]; then
-    OS='Mac'
-  else
-    echo "Your platform ($(uname -a)) is not supported."
-    exit 1
-  fi
-  return 0
-}
-
-install_fun() {
+install() {
   if has "$1"; then
     echo "${BOLD}${1} is already exists.$NORMAL"
   else
     echo "Installing ${1}..."
-    . $INSTALL_SCRIPTS_INSTALL/install-$1.sh
+    $2
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully installed ${1}.$NORMAL"
     else
@@ -92,27 +64,15 @@ install_fun() {
   return 0
 }
 
-install_git_for_ubuntu() {
-  sudo apt update
-  sudo apt install git -y
-}
-
-install_dotfiles() {
+download_dotfiles() {
   cd $HOME
   if [ ! -d $DOT_PATH ]; then
     echo "Downloading dotfiles..."
-    if has "git"; then
-      git clone --recursive $REMOTE_URL $DOT_PATH
-    else
-      echo "Installing git..."
-      install_git_for_ubuntu
-      echo "${BOLD}The git installation is now complete.$NORMAL"
-      install_dotfiles
-    fi
+    git clone --recursive $REMOTE_URL $DOT_PATH
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
     else
-      echo "${RED}An unexpected error occurred when trying to install git.$NORMAL"
+      echo "${RED}An unexpected error occurred when trying to download clone$NORMAL"
       exit 1
     fi
   else
@@ -120,35 +80,24 @@ install_dotfiles() {
   fi
 }
 
-install_tools_for_ubuntu() {
-  install_fun "tmux"
-  install_fun "fish"
-  install_fun "vim"
-  install_fun "nvim"
-  install_fun "cmatrix"
-  install_fun "cowsay"
-  install_fun "figlet"
-  install_fun "fortune"
-  install_fun "rig"
-  install_fun "sl"
-  install_fun "htop"
-  install_fun "fzf"
+install_brew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 # === main ===
 # ------------
 
 main() {
-  get_os
+  sudo echo ""
   dotfiles_logo
-  install_dotfiles
-  echo "You use $OS"
-  if [ "${OS}" = "Ubuntu" ]; then
-    install_tools_for_ubuntu
-  else
-    echo "${RED}Your OS is not supported $NORMAL"
-    exit 1
-  fi
+  sudo apt update -y
+  sudo apt install build-essential procps curl file git -y
+  download_dotfiles
+  install "brew" install_brew
+  install "terminator" "brew install terminator"
+  install "fish" "brew install fish"
+  install "tmux" "brew install tmux"
+  install "nvim" "brew install neovim"
 }
 
 main
