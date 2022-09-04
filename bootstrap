@@ -95,6 +95,8 @@ main() {
   download_dotfiles
   install "brew" install_brew
   install "terminator" "brew install terminator"
+  mkdir -pv $HOME/.config/terminator
+  ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
   install "fish" "brew install fish"
   install "tmux" "brew install tmux"
   install "nvim" "brew install neovim"
