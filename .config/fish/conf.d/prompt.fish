@@ -1,5 +1,5 @@
 set -U tide_git_bg_color 268bd2 #268bd2
-set -U tide_git_bg_color_unstable cb4b16 #cb4b16
+set -U tide_git_bg_color_unstable 2aa198 #2aa198
 set -U tide_git_bg_color_urgent CC0000 #cc0000
 set -U tide_git_branch_color 000000 #00000
 set -U tide_git_color_branch 000000 #00000
