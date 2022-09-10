@@ -82,6 +82,10 @@ download_dotfiles() {
 
 install_brew() {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  git -C $(brew --repo homebrew/core) checkout master
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  echo "${GREEN}Successfully add brew path.$NORMAL"
 }
 
 # === main ===
@@ -96,9 +100,6 @@ main() {
   ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
   echo "${GREEN}Successfully link gitconfig.$NORMAL"
   install "brew" install_brew
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  echo "${GREEN}Successfully add brew path.$NORMAL"
   install "terminator" "brew install terminator"
   mkdir -pv $HOME/.config/terminator
   ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
