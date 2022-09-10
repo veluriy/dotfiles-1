@@ -95,9 +95,10 @@ main() {
   download_dotfiles
   ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
   echo "${GREEN}Successfully link gitconfig.$NORMAL"
+  install "brew" install_brew
   echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  install "brew" install_brew
+  echo "${GREEN}Successfully add brew path.$NORMAL"
   install "terminator" "brew install terminator"
   mkdir -pv $HOME/.config/terminator
   ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
