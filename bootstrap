@@ -115,7 +115,7 @@ main() {
   curl -fsSL https://git.io/fisher > fisher_installer
   fish ./fisher_installer
   rm fisher_installer
-  fisher install jorgebucaran/fisher
+  fisher update
   echo "${GREEN}Successfully link fish shell settings.$NORMAL"
   install "tmux" "brew install tmux"
   ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
