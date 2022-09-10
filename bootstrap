@@ -95,9 +95,28 @@ main() {
   download_dotfiles
   install "brew" install_brew
   install "terminator" "brew install terminator"
+  mkdir -pv $HOME/.config/terminator
+  ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
+  echo "${GREEN}Successfully link terminator settings.$NORMAL"
   install "fish" "brew install fish"
+  mkdir -pv $HOME/.config/fish
+  ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
+  ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
+  ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
+  ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/functions
+  sudo chsh -s $(which fish)
+  echo "${GREEN}Successfully link fish shell settings.$NORMAL"
   install "tmux" "brew install tmux"
+  ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
+  echo "${GREEN}Successfully link tmux settings.$NORMAL"
   install "nvim" "brew install neovim"
+  mkdir -pv $HOME/.config/nvim
+  ln -snfv $DOTFILES_PATH/.config/nvim/init.lua $HOME/.config/nvim/init.lua
+  ln -snfv $DOTFILES_PATH/.config/nvim/lua $HOME/.config/nvim/lua
+  echo "${GREEN}Successfully link nvim settings.$NORMAL"
+  curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
+  echo "${GREEN}Successfully install jetpack.$NORMAL"
+  neovim -c "JetpackSync"
 }
 
 main
