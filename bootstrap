@@ -113,7 +113,7 @@ main() {
   echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
   chsh -s $(which fish)
   curl -fsSL https://git.io/fisher > fisher_installer
-  . ./fisher_installer
+  source ./fisher_installer
   rm fisher_installer
   fisher install jorgebucaran/fisher
   echo "${GREEN}Successfully link fish shell settings.$NORMAL"
