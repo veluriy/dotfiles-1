@@ -26,7 +26,7 @@
 ## Install
 
 ```shell
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/v4.0.0/bootstrap)"
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/main/bootstrap)"
 ```
 
 ## About me
