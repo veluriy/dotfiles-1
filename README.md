@@ -8,6 +8,7 @@
 - fish shell
 - tmux
 - vim (NeoVim)
+- exa
 
 ## Contents
 

@@ -110,7 +110,9 @@ main() {
   ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
   ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
   ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/functions
-  sudo chsh -s $(which fish)
+  echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
+  chsh -s $(which fish)
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   echo "${GREEN}Successfully link fish shell settings.$NORMAL"
   install "tmux" "brew install tmux"
   ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
@@ -123,6 +125,8 @@ main() {
   curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
   echo "${GREEN}Successfully install jetpack.$NORMAL"
   nvim -c "JetpackSync"
+  install "exa" "brew install exa"
+  echo "${GREEN}Successfully install exa.$NORMAL"
 }
 
 main
