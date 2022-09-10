@@ -122,7 +122,7 @@ main() {
   echo "${GREEN}Successfully link nvim settings.$NORMAL"
   curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
   echo "${GREEN}Successfully install jetpack.$NORMAL"
-  neovim -c "JetpackSync"
+  nvim -c "JetpackSync"
 }
 
 main
