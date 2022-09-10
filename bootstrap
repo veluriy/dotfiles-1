@@ -94,6 +94,9 @@ main() {
   sudo apt install build-essential procps curl file git -y
   download_dotfiles
   ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
+  echo "${GREEN}Successfully link gitconfig.$NORMAL"
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   install "brew" install_brew
   install "terminator" "brew install terminator"
   mkdir -pv $HOME/.config/terminator
