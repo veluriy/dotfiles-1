@@ -109,7 +109,7 @@ main() {
   ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
   ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
   ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
-  ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/functions
+  ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/fish_plugins
   echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
   chsh -s $(which fish)
   source $(curl -fsSL https://git.io/fisher)
