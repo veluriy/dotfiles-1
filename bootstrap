@@ -4,7 +4,7 @@
 # -------------
 
 readonly DOTFILES_PATH=$HOME/dotfiles
-readonly REMOTE_URL="https://github.com/Wurzeit/ditfiles.git"
+readonly REMOTE_URL="https://github.com/Wurzeit/dotfiles.git"
 
 # === colors ===
 # --------------
