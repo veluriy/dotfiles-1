@@ -66,9 +66,9 @@ install() {
 
 download_dotfiles() {
   cd $HOME
-  if [ ! -d $DOT_PATH ]; then
+  if [ ! -d $DOTFILES_PATH ]; then
     echo "Downloading dotfiles..."
-    git clone --recursive $REMOTE_URL $DOT_PATH
+    git clone --recursive $REMOTE_URL $DOTFILES_PATH
     if [ $? = 0 ]; then
       echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
     else
