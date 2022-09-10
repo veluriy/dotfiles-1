@@ -93,6 +93,7 @@ main() {
   sudo apt update -y
   sudo apt install build-essential procps curl file git -y
   download_dotfiles
+  ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
   install "brew" install_brew
   install "terminator" "brew install terminator"
   mkdir -pv $HOME/.config/terminator
