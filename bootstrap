@@ -112,7 +112,9 @@ main() {
   ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME./config/fish/fish_plugins
   echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
   chsh -s $(which fish)
-  source $(curl -fsSL https://git.io/fisher)
+  curl -fsSL https://git.io/fisher > fisher_installer
+  . ./fisher_installer
+  rm fisher_installer
   fisher install jorgebucaran/fisher
   echo "${GREEN}Successfully link fish shell settings.$NORMAL"
   install "tmux" "brew install tmux"
