@@ -30,6 +30,10 @@
 $ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/main/bootstrap)"
 ```
 
+## LICENSE
+
+MIT
+
 ## About me
 
 [Homepage](https://wurzeit.com)
