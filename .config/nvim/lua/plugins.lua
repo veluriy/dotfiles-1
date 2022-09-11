@@ -42,6 +42,7 @@ require('jetpack').startup(function(use)
   use { 'phaazon/hop.nvim' }--easymotion
   use { 'mfussenegger/nvim-dap' }
   use { 'scalameta/nvim-metals', requires = { 'mfussenegger/nvim-dap' } }-- scala lsp
+  use { 'qnighy/satysfi.vim' }-- SATySFi
 end)
 
 -- git-blame

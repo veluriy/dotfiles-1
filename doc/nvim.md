@@ -42,3 +42,4 @@
   - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)
   - [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
   - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
+  - [qnighy/satysfi.vim](https://github.com/qnighy/satysfi.vim)
