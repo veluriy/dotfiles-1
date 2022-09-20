@@ -80,3 +80,12 @@ alias gmo "shutdown -h now"
 
 # clipboard copy
 alias clip "xsel --clipboard --input"
+
+# vi mode bind
+function fish_user_key_bindings
+  bind -M insert \cc kill-whole-line repaint
+  bind -M insert -m default jk 'commandline -f repaint'
+end
+
+# etc bind
+bind \cd 'exit'

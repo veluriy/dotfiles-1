@@ -32,6 +32,15 @@ set -U tide_status_color 2aa198 #2aa198
 set -U tide_status_color_failure d70000 #d70000
 set -U tide_cmd_duration_bg_color d33682 #d33683
 set -U tide_cmd_duration_color 1c1c1c #1c1c1c
+set -U tide_vi_mode_bg_color_default 268bd2 #268bd2
+set -U tide_vi_mode_color_default ffffff #ffffff
+set -U tide_vi_mode_icon_default NORMAL
+set -U tide_vi_mode_bg_color_replace cb4b16 #cb4b16
+set -U tide_vi_mode_color_replace ffffff #ffffff
+set -U tide_vi_mode_icon_replace REPLACE
+set -U tide_vi_mode_bg_color_visual d33682 #d33682
+set -U tide_vi_mode_color_visual ffffff #ffffff
+set -U tide_vi_mode_icon_visual VISUAL
 set -U fish_color_normal EBDBB2 #ebdbb2
 set -U fish_color_command 2aa198 #2aa198
 set -U fish_color_quote 268bd2 #268bd2
