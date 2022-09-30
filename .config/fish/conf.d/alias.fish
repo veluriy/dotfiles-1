@@ -85,6 +85,7 @@ alias clip "xsel --clipboard --input"
 function fish_user_key_bindings
   bind -M insert \cc kill-whole-line repaint
   bind -M insert -m default jk 'commandline -f repaint'
+  bind -M insert \cf accept-autosuggestion
 end
 
 # etc bind
