@@ -1,2 +1,0 @@
-let g:coc_global_extensions = ['coc-actions','coc-clangd','coc-css','coc-cspell-dicts','coc-deno','coc-diagnostic','coc-dictionary','coc-docker','coc-eslint','coc-fzf-preview','coc-git','coc-go','coc-highlight','coc-html','coc-java','coc-jedi','coc-json','coc-lists','coc-lua','coc-markdownlint','coc-metals','coc-pairs','coc-phpls','coc-prettier','coc-react-refactor','coc-rls','coc-spell-checker','coc-sql','coc-toml','coc-tslint-plugin','coc-tsserver','coc-vimlsp','coc-yaml','@yaegassy/coc-volar',]
-  " \'coc-floaterm',
