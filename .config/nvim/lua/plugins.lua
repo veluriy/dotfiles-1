@@ -5,8 +5,13 @@ require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 }-- bootstrap
   use { 'tjdevries/colorbuddy.nvim' }-- required neosolarized
   use { 'svrana/neosolarized.nvim' }-- color scheme
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }-- status line
+  use { 'nvim-lualine/lualine.nvim' }-- status line
   use { 'phaazon/hop.nvim' }--easymotion
+  use { 'norcalli/nvim-colorizer.lua' }-- high performance color highlighter
+  use { 'lewis6991/gitsigns.nvim' }-- git
+  use { 'f-person/git-blame.nvim' }-- git blame
+  use { 'TimUntersberger/neogit' }-- work in progress vim
+  use { 'nvim-lua/plenary.nvim' }-- required neogit
 end)
 
 ---- lualine.nvim
@@ -68,3 +73,17 @@ vim.api.nvim_set_keymap('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction 
 vim.api.nvim_set_keymap('v', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
 vim.api.nvim_set_keymap('v', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
 vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>HopWord<CR>', {})
+
+---- nvim-colorizer.lua
+
+require('colorizer').setup()
+
+---- git-blame
+vim.g.gitblame_enabled = 1
+vim.g.gitblame_date_format = '%r'
+vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
+
+---- neogit
+local neogit = require('neogit')
+neogit.setup {}
+vim.keymap.set('n', 'git', '<Cmd>Neogit<CR>')
