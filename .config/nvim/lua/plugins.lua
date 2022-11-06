@@ -13,7 +13,7 @@ require('jetpack.packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim' }-- git
   use { 'f-person/git-blame.nvim' }-- git blame
   use { 'TimUntersberger/neogit' }-- work in progress vim
-  use { 'nvim-lua/plenary.nvim' }-- required neogit, telescope
+  use { 'nvim-lua/plenary.nvim' }-- required neogit, telescope, trouble.nvim
   use { 'BurntSushi/ripgrep' }-- required telescope
   use { 'sharkdp/fd' }-- required telescope
   use { 'nvim-telescope/telescope.nvim' }-- high performance file searcher
@@ -21,6 +21,18 @@ require('jetpack.packer').startup(function(use)
   use { 'windwp/nvim-ts-autotag' }-- powerfull typescript auto tag
   use { 'windwp/nvim-autopairs' }-- powerfull () {} []
   use { 'nvim-treesitter/nvim-treesitter' }-- parsing
+  use { 'neovim/nvim-lspconfig' }-- neovim builtin LSP
+  use { 'williamboman/mason.nvim' }-- neovim builtin LSP
+  use { 'williamboman/mason-lspconfig.nvim' }-- neovim builtin LSP
+  use { 'hrsh7th/nvim-cmp' }-- LSP complement
+  use { 'hrsh7th/cmp-nvim-lsp' }-- LSP complement src
+  use { 'hrsh7th/cmp-vsnip' }-- LSP snip
+  use { 'hrsh7th/cmp-buffer' }-- LSP buffer cmp
+  use { 'hrsh7th/vim-vsnip' }-- LSP snip
+  use { 'kkharji/lspsaga.nvim' }-- LSP powerfull gui
+  use { 'ray-x/lsp_signature.nvim' }-- LSP cmp powerfull gui
+  use { 'onsails/lspkind.nvim' }-- LSP cmp icon
+  use { 'j-hui/fidget.nvim' }-- LSP show running progress
   use { 'rust-lang/rust.vim' }-- rust fmt
 end)
 
@@ -308,6 +320,122 @@ treesitter.setup({
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+
+---- builtin LSP
+
+local on_attach = function(client, bufnr)
+
+  -- disable formater
+  -- client.resolved_capabilities.document_formatting = false
+
+  local set = vim.keymap.set
+  set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+end
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+require("mason-lspconfig").setup_handlers {
+  function (server_name)
+    require("lspconfig")[server_name].setup {
+      on_attach = on_attach
+    }
+  end,
+}
+
+------ cmp
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+vim.opt.completeopt = "menu,menuone,noselect"
+
+local cmp = require"cmp"
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+    ["<C-f>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
+  }, {
+    { name = "buffer" },
+  })
+})
+
+------ saga
+
+local lspsaga = require 'lspsaga'
+lspsaga.setup {
+  debug = false,
+  use_saga_diagnostic_sign = true,
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
+  diagnostic_header_icon = "   ",
+  code_action_icon = " ",
+  code_action_prompt = {
+    enable = true,
+    sign = true,
+    sign_priority = 40,
+    virtual_text = true,
+  },
+  finder_definition_icon = "  ",
+  finder_reference_icon = "  ",
+  max_preview_lines = 10,
+  finder_action_keys = {
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    quit = "q",
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>",
+  },
+  code_action_keys = {
+    quit = "q",
+    exec = "<CR>",
+  },
+  rename_action_keys = {
+    quit = "<C-c>",
+    exec = "<CR>",
+  },
+  definition_preview_icon = "  ",
+  border_style = "single",
+  rename_prompt_prefix = "➤",
+  rename_output_qflist = {
+    enable = false,
+    auto_open_qflist = false,
+  },
+  server_filetype_map = {},
+  diagnostic_prefix_format = "%d. ",
+  diagnostic_message_format = "%m %c",
+  highlight_prefix = false,
+}
+
+-------- key
+
+local map = vim.api.nvim_buf_set_keymap
+map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
+map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+
+------ fidget
+
+require"fidget".setup{}
 
 ---- rust.vim
 
