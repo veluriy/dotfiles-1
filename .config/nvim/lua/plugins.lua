@@ -6,8 +6,9 @@ require('jetpack.packer').startup(function(use)
   use { 'tjdevries/colorbuddy.nvim' }-- required neosolarized
   use { 'svrana/neosolarized.nvim' }-- color scheme
   use { 'nvim-lualine/lualine.nvim' }-- status line
-  use { 'akinsho/nvim-bufferline.lua' }--buffer line customize
-  use { 'phaazon/hop.nvim' }--easymotion
+  use { 'akinsho/nvim-bufferline.lua' }-- buffer line customize
+  use { 'kyazdani42/nvim-web-devicons' }-- required buffer line
+  use { 'phaazon/hop.nvim' }-- easymotion
   use { 'norcalli/nvim-colorizer.lua' }-- high performance color highlighter
   use { 'lewis6991/gitsigns.nvim' }-- git
   use { 'f-person/git-blame.nvim' }-- git blame
