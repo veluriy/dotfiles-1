@@ -1,5 +1,15 @@
 -- plugins.lua
 
+---- helper
+
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+---- jetpack
+
 vim.cmd('packadd vim-jetpack')
 require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 }-- bootstrap
@@ -34,6 +44,7 @@ require('jetpack.packer').startup(function(use)
   use { 'onsails/lspkind.nvim' }-- LSP cmp icon
   use { 'j-hui/fidget.nvim' }-- LSP show running progress
   use { 'rust-lang/rust.vim' }-- rust fmt
+  use { 'jose-elias-alvarez/typescript.nvim' }-- typescript lsp plugin
 end)
 
 ---- lualine.nvim
@@ -82,10 +93,10 @@ lualine.setup {
   extensions = { 'fugitive' }
 }
 
--- nvim-bufferline
+---- nvim-bufferline
 
-local status, bufferline = pcall(require, "bufferline")
-if (not status) then return end
+local bufferlineStatus, bufferline = pcall(require, "bufferline")
+if (not bufferlineStatus) then return end
 
 bufferline.setup({
   options = {
@@ -120,30 +131,39 @@ bufferline.setup({
   },
 })
 
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+map('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>')
+map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>')
 
 ---- hop.nvim
 
-require('hop').setup()
+local hopStatus, hop = pcall(require, "hop")
+if (not hopStatus) then return end
 
-vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('n', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
-vim.api.nvim_set_keymap('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('v', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('v', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
-vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>HopWord<CR>', {})
+hop.setup()
+
+map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+map('n', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>")
+map('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>")
+map('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+map('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+map('v', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>")
+map('v', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>")
+map('n', '<Leader>e', '<cmd>HopWord<CR>')
 
 ---- nvim-colorizer.lua
 
-require('colorizer').setup()
+local colorizerStatus, colorizer = pcall(require, "colorizer")
+if (not colorizerStatus) then return end
+
+colorizer.setup()
 
 ---- gitsigns
 
-require('gitsigns').setup {
+local gitsignsStatus, gitsigns = pcall(require, "gitsigns")
+if (not gitsignsStatus) then return end
+
+gitsigns.setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
     change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
@@ -185,19 +205,24 @@ require('gitsigns').setup {
 }
 
 ---- git-blame
+
 vim.g.gitblame_enabled = 1
 vim.g.gitblame_date_format = '%r'
 vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
 
 ---- neogit
-local neogit = require('neogit')
+
+local neogitStatus, neogit = pcall(require, "neogit")
+if (not neogitStatus) then return end
+
 neogit.setup {}
-vim.keymap.set('n', 'git', '<Cmd>Neogit<CR>')
+map('n', 'git', '<Cmd>Neogit<CR>')
 
 ---- telescope
 
 local telescopeStatus, telescope = pcall(require, "telescope")
 if (not telescopeStatus) then return end
+
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
@@ -237,6 +262,7 @@ telescope.setup {
 telescope.load_extension("file_browser")
 
 ------ keymaps
+
 vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
@@ -290,7 +316,7 @@ autopairs.setup({
 
 ---- nvim-tree-sitter
 
-local treesitterStatus, treesitter = pcall(require, "nvim-treesitter")
+local treesitterStatus, treesitter = pcall(require, "nvim-treesitter.configs")
 if (not treesitterStatus) then return end
 
 treesitter.setup({
@@ -303,6 +329,8 @@ treesitter.setup({
     disable = {},
   },
   ensure_installed = {
+    "c",
+    "rust",
     "tsx",
     "toml",
     "fish",
@@ -328,23 +356,23 @@ local on_attach = function(client, bufnr)
   -- disable formater
   -- client.resolved_capabilities.document_formatting = false
 
-  local set = vim.keymap.set
-  set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 end
 
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup_handlers {
   function (server_name)
-    require("lspconfig")[server_name].setup {
-      on_attach = on_attach
+    local opt = {
+      on_attach = on_attach,
+      capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     }
+    require("lspconfig")[server_name].setup(opt)
   end,
 }
 
 ------ cmp
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
@@ -422,21 +450,36 @@ lspsaga.setup {
 
 -------- key
 
-local map = vim.api.nvim_buf_set_keymap
-map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
-map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
-map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
-map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
-map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
-map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
-map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+map("n", "gr", "<cmd>Lspsaga rename<cr>", {noremap = true})
+map("n", "gx", "<cmd>Lspsaga code_action<cr>", {noremap = true})
+map("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {noremap = true})
+map("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {noremap = true})
+map("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {noremap = true})
+map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {noremap = true})
+map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {noremap = true})
+map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>")
+map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>")
 
 ------ fidget
 
-require"fidget".setup{}
+local fisgetStatus, fidget = pcall(require, "fidget")
+if (not fisgetStatus) then return end
+
+fidget.setup()
 
 ---- rust.vim
 
 vim.g.rustfmt_autosave = 1
+
+---- typescript.nvim
+
+local typescriptStatus, typescript = pcall(require, "typescript")
+if (not typescriptStatus) then return end
+
+typescript.setup({
+  disable_commands = false,
+  debug = false,
+  gp_to_source_definition = {
+    fallback = true,
+  }
+})
