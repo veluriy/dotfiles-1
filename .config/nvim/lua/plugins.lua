@@ -92,10 +92,10 @@ lualine.setup {
   extensions = { 'fugitive' }
 }
 
--- nvim-bufferline
+---- nvim-bufferline
 
-local status, bufferline = pcall(require, "bufferline")
-if (not status) then return end
+local bufferlineStatus, bufferline = pcall(require, "bufferline")
+if (not bufferlineStatus) then return end
 
 bufferline.setup({
   options = {
@@ -135,7 +135,10 @@ map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>')
 
 ---- hop.nvim
 
-require('hop').setup()
+local hopStatus, hop = pcall(require, "hop")
+if (not hopStatus) then return end
+
+hop.setup()
 
 map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
 map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
@@ -149,11 +152,17 @@ map('n', '<Leader>e', '<cmd>HopWord<CR>')
 
 ---- nvim-colorizer.lua
 
-require('colorizer').setup()
+local colorizerStatus, colorizer = pcall(require, "colorizer")
+if (not colorizerStatus) then return end
+
+colorizer.setup()
 
 ---- gitsigns
 
-require('gitsigns').setup {
+local gitsignsStatus, gitsigns = pcall(require, "gitsigns")
+if (not gitsignsStatus) then return end
+
+gitsigns.setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
     change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
@@ -195,12 +204,16 @@ require('gitsigns').setup {
 }
 
 ---- git-blame
+
 vim.g.gitblame_enabled = 1
 vim.g.gitblame_date_format = '%r'
 vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
 
 ---- neogit
-local neogit = require('neogit')
+
+local neogitStatus, neogit = pcall(require, "neogit")
+if (not neogitStatus) then return end
+
 neogit.setup {}
 map('n', 'git', '<Cmd>Neogit<CR>')
 
@@ -208,6 +221,7 @@ map('n', 'git', '<Cmd>Neogit<CR>')
 
 local telescopeStatus, telescope = pcall(require, "telescope")
 if (not telescopeStatus) then return end
+
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
@@ -247,6 +261,7 @@ telescope.setup {
 telescope.load_extension("file_browser")
 
 ------ keymaps
+
 vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
@@ -300,6 +315,7 @@ autopairs.setup({
 
 ---- nvim-tree-sitter
 
+-- local treesitterStatus, treesitter = pcall(require, "nvim-treesitter.configs")
 local treesitterStatus, treesitter = pcall(require, "nvim-treesitter")
 if (not treesitterStatus) then return end
 
@@ -443,7 +459,10 @@ map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, 
 
 ------ fidget
 
-require"fidget".setup{}
+local fisgetStatus, fidget = pcall(require, "fidget")
+if (not fisgetStatus) then return end
+
+fidget.setup()
 
 ---- rust.vim
 
