@@ -20,6 +20,7 @@ require('jetpack.packer').startup(function(use)
   use { 'nvim-telescope/telescope-file-browser.nvim' }-- telescope extension
   use { 'windwp/nvim-ts-autotag' }-- powerfull typescript auto tag
   use { 'windwp/nvim-autopairs' }-- powerfull () {} []
+  use { 'nvim-treesitter/nvim-treesitter' }-- parsing
 end)
 
 ---- lualine.nvim
@@ -273,3 +274,36 @@ if (not autopairStatus) then return end
 autopairs.setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
+
+---- nvim-tree-sitter
+
+local treesitterStatus, treesitter = pcall(require, "nvim-treesitter")
+if (not treesitterStatus) then return end
+
+treesitter.setup({
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = true,
+    disable = {},
+  },
+  ensure_installed = {
+    "tsx",
+    "toml",
+    "fish",
+    "php",
+    "json",
+    "yaml",
+    "css",
+    "html",
+    "lua"
+  },
+  autotag = {
+    enable = true,
+  },
+})
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
