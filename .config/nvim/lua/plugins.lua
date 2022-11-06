@@ -44,6 +44,7 @@ require('jetpack.packer').startup(function(use)
   use { 'onsails/lspkind.nvim' }-- LSP cmp icon
   use { 'j-hui/fidget.nvim' }-- LSP show running progress
   use { 'rust-lang/rust.vim' }-- rust fmt
+  use { 'jose-elias-alvarez/typescript.nvim' }-- typescript lsp plugin
 end)
 
 ---- lualine.nvim
@@ -468,3 +469,16 @@ fidget.setup()
 ---- rust.vim
 
 vim.g.rustfmt_autosave = 1
+
+---- typescript.nvim
+
+local typescriptStatus, typescript = pcall(require, "typescript")
+if (not typescriptStatus) then return end
+
+typescript.setup({
+  disable_commands = false,
+  debug = false,
+  gp_to_source_definition = {
+    fallback = true,
+  }
+})
