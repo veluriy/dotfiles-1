@@ -7,18 +7,15 @@
 - Terminator
 - fish shell
 - tmux
-- vim (NeoVim)
+- NeoVim
 - exa
 
 ## Contents
 
 - terminator config
-- hyper terminal config
 - fish shell config
-- zsh config
 - tmux config
 - nvim config
-- vim config
 
 ## Supported OS
 
