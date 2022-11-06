@@ -1,21 +1,8 @@
+-- init.lua
+
 require('base')
 require('map')
 require('plugins')
 require('color')
-require('autopair')
-require('autotag')
-require('statusline')
-require('ts')
-require('tele')
-require('lsp')
-require('bl')
-require('saga')
-require('nullls')
-require('pret')
-require('gsign')
-require('motion')
-require('rust')
-require('metal')
-require('runsbt')
 
 print('init.lua loaded')
