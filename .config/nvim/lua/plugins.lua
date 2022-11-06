@@ -1,5 +1,15 @@
 -- plugins.lua
 
+---- helper
+
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+---- jetpack
+
 vim.cmd('packadd vim-jetpack')
 require('jetpack.packer').startup(function(use)
   use { 'tani/vim-jetpack', opt = 1 }-- bootstrap
@@ -120,22 +130,22 @@ bufferline.setup({
   },
 })
 
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
+map('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>')
+map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>')
 
 ---- hop.nvim
 
 require('hop').setup()
 
-vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('n', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
-vim.api.nvim_set_keymap('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('v', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-vim.api.nvim_set_keymap('v', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
-vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>HopWord<CR>', {})
+map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+map('n', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>")
+map('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>")
+map('v', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+map('v', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+map('v', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>")
+map('v', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>")
+map('n', '<Leader>e', '<cmd>HopWord<CR>')
 
 ---- nvim-colorizer.lua
 
@@ -192,7 +202,7 @@ vim.g.gitblame_message_templete = '<author>・<date>・<summary>'
 ---- neogit
 local neogit = require('neogit')
 neogit.setup {}
-vim.keymap.set('n', 'git', '<Cmd>Neogit<CR>')
+map('n', 'git', '<Cmd>Neogit<CR>')
 
 ---- telescope
 
@@ -328,8 +338,7 @@ local on_attach = function(client, bufnr)
   -- disable formater
   -- client.resolved_capabilities.document_formatting = false
 
-  local set = vim.keymap.set
-  set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 end
 
 require("mason").setup()
@@ -422,16 +431,15 @@ lspsaga.setup {
 
 -------- key
 
-local map = vim.api.nvim_buf_set_keymap
-map(0, "n", "gr", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
-map(0, "n", "gx", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
-map(0, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
-map(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-map(0, "n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
-map(0, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
-map(0, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-map(0, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", {})
-map(0, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", {})
+map("n", "gr", "<cmd>Lspsaga rename<cr>", {noremap = true})
+map("n", "gx", "<cmd>Lspsaga code_action<cr>", {noremap = true})
+map("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {noremap = true})
+map("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {noremap = true})
+map("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {noremap = true})
+map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {noremap = true})
+map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {noremap = true})
+map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>")
+map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>")
 
 ------ fidget
 
