@@ -18,6 +18,8 @@ require('jetpack.packer').startup(function(use)
   use { 'sharkdp/fd' }-- required telescope
   use { 'nvim-telescope/telescope.nvim' }-- high performance file searcher
   use { 'nvim-telescope/telescope-file-browser.nvim' }-- telescope extension
+  use { 'windwp/nvim-ts-autotag' }-- powerfull typescript auto tag
+  use { 'windwp/nvim-autopairs' }-- powerfull () {} []
 end)
 
 ---- lualine.nvim
@@ -255,3 +257,19 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
+
+---- autotag
+
+local autotagStatus, autotag = pcall(require, "nvim-ts-autotag")
+if (not autotagStatus) then return end
+
+autotag.setup({})
+
+---- autopair
+
+local autopairStatus, autopairs = pcall(require, "nvim-autopairs")
+if (not autopairStatus) then return end
+
+autopairs.setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
