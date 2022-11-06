@@ -315,8 +315,7 @@ autopairs.setup({
 
 ---- nvim-tree-sitter
 
--- local treesitterStatus, treesitter = pcall(require, "nvim-treesitter.configs")
-local treesitterStatus, treesitter = pcall(require, "nvim-treesitter")
+local treesitterStatus, treesitter = pcall(require, "nvim-treesitter.configs")
 if (not treesitterStatus) then return end
 
 treesitter.setup({
@@ -329,6 +328,8 @@ treesitter.setup({
     disable = {},
   },
   ensure_installed = {
+    "c",
+    "rust",
     "tsx",
     "toml",
     "fish",
