@@ -352,15 +352,21 @@ parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 ---- builtin LSP
 
 local on_attach = function(client, bufnr)
-
-  -- disable formater
-  -- client.resolved_capabilities.document_formatting = false
-
-  map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+  map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+  map('n', 'gn', '<cmd>lua vim.lsp.buf.references()<CR>')
 end
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    'taplo',
+    'hls',
+    'zk',
+    'sumneko_lua',
+    'clangd',
+    'rust_analyzer',
+  }
+})
 require("mason-lspconfig").setup_handlers {
   function (server_name)
     local opt = {
@@ -371,12 +377,20 @@ require("mason-lspconfig").setup_handlers {
   end,
 }
 
------- cmp
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+)
 
+------ cmp
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
-local cmp = require"cmp"
+
+local cmpStatus, cmp = pcall(require, "cmp")
+if (not cmpStatus) then return end
+local lspkindStatus, lspkind = pcall(require, "lspkind")
+if (not lspkindStatus) then return end
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -384,23 +398,36 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-f>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<CR>"] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true
+    }),
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "vsnip" },
-  }, {
     { name = "buffer" },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
+  }
 })
 
 ------ saga
 
-local lspsaga = require 'lspsaga'
+local lspsagaStatus, lspsaga = pcall(require, "lspsaga")
+if (not lspsagaStatus) then return end
+
+lspsaga.init_lsp_saga {
+  server_filetype_map = {
+    typescript = 'typescript'
+  }
+}
+
 lspsaga.setup {
   debug = false,
   use_saga_diagnostic_sign = true,
@@ -450,15 +477,15 @@ lspsaga.setup {
 
 -------- key
 
-map("n", "gr", "<cmd>Lspsaga rename<cr>", {noremap = true})
-map("n", "gx", "<cmd>Lspsaga code_action<cr>", {noremap = true})
-map("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", {noremap = true})
-map("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {noremap = true})
-map("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {noremap = true})
-map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {noremap = true})
-map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {noremap = true})
-map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>")
-map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>")
+map('n', 'gr', '<cmd>Lspsaga rename<cr>', {noremap = true})
+map('n', 'gx', '<cmd>Lspsaga code_action<cr>', {noremap = true})
+map('x', 'gx', ':<c-u>Lspsaga range_code_action<cr>', {noremap = true})
+map('n', 'K',  '<cmd>Lspsaga hover_doc<cr>', {noremap = true})
+map('n', 'go', '<cmd>Lspsaga show_line_diagnostics<cr>', {noremap = true})
+map('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', {noremap = true})
+map('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', {noremap = true})
+map('n', '<C-u>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1, "<c-u>")<cr>')
+map('n', '<C-d>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1, "<c-d>")<cr>')
 
 ------ fidget
 
