@@ -363,15 +363,16 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-lspconfig").setup_handlers {
   function (server_name)
-    require("lspconfig")[server_name].setup {
-      on_attach = on_attach
+    local opt = {
+      on_attach = on_attach,
+      capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
     }
+    require("lspconfig")[server_name].setup(opt)
   end,
 }
 
 ------ cmp
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
