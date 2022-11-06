@@ -21,6 +21,7 @@ require('jetpack.packer').startup(function(use)
   use { 'windwp/nvim-ts-autotag' }-- powerfull typescript auto tag
   use { 'windwp/nvim-autopairs' }-- powerfull () {} []
   use { 'nvim-treesitter/nvim-treesitter' }-- parsing
+  use { 'rust-lang/rust.vim' }-- rust fmt
 end)
 
 ---- lualine.nvim
@@ -307,3 +308,7 @@ treesitter.setup({
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
+
+---- rust.vim
+
+vim.g.rustfmt_autosave = 1
