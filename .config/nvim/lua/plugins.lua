@@ -43,7 +43,6 @@ require('jetpack.packer').startup(function(use)
   use { 'ray-x/lsp_signature.nvim' }-- LSP cmp powerfull gui
   use { 'onsails/lspkind.nvim' }-- LSP cmp icon
   use { 'j-hui/fidget.nvim' }-- LSP show running progress
-  use { 'jose-elias-alvarez/null-ls.nvim' }-- LSP diagnostics
   use { 'rust-lang/rust.vim' }-- rust fmt
   use { 'jose-elias-alvarez/typescript.nvim' }-- typescript lsp plugin
 end)
@@ -503,20 +502,6 @@ local fisgetStatus, fidget = pcall(require, "fidget")
 if (not fisgetStatus) then return end
 
 fidget.setup()
-
------- null-ls
-
-local nulllsStatus, null_ls = pcall(require, "null-ls")
-if (not nulllsStatus) then return end
-
-null_ls.setup({
-  sources = {
-    null_ls.builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
-    }),
-    null_ls.builtins.diagnostics.fish
-  }
-})
 
 ---- rust.vim
 
