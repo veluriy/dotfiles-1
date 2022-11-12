@@ -352,7 +352,6 @@ parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 ---- builtin LSP
 
 local on_attach = function(client, bufnr)
-  map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
   map('n', 'gn', '<cmd>lua vim.lsp.buf.references()<CR>')
 end
 
@@ -486,13 +485,14 @@ lspsaga.setup {
 
 -------- key
 
-map('n', 'gr', '<cmd>Lspsaga rename<cr>', {noremap = true})
-map('n', 'gx', '<cmd>Lspsaga code_action<cr>', {noremap = true})
-map('x', 'gx', ':<c-u>Lspsaga range_code_action<cr>', {noremap = true})
-map('n', 'K',  '<cmd>Lspsaga hover_doc<cr>', {noremap = true})
-map('n', 'ge', '<cmd>Lspsaga show_line_diagnostics<cr>', {noremap = true})
-map('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', {noremap = true})
-map('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', {noremap = true})
+map('n', 'gd', '<cmd>Lspsaga lsp_finder<CR>', {silent = true})
+map('n', 'gr', '<cmd>Lspsaga rename<cr>', {silent = true})
+map('n', 'gx', '<cmd>Lspsaga code_action<cr>', {silent = true})
+map('x', 'gx', ':<c-u>Lspsaga range_code_action<cr>', {silent = true})
+map('n', 'K',  '<cmd>Lspsaga hover_doc<cr>', {silent = true})
+map('n', 'ge', '<cmd>Lspsaga show_line_diagnostics<cr>', {silent = true})
+map('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', {silent = true})
+map('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', {silent = true})
 map('n', '<C-u>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1, "<c-u>")<cr>')
 map('n', '<C-d>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1, "<c-d>")<cr>')
 
