@@ -1,27 +1,37 @@
-"" Source your .vimrc
-"source ~/.vimrc
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
-
-" Do incremental searching.
+set number relativenumber
+set ignorecase
+set smartcase
 set incsearch
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
-
-
-" Find more examples here: https://jb.gg/share-ideavimrc
+set hlsearch
+set inccommand=split
+set wrapscan
+set showmatch matchtime=1
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set guioptions+=a
+set title
+set display=lastline
+set scrolloff=10
+set pumheight=10
+set cursorline
+set autoindent
+set smartindent
+set cindent
+set showcmd
+set regexpengine=1
+set list listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set nobackup
+set wildmenu wildmode=list:longest,full
+set clipboard+=unnamed
+set redrawtime=10000
+set re=0
+set hidden
+set fileformat=unix
+set fileencodings=utf-8,sjis
+set spell
+inoremap jk <esc>
+nnoremap U <c-r>
+nnoremap + <C-a>
+nnoremap - <C-x>
