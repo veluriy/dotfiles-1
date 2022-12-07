@@ -35,3 +35,5 @@ inoremap jk <esc>
 nnoremap U <c-r>
 nnoremap + <C-a>
 nnoremap - <C-x>
+set easymotion
+let mapleader=","
