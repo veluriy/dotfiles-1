@@ -1,8 +1,7 @@
--- init.lua
+local load_core = function()
+    require("plugins")
+    require("options")
+    require("keymap")
+end
 
-require('base')
-require('map')
-require('plugins')
-require('color')
-
-print('init.lua loaded')
+load_core()
