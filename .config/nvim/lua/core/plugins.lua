@@ -14,14 +14,6 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup({function(use)
     use 'wbthomason/packer.nvim'
     use {
-        'startup-nvim/startup.nvim',
-        requires = { 'nvim/telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
-        config = function ()
-            require('startup').setup {
-            }
-        end
-    }
-    use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
