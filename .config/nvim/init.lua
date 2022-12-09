@@ -1,7 +1,3 @@
-local load_core = function()
-    require("plugins")
-    require("options")
-    require("keymap")
+if not vim.g.vscode then
+    require('core')
 end
-
-load_core()
