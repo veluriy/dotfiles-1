@@ -463,17 +463,6 @@ return require('packer').startup({function(use)
         end,
     }-- lsp saga
     use {
-        'ray-x/lsp_signature.nvim',
-        config = function ()
-            require('lsp_signature').setup {
-                bind = true,
-                handler_opts = {
-                    border = 'rounded'
-                }
-            }
-        end
-    }-- lsp signature
-    use {
         'numToStr/FTerm.nvim',
         module = { 'FTerm' },
         setup = function ()
