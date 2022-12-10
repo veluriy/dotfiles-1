@@ -125,9 +125,12 @@ main() {
   ln -snfv $DOTFILES_PATH/.config/nvim/init.lua $HOME/.config/nvim/init.lua
   ln -snfv $DOTFILES_PATH/.config/nvim/lua $HOME/.config/nvim/lua
   echo "${GREEN}Successfully link nvim settings.$NORMAL"
-  curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
-  echo "${GREEN}Successfully install jetpack.$NORMAL"
-  nvim -c "JetpackSync"
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+  echo "${GREEN}Successfully packer sync.$NORMAL"
+  install "btop" "brew install btop"
+  echo "${GREEN}Successfully install btop.$NORMAL"
+  install "gitui" "brew install gitui"
+  echo "${GREEN}Successfully install gitui.$NORMAL"
   install "exa" "brew install exa"
   echo "${GREEN}Successfully install exa.$NORMAL"
 }
