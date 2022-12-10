@@ -171,22 +171,6 @@ return require('packer').startup({function(use)
         end,
     }-- git blame
     use {
-        'TimUntersberger/neogit',
-        requires = {
-            { 'nvim-lua/plenary.nvim', opt = true },
-        },
-        wants = { 'plenary.nvim' },
-        module = { 'neogit' },
-        setup = function()
-            vim.keymap.set('n', 'git', function()
-                require('neogit').open()
-            end)
-        end,
-        config = function()
-            require'neogit'.setup {}
-        end,
-    }-- work in progress in vim
-    use {
         'windwp/nvim-autopairs',
         event = 'InsertEnter',
         config = function()
