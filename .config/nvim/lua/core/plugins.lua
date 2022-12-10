@@ -512,7 +512,7 @@ return require('packer').startup({function(use)
                 },
             }
         end,
-    }
+    }-- terminal
 
     if packer_bootstrap then
         require('packer').sync()
