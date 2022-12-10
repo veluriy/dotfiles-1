@@ -141,13 +141,13 @@ return require('packer').startup({function(use)
             vim.keymap.set({ 'n', 'v' }, 'T', function()
                 require('hop').hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
             end, { remap = true })
-            vim.keymap.set({ 'n', 'v' }, '<Space>w', function()
+            vim.keymap.set({ 'n', 'v' }, '<Leader>w', function()
                 require('hop').hint_words()
             end, { remap = false })
-            vim.keymap.set({ 'n', 'v' }, '<Space>a', function()
+            vim.keymap.set({ 'n', 'v' }, '<Leader>a', function()
                 require('hop').hint_anywhere()
             end, { remap = false })
-            vim.keymap.set({ 'n', 'v' }, '<Space>l', function()
+            vim.keymap.set({ 'n', 'v' }, '<Leader>l', function()
                 require('hop').hint_lines()
             end, { remap = false })
         end,
@@ -485,6 +485,33 @@ return require('packer').startup({function(use)
                 }
             }
         end
+    }-- lsp signature
+    use {
+        'numToStr/FTerm.nvim',
+        module = { 'FTerm' },
+        setup = function ()
+            vim.keymap.set('n', '<Leader>t', function ()
+                require('FTerm').toggle()
+            end)
+            vim.keymap.set('t', '<Leader>t', function ()
+                require('FTerm').toggle()
+            end)
+            vim.keymap.set('n', '<Leader>b', function ()
+                require('FTerm'):new({ ft = 'fterm_btop', cmd = 'btop' }):toggle()
+            end)
+            vim.keymap.set('n', '<Leader>g', function ()
+                require('FTerm'):new({ ft = 'fterm_gitui', cmd = 'gitui' }):toggle()
+            end)
+        end,
+        config = function ()
+            require('FTerm').setup {
+                border = 'double',
+                dimensions = {
+                    height = 0.9,
+                    width = 0.9,
+                },
+            }
+        end,
     }
 
     if packer_bootstrap then
