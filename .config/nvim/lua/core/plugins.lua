@@ -271,6 +271,9 @@ return require('packer').startup({function(use)
                     layout_config = { height = 40 }
                 })
             end)
+            vim.keymap.set('n', 'sn', function ()
+                require('telescope').extensions.notify.notify()
+            end)
         end,
         config = function()
             local actions = require('telescope.actions')
@@ -505,7 +508,8 @@ return require('packer').startup({function(use)
                 'rcarriga/nvim-notify',
                 config = function ()
                     require('notify').setup {
-                        background_colour = '#000000'
+                        background_colour = '#000000',
+                        stages = 'fade',
                     }
                 end
             },
