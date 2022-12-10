@@ -574,7 +574,7 @@ return require('packer').startup({function(use)
                 },
             }
         end
-    }
+    }-- cmdheight = 0
 
     if packer_bootstrap then
         require('packer').sync()
