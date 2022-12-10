@@ -100,10 +100,6 @@ main() {
   ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
   echo "${GREEN}Successfully link gitconfig.$NORMAL"
   install "brew" install_brew
-  install "terminator" "brew install terminator"
-  mkdir -pv $HOME/.config/terminator
-  ln -snfv $DOTFILES_PATH/.config/terminator/config $HOME/.config/terminator/config
-  echo "${GREEN}Successfully link terminator settings.$NORMAL"
   install "fish" "brew install fish"
   mkdir -pv $HOME/.config/fish
   ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
