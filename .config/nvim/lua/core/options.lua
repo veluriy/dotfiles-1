@@ -76,7 +76,7 @@ opt.regexpengine = 0
 opt.list = true
 opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
 
----- no backup, on swap, no undo
+---- backup, swap, undo
 
 opt.backup = false
 opt.swapfile = true
