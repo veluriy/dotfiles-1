@@ -224,6 +224,25 @@ return require('packer').startup({function(use)
         end
     }-- treesitter
     use {
+        'yioneko/nvim-yati',
+        requires = {
+            { 'nvim-treesitter/nvim-treesitter' },
+        },
+        config = function()
+            require('nvim-treesitter.configs').setup {
+                yati = {
+                    enable = true,
+                    disable = { 'python' },
+                    default_lazy = true,
+                    default_fallback = 'auto',
+                },
+                indent = {
+                    enable = false
+                }
+            }
+        end
+    }
+    use {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         requires = {
@@ -326,7 +345,6 @@ return require('packer').startup({function(use)
             { 'f3fora/cmp-spell', event = { 'InsertEnter' } },
             { 'yutkat/cmp-mocword', event = { 'InsertEnter' } },
             { 'saadparwaiz1/cmp_luasnip', event = { 'InsertEnter' } },
-            { 'tzachar/cmp-tabnine', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-omni', event = { 'InsertEnter' } },
         },
         config = function()
@@ -366,7 +384,6 @@ return require('packer').startup({function(use)
                         },
                     },
                     { name = 'mocword' },
-                    { name = 'cmp_tabline' },
                     { name = 'omni' },
                 }),
                 formatting = {
