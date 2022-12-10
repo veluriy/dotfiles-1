@@ -35,7 +35,7 @@ return require('packer').startup({function(use)
                     } },
                     lualine_x = {
                         { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = ' ', warn = ' ', info = ' ',
-                        hint = ' ' } },
+                            hint = ' ' } },
                         'encoding',
                         'filetype'
                     },
@@ -238,12 +238,12 @@ return require('packer').startup({function(use)
                 return vim.fn.expand('%:p:h')
             end
             vim.keymap.set('n', ';f',
-            function()
-                require('telescope.builtin').find_files({
-                    no_ignore = false,
-                    hidden = true
-                })
-            end)
+                function()
+                    require('telescope.builtin').find_files({
+                        no_ignore = false,
+                        hidden = true
+                    })
+                end)
             vim.keymap.set('n', ';r', function()
                 require('telescope.builtin').live_grep()
             end)
@@ -271,7 +271,7 @@ return require('packer').startup({function(use)
                     layout_config = { height = 40 }
                 })
             end)
-            vim.keymap.set('n', 'sn', function ()
+            vim.keymap.set('n', 'sn', function()
                 require('telescope').extensions.notify.notify()
             end)
         end,
@@ -320,6 +320,14 @@ return require('packer').startup({function(use)
             { 'onsails/lspkind.nvim', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-vsnip', event = { 'InsertEnter' } },
             { 'hrsh7th/vim-vsnip', event = { 'InsertEnter' } },
+            { 'ray-x/cmp-treesitter', event = { 'InsertEnter' } },
+            { 'hrsh7th/cmp-nvim-lua', event = { 'InsertEnter' } },
+            { 'hrsh7th/cmp-calc', event = { 'InsertEnter' } },
+            { 'f3fora/cmp-spell', event = { 'InsertEnter' } },
+            { 'yutkat/cmp-mocword', event = { 'InsertEnter' } },
+            { 'saadparwaiz1/cmp_luasnip', event = { 'InsertEnter' } },
+            { 'tzachar/cmp-tabnine', event = { 'InsertEnter' } },
+            { 'hrsh7th/cmp-omni', event = { 'InsertEnter' } },
         },
         config = function()
             vim.opt.completeopt = 'menu,menuone,noselect'
@@ -342,13 +350,48 @@ return require('packer').startup({function(use)
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'vsnip' },
                     { name = 'buffer' },
+                    { name = 'path' },
+                    { name = 'vsnip' },
+                    { name = 'treesitter' },
+                    { name = 'nvim_lua' },
+                    { name = 'calc' },
+                    {
+                        name = 'spell',
+                        option = {
+                            keep_all_entries = false,
+                            enable_in_context = function ()
+                                return true
+                            end,
+                        },
+                    },
+                    { name = 'mocword' },
+                    { name = 'cmp_tabline' },
+                    { name = 'omni' },
                 }),
                 formatting = {
                     format = require('lspkind').cmp_format({ with_text = false, maxwidth = 50 })
-                }
+                },
             }
+            cmp.setup.cmdline('/', {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = 'buffer' }
+                }
+            })
+            cmp.setup.cmdline(':', {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = 'path' }
+                }, {
+                        {
+                            name = 'cmdline',
+                            option = {
+                                ignore_cmds = { 'Man', '!' }
+                            }
+                        }
+                })
+            })
         end,
     }-- cmp
     use { 'onsails/lspkind.nvim' }
@@ -520,7 +563,7 @@ return require('packer').startup({function(use)
         require('packer').sync()
     end
 end,
-config = {
+    config = {
         display = {
             open_fn = require('packer.util').float,
         }

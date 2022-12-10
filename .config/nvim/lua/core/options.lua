@@ -113,3 +113,8 @@ opt.shell = 'fish'
 ---- cmdheight
 
 opt.cmdheight = 0
+
+---- spell
+
+opt.spell = true
+opt.spelllang = { 'en_us' }
