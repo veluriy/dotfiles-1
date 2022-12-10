@@ -109,3 +109,7 @@ opt.termguicolors = true
 ---- shell
 
 opt.shell = 'fish'
+
+---- cmdheight
+
+opt.cmdheight = 0
