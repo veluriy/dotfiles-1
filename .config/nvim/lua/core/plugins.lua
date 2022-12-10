@@ -330,6 +330,7 @@ return require('packer').startup({function(use)
         module = { 'cmp' },
         event = { 'InsertEnter' },
         requires = {
+            -- TODO どれかsourceが悪さしてる。いらないの消せ
             { 'neovim/nvim-lspconfig', event = { 'InsertEnter'} },
             { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-buffer', event = { 'InsertEnter' } },
@@ -344,7 +345,6 @@ return require('packer').startup({function(use)
             { 'hrsh7th/cmp-calc', event = { 'InsertEnter' } },
             { 'f3fora/cmp-spell', event = { 'InsertEnter' } },
             { 'yutkat/cmp-mocword', event = { 'InsertEnter' } },
-            { 'saadparwaiz1/cmp_luasnip', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-omni', event = { 'InsertEnter' } },
         },
         config = function()
