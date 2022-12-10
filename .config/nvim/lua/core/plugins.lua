@@ -34,7 +34,7 @@ return require('packer').startup({function(use)
                         path = 0
                     } },
                     lualine_x = {
-                        { 'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
+                        { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = ' ', warn = ' ', info = ' ',
                         hint = ' ' } },
                         'encoding',
                         'filetype'
@@ -83,14 +83,14 @@ return require('packer').startup({function(use)
             local cWarn = groups.Warning.fg
             local cHint = groups.Hint.fg
 
-            Group.new("DiagnosticVirtualTextError", cError, cError:dark():dark():dark():dark(), styles.NONE)
-            Group.new("DiagnosticVirtualTextInfo", cInfo, cInfo:dark():dark():dark(), styles.NONE)
-            Group.new("DiagnosticVirtualTextWarn", cWarn, cWarn:dark():dark():dark(), styles.NONE)
-            Group.new("DiagnosticVirtualTextHint", cHint, cHint:dark():dark():dark(), styles.NONE)
-            Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.undercurl, cError)
-            Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.undercurl, cWarn)
-            Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.undercurl, cInfo)
-            Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.undercurl, cHint)
+            Group.new('DiagnosticVirtualTextError', cError, cError:dark():dark():dark():dark(), styles.NONE)
+            Group.new('DiagnosticVirtualTextInfo', cInfo, cInfo:dark():dark():dark(), styles.NONE)
+            Group.new('DiagnosticVirtualTextWarn', cWarn, cWarn:dark():dark():dark(), styles.NONE)
+            Group.new('DiagnosticVirtualTextHint', cHint, cHint:dark():dark():dark(), styles.NONE)
+            Group.new('DiagnosticUnderlineError', colors.none, colors.none, styles.undercurl, cError)
+            Group.new('DiagnosticUnderlineWarn', colors.none, colors.none, styles.undercurl, cWarn)
+            Group.new('DiagnosticUnderlineInfo', colors.none, colors.none, styles.undercurl, cInfo)
+            Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
         end,
     }-- color scheme
     use {
@@ -259,15 +259,15 @@ return require('packer').startup({function(use)
             vim.keymap.set('n', ';e', function()
                 require('telescope.builtin').diagnostics()
             end)
-            vim.keymap.set("n", "sf", function()
+            vim.keymap.set('n', 'sf', function()
                 require('telescope').extensions.file_browser.file_browser({
-                    path = "%:p:h",
+                    path = '%:p:h',
                     cwd = telescope_buffer_dir(),
                     respect_gitignore = false,
                     hidden = true,
                     grouped = true,
                     previewer = false,
-                    initial_mode = "normal",
+                    initial_mode = 'normal',
                     layout_config = { height = 40 }
                 })
             end)
@@ -279,21 +279,21 @@ return require('packer').startup({function(use)
                 defaults = {
                     mappings = {
                         n = {
-                            ["q"] = actions.close
+                            ['q'] = actions.close
                         },
                     },
                 },
                 extensions = {
                     file_browser = {
-                        theme = "dropdown",
+                        theme = 'dropdown',
                         hijack_netrw = true,
                         mappings = {
-                            ["i"] = {
-                                ["<C-w>"] = function() vim.cmd('normal vbd') end,
+                            ['i'] = {
+                                ['<C-w>'] = function() vim.cmd('normal vbd') end,
                             },
-                            ["n"] = {
-                                ["h"] = fb_actions.goto_parent_dir,
-                                ["/"] = function()
+                            ['n'] = {
+                                ['h'] = fb_actions.goto_parent_dir,
+                                ['/'] = function()
                                     vim.cmd('startinsert')
                                 end
                             },
@@ -319,28 +319,28 @@ return require('packer').startup({function(use)
             { 'hrsh7th/vim-vsnip', event = { 'InsertEnter' } },
         },
         config = function()
-            vim.opt.completeopt = "menu,menuone,noselect"
+            vim.opt.completeopt = 'menu,menuone,noselect'
             local cmp = require('cmp')
             cmp.setup {
                 snippet = {
                     expand = function(args)
-                        vim.fn["vsnip#anonymous"](args.body)
+                        vim.fn['vsnip#anonymous'](args.body)
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-p>"] = cmp.mapping.select_prev_item(),
-                    ["<C-n>"] = cmp.mapping.select_next_item(),
-                    ["<C-f>"] = cmp.mapping.complete(),
-                    ["<C-e>"] = cmp.mapping.close(),
-                    ["<CR>"] = cmp.mapping.confirm({
+                    ['<C-p>'] = cmp.mapping.select_prev_item(),
+                    ['<C-n>'] = cmp.mapping.select_next_item(),
+                    ['<C-f>'] = cmp.mapping.complete(),
+                    ['<C-e>'] = cmp.mapping.close(),
+                    ['<CR>'] = cmp.mapping.confirm({
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = true
                     }),
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "vsnip" },
-                    { name = "buffer" },
+                    { name = 'nvim_lsp' },
+                    { name = 'vsnip' },
+                    { name = 'buffer' },
                 }),
                 formatting = {
                     format = require('lspkind').cmp_format({ with_text = false, maxwidth = 50 })
@@ -370,8 +370,8 @@ return require('packer').startup({function(use)
             end
             require('lspconfig').tsserver.setup {
                 on_attach = on_attach,
-                filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-                cmd = { "typescript-language-server", "--stdio" }
+                filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+                cmd = { 'typescript-language-server', '--stdio' }
             }
             require('mason').setup {}
             require('mason-lspconfig').setup {
@@ -383,10 +383,10 @@ return require('packer').startup({function(use)
                         on_attach = on_attach,
                         capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
                     }
-                    require("lspconfig")[server_name].setup(masonopt)
+                    require('lspconfig')[server_name].setup(masonopt)
                 end,
             }
-            vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+            vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
                 vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
             )
         end,
@@ -414,47 +414,47 @@ return require('packer').startup({function(use)
             saga.setup {
                 debug = false,
                 use_saga_diagnostic_sign = true,
-                error_sign = "",
-                warn_sign = "",
-                hint_sign = "",
-                infor_sign = "",
-                diagnostic_header_icon = "   ",
-                code_action_icon = " ",
+                error_sign = '',
+                warn_sign = '',
+                hint_sign = '',
+                infor_sign = '',
+                diagnostic_header_icon = '   ',
+                code_action_icon = ' ',
                 code_action_prompt = {
                     enable = true,
                     sign = true,
                     sign_priority = 40,
                     virtual_text = true,
                 },
-                finder_definition_icon = "  ",
-                finder_reference_icon = "  ",
+                finder_definition_icon = '  ',
+                finder_reference_icon = '  ',
                 max_preview_lines = 10,
                 finder_action_keys = {
-                    open = "o",
-                    vsplit = "s",
-                    split = "i",
-                    quit = "q",
-                    scroll_down = "<C-f>",
-                    scroll_up = "<C-b>",
+                    open = 'o',
+                    vsplit = 's',
+                    split = 'i',
+                    quit = 'q',
+                    scroll_down = '<C-f>',
+                    scroll_up = '<C-b>',
                 },
                 code_action_keys = {
-                    quit = "q",
-                    exec = "<CR>",
+                    quit = 'q',
+                    exec = '<CR>',
                 },
                 rename_action_keys = {
-                    quit = "<C-c>",
-                    exec = "<CR>",
+                    quit = '<C-c>',
+                    exec = '<CR>',
                 },
-                definition_preview_icon = "  ",
-                border_style = "single",
-                rename_prompt_prefix = "➤",
+                definition_preview_icon = '  ',
+                border_style = 'single',
+                rename_prompt_prefix = '➤',
                 rename_output_qflist = {
                     enable = false,
                     auto_open_qflist = false,
                 },
                 server_filetype_map = {},
-                diagnostic_prefix_format = "%d. ",
-                diagnostic_message_format = "%m %c",
+                diagnostic_prefix_format = '%d. ',
+                diagnostic_message_format = '%m %c',
                 highlight_prefix = false,
             }
         end,
