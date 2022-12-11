@@ -371,20 +371,20 @@ return require('packer').startup({function(use)
                     { name = 'buffer' },
                     { name = 'path' },
                     { name = 'vsnip' },
-                    { name = 'treesitter' },
-                    { name = 'nvim_lua' },
-                    { name = 'calc' },
-                    {
-                        name = 'spell',
-                        option = {
-                            keep_all_entries = false,
-                            enable_in_context = function ()
-                                return true
-                            end,
-                        },
-                    },
-                    { name = 'mocword' },
-                    { name = 'omni' },
+                    --{ name = 'treesitter' },
+                    --{ name = 'nvim_lua' },
+                    --{ name = 'calc' },
+                    --{
+                    --    name = 'spell',
+                    --    option = {
+                    --        keep_all_entries = false,
+                    --        enable_in_context = function ()
+                    --            return true
+                    --        end,
+                    --    },
+                    --},
+                    --{ name = 'mocword' },
+                    --{ name = 'omni' },
                 }),
                 formatting = {
                     format = require('lspkind').cmp_format({ with_text = false, maxwidth = 50 })
@@ -575,6 +575,12 @@ return require('packer').startup({function(use)
             }
         end
     }-- cmdheight = 0
+    use {
+        'rust-lang/rust.vim',
+        config = function ()
+            vim.g.rustfmt_autosave = 1
+        end
+    }-- rust
 
     if packer_bootstrap then
         require('packer').sync()
