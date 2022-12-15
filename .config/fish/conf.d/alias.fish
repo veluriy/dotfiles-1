@@ -17,7 +17,6 @@ alias llac "clear && lla"
 # cd
 alias d "cd ~/dotfiles"
 alias p "cd ~/projects"
-alias til "cd ~/projects/til"
 alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
@@ -27,11 +26,6 @@ alias rm "rm -iv"
 
 # cp
 alias cp "cp -iv"
-
-# apt
-alias agu "sudo apt update"
-alias agi "sudo apt install"
-alias agr "sudo apt remove"
 
 # vim
 alias vim "nvim"
@@ -76,7 +70,6 @@ alias gd "git diff"
 
 # shutdown
 alias shutnow "shutdown -h now"
-alias gmo "shutdown -h now"
 
 # clipboard copy
 alias clip "xsel --clipboard --input"
