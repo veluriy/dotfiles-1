@@ -1,4 +1,10 @@
--- map.lua
+local leader_map = function()
+    vim.g.mapleader = " "
+    vim.api.nvim_set_keymap("n", " ", "", { noremap = true })
+    vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
+end
+
+leader_map()
 
 ---- helper
 
@@ -9,11 +15,11 @@ local function map(mode, lhs, rhs, opts)
 end
 
 local g = vim.g
-g.mapleader = ' '
 
 ---- move
 
 map('i', 'jk', '<ESC>:w<CR>', { silent = true })
+map('i', 'jj', '<ESC>', { silent = true })
 map('n', '<C-Up>', '"zdd<Up>"zP')
 map('n', '<C-Down>', '"zdd"zp')
 map('v', '<C-Up>', '"zx<Up>"zP`[V`]')
@@ -37,7 +43,7 @@ map('n', '<Right>', '<C-w>>', { silent = true })
 ---- save end quit
 
 map('n', '<Leader>z', 'ZZ<CR>')
-map('n', '<Leader>w', ':w<CR>')
+map('n', '<C-s>', ':w<CR>')
 
 ---- undo
 

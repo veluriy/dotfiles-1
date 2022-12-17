@@ -4,22 +4,27 @@
 
 ## Main software
 
-- Terminator
+- git
+- brew
 - fish shell
 - tmux
-- NeoVim
+- nvim
+- btop
+- gitui
+- ripgrep
 - exa
 
 ## Contents
 
-- terminator config
 - fish shell config
-- tmux config
+- gitui config
+- ideavimrc
 - nvim config
+- tmux config
 
 ## Supported OS
 
-- Ubuntu
+- Mac OS
 
 ## Install
 
@@ -33,4 +38,4 @@ MIT
 
 ## About me
 
-[Homepage](https://wurzeit.com)
+[Homepage](https://wurzeit.com/about)

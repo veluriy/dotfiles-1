@@ -5,6 +5,9 @@
 # | .__/ \__,_|\__|_| |_|
 # |_|
 
-# one line
-set PATH $HOME/.cargo/bin $HOME/.ghcup/bin $HOME/.local/share/coursier/bin $PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# homebrew
+fish_add_path /opt/homebrew/bin
+
+# cargo
+set -gx CARGO_HOME $HOME/.cargo
+fish_add_path $CARGO_HOME/bin

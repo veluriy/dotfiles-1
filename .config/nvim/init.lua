@@ -1,8 +1,3 @@
--- init.lua
-
-require('base')
-require('map')
-require('plugins')
-require('color')
-
-print('init.lua loaded')
+if not vim.g.vscode then
+    require('core')
+end
