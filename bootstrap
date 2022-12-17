@@ -146,6 +146,11 @@ install_exa() {
     install "exa" "brew install exa"
 }
 
+link_idea() {
+    ln -snfv $DOTFILES_PATH/.config/idea/.ideavimrc $HOME/.ideavimrc
+    successfully_link_message "ideavim"
+}
+
 # === main ===
 # ------------
 
@@ -162,6 +167,7 @@ main() {
     install_gitui
     install_ripgrep
     install_exa
+    link_idea
 }
 
 main
