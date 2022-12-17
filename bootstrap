@@ -124,6 +124,9 @@ main() {
   install "btop" "brew install btop"
   echo "${GREEN}Successfully install btop.$NORMAL"
   install "gitui" "brew install gitui"
+  mkdir -p $HOME/.config/gitui
+  ln -snfv $DOTFILES_PATH/.config/gitui/key_bindings.ron $HOME/.config/gitui/key_bindings.ron
+  ln -snfb $DOTFILES_PATH/.config/gitui/key_symbols.ron $HOME/.config/gitui/key_symbols.ron
   echo "${GREEN}Successfully install gitui.$NORMAL"
   install "rg" "brew install ripgrep"
   echo "${GREEN}Successfully install ripgrep.$NORMAL"
