@@ -407,7 +407,7 @@ return require('packer').startup({function(use)
                                 ignore_cmds = { 'Man', '!' }
                             }
                         }
-                })
+                    })
             })
         end,
     }-- cmp
@@ -563,6 +563,16 @@ return require('packer').startup({function(use)
                         ['cmp.entry.get_documentation'] = true,
                     },
                 },
+                cmdline = {
+                    format = {
+                        cmdline = { icon = ">" },
+                        search_down = { icon = "🔍⌄" },
+                        search_up = { icon = "🔍⌃" },
+                        filter = { icon = "$" },
+                        lua = { icon = "☾" },
+                        help = { icon = "?" },
+                    },
+                },
             }
         end
     }-- cmdheight = 0
@@ -581,4 +591,6 @@ end,
         display = {
             open_fn = require('packer.util').float,
         }
-    }})
+    }
+}
+)
