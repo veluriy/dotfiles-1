@@ -10,78 +10,78 @@ readonly REMOTE_URL="https://github.com/Wurzeit/dotfiles.git"
 # --------------
 
 if which tput >/dev/null 2>&1; then
-  ncolors=$(tput colors)
+    ncolors=$(tput colors)
 fi
 if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
-  RED="$(tput setaf 1)"
-  GREEN="$(tput setaf 2)"
-  YELLOW="$(tput setaf 3)"
-  BLUE="$(tput setaf 4)"
-  BOLD="$(tput bold)"
-  NORMAL="$(tput sgr0)"
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    BOLD="$(tput bold)"
+    NORMAL="$(tput sgr0)"
 else
-  RED=""
-  GREEN=""
-  YELLOW=""
-  BLUE=""
-  BOLD=""
-  NORMAL=""
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    BOLD=""
+    NORMAL=""
 fi
 
 # === functions ===
 # -----------------
 
 has() {
-  type "$1" > /dev/null 2>&1
+    type "$1" > /dev/null 2>&1
 }
 
 dotfiles_logo() {
-  echo $BLUE
-  cat <<\EOF
+    echo $BLUE
+    cat <<\EOF
       _       _    __ _ _
    __| | ___ | |_ / _(_) | ___  ___
   / _` |/ _ \| __| |_| | |/ _ \/ __|
  | (_| | (_) | |_|  _| | |  __/\__ \
 (_)__,_|\___/ \__|_| |_|_|\___||___/
 EOF
-echo $NORMAL
+    echo $NORMAL
 }
 
 install() {
-  if has "$1"; then
-    echo "${BOLD}${1} is already exists.$NORMAL"
-  else
-    echo "Installing ${1}..."
-    $2
-    if [ $? = 0 ]; then
-      echo "${GREEN}Successfully installed ${1}.$NORMAL"
+    if has "$1"; then
+        echo "${BOLD}${1} is already exists.$NORMAL"
     else
-      echo "${RED}An unexpected error occurred when trying to install ${1}.$NORMAL"
-      exit 1
+        echo "Installing ${1}..."
+        $2
+        if [ $? = 0 ]; then
+            echo "${GREEN}Successfully installed ${1}.$NORMAL"
+        else
+            echo "${RED}An unexpected error occurred when trying to install ${1}.$NORMAL"
+            exit 1
+        fi
     fi
-  fi
 
-  return 0
+    return 0
 }
 
 successfully_link_message() {
-  echo "${GREEN}Successfully link ${1} settings.$NORMAL"
+    echo "${GREEN}Successfully link ${1} settings.$NORMAL"
 }
 
 download_dotfiles() {
-  cd $HOME
-  if [ ! -d $DOTFILES_PATH ]; then
-    echo "Downloading dotfiles..."
-    git clone --recursive $REMOTE_URL $DOTFILES_PATH
-    if [ $? = 0 ]; then
-      echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
+    cd $HOME
+    if [ ! -d $DOTFILES_PATH ]; then
+        echo "Downloading dotfiles..."
+        git clone --recursive $REMOTE_URL $DOTFILES_PATH
+        if [ $? = 0 ]; then
+            echo "${GREEN}Successfully downloaded dotfiles.$NORMAL"
+        else
+            echo "${RED}An unexpected error occurred when trying to download clone$NORMAL"
+            exit 1
+        fi
     else
-      echo "${RED}An unexpected error occurred when trying to download clone$NORMAL"
-      exit 1
+        echo "${BOLD}dotfiles is already exists.$NORMAL"
     fi
-  else
-    echo "${BOLD}dotfiles is already exists.$NORMAL"
-  fi
 }
 
 # install_brew_scipt() {
@@ -93,78 +93,78 @@ download_dotfiles() {
 # }
 
 link_gitconfig() {
-  ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
-  successfully_link_message "gitconfig"
+    ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
+    successfully_link_message "gitconfig"
 }
 
 install_fish() {
-  install "fish" "brew install fish"
-  mkdir -pv $HOME/.config/fish
-  ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
-  ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
-  ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
-  ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
-  # echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
-  chsh -s $(which fish)
-  curl -fsSL https://git.io/fisher > fisher_installer
-  fish ./fisher_installer
-  rm fisher_installer
-  fisher update
-  successfully_link_message "fish shell"
+    install "fish" "brew install fish"
+    mkdir -pv $HOME/.config/fish
+    ln -snfv $DOTFILES_PATH/.config/fish/config.fish $HOME/.config/fish/config.fish
+    ln -snfv $DOTFILES_PATH/.config/fish/conf.d $HOME/.config/fish/conf.d
+    ln -snfv $DOTFILES_PATH/.config/fish/functions $HOME/.config/fish/functions
+    ln -snfv $DOTFILES_PATH/.config/fish/fish_plugins $HOME/.config/fish/fish_plugins
+    # echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
+    chsh -s $(which fish)
+    curl -fsSL https://git.io/fisher > fisher_installer
+    fish ./fisher_installer
+    rm fisher_installer
+    fisher update
+    successfully_link_message "fish shell"
 }
 
 install_tmux() {
-  install "tmux" "brew install tmux"
-  ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
-  successfully_link_message "tmux"
+    install "tmux" "brew install tmux"
+    ln -snfv $DOTFILES_PATH/.config/tmux/.tmux.conf $HOME/.tmux.conf
+    successfully_link_message "tmux"
 }
 
 install_nvim() {
-  install "nvim" "brew install neovim"
-  mkdir -pv $HOME/.config/nvim
-  ln -snfv $DOTFILES_PATH/.config/nvim/init.lua $HOME/.config/nvim/init.lua
-  ln -snfv $DOTFILES_PATH/.config/nvim/lua $HOME/.config/nvim/lua
-  successfully_link_message "nvim"
-  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-  echo "${GREEN}Successfully packer sync.$NORMAL"
+    install "nvim" "brew install neovim"
+    mkdir -pv $HOME/.config/nvim
+    ln -snfv $DOTFILES_PATH/.config/nvim/init.lua $HOME/.config/nvim/init.lua
+    ln -snfv $DOTFILES_PATH/.config/nvim/lua $HOME/.config/nvim/lua
+    successfully_link_message "nvim"
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    echo "${GREEN}Successfully packer sync.$NORMAL"
 }
 
 install_btop() {
-  install "btop" "brew install btop"
+    install "btop" "brew install btop"
 }
 
 install_gitui() {
-  install "gitui" "brew install gitui"
-  mkdir -p $HOME/.config/gitui
-  ln -snfv $DOTFILES_PATH/.config/gitui/key_bindings.ron $HOME/.config/gitui/key_bindings.ron
-  ln -snfv $DOTFILES_PATH/.config/gitui/key_symbols.ron $HOME/.config/gitui/key_symbols.ron
-  successfully_link_message "gitui"
+    install "gitui" "brew install gitui"
+    mkdir -p $HOME/.config/gitui
+    ln -snfv $DOTFILES_PATH/.config/gitui/key_bindings.ron $HOME/.config/gitui/key_bindings.ron
+    ln -snfv $DOTFILES_PATH/.config/gitui/key_symbols.ron $HOME/.config/gitui/key_symbols.ron
+    successfully_link_message "gitui"
 }
 
 install_ripgrep() {
-  install "rg" "brew install ripgrep"
+    install "rg" "brew install ripgrep"
 }
 
 install_exa() {
-  install "exa" "brew install exa"
+    install "exa" "brew install exa"
 }
 
 # === main ===
 # ------------
 
 main() {
-  sudo echo ""
-  dotfiles_logo
-  download_dotfiles
-  # install "brew" install_brew_scipt
-  link_gitconfig
-  install_fish
-  install_tmux
-  install_nvim
-  install_btop
-  install_gitui
-  install_ripgrep
-  install_exa
+    sudo echo ""
+    dotfiles_logo
+    download_dotfiles
+    # install "brew" install_brew_scipt
+    link_gitconfig
+    install_fish
+    install_tmux
+    install_nvim
+    install_btop
+    install_gitui
+    install_ripgrep
+    install_exa
 }
 
 main
