@@ -81,7 +81,7 @@ download_dotfiles() {
 }
 
 install_brew() {
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
   git -C $(brew --repo homebrew/core) checkout master
   echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -94,8 +94,6 @@ install_brew() {
 main() {
   sudo echo ""
   dotfiles_logo
-  sudo apt update -y
-  sudo apt install build-essential procps curl file git -y
   download_dotfiles
   ln -snfv $DOTFILES_PATH/.gitconfig $HOME/.gitconfig
   echo "${GREEN}Successfully link gitconfig.$NORMAL"
@@ -127,6 +125,8 @@ main() {
   echo "${GREEN}Successfully install btop.$NORMAL"
   install "gitui" "brew install gitui"
   echo "${GREEN}Successfully install gitui.$NORMAL"
+  install "rg" "brew install ripgrep"
+  echo "${GREEN}Successfully install ripgrep.$NORMAL"
   install "exa" "brew install exa"
   echo "${GREEN}Successfully install exa.$NORMAL"
 }
