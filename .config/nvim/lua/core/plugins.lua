@@ -14,52 +14,6 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup({function(use)
     use 'wbthomason/packer.nvim'
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = function()
-            require('lualine').setup {
-                options = {
-                    icons_enabled = true,
-                    theme = 'solarized_dark',
-                    section_separators = { left = '', right = '' },
-                    component_separators = { left = '', right = '' },
-                    disabled_filetypes = {}
-                },
-                sections = {
-                    lualine_a = { 'mode' },
-                    lualine_b = { 'branch' },
-                    lualine_c = { {
-                        'filename',
-                        file_lualineStatus = true,
-                        path = 0
-                    } },
-                    lualine_x = {
-                        { 'diagnostics', sources = { 'nvim_diagnostic' }, symbols = { error = ' ', warn = ' ', info = ' ',
-                            hint = ' ' } },
-                        'encoding',
-                        'filetype'
-                    },
-                    lualine_y = { 'progress' },
-                    lualine_z = { 'location' }
-                },
-                inactive_sections = {
-                    lualine_a = {},
-                    lualine_b = {},
-                    lualine_c = { {
-                        'filename',
-                        file_lualineStatus = true,
-                        path = 1
-                    } },
-                    lualine_x = { 'location' },
-                    lualine_y = {},
-                    lualine_z = {}
-                },
-                tabline = {},
-                extensions = { 'fugitive' }
-            }
-        end,
-    }-- status line
-    use {
         'svrana/neosolarized.nvim' ,
         requires = { 'tjdevries/colorbuddy.nvim' },
         config = function()
@@ -230,25 +184,6 @@ return require('packer').startup({function(use)
         end
     }-- treesitter
     use {
-        'yioneko/nvim-yati',
-        requires = {
-            { 'nvim-treesitter/nvim-treesitter' },
-        },
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                yati = {
-                    enable = true,
-                    disable = { 'python' },
-                    default_lazy = true,
-                    default_fallback = 'auto',
-                },
-                indent = {
-                    enable = false
-                }
-            }
-        end
-    }
-    use {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         requires = {
@@ -346,12 +281,12 @@ return require('packer').startup({function(use)
             { 'onsails/lspkind.nvim', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-vsnip', event = { 'InsertEnter' } },
             { 'hrsh7th/vim-vsnip', event = { 'InsertEnter' } },
-            { 'ray-x/cmp-treesitter', event = { 'InsertEnter' } },
+            -- { 'ray-x/cmp-treesitter', event = { 'InsertEnter' } },
             { 'hrsh7th/cmp-nvim-lua', event = { 'InsertEnter' } },
-            { 'hrsh7th/cmp-calc', event = { 'InsertEnter' } },
-            { 'f3fora/cmp-spell', event = { 'InsertEnter' } },
-            { 'yutkat/cmp-mocword', event = { 'InsertEnter' } },
-            { 'hrsh7th/cmp-omni', event = { 'InsertEnter' } },
+            -- { 'hrsh7th/cmp-calc', event = { 'InsertEnter' } },
+            -- { 'f3fora/cmp-spell', event = { 'InsertEnter' } },
+            -- { 'yutkat/cmp-mocword', event = { 'InsertEnter' } },
+            -- { 'hrsh7th/cmp-omni', event = { 'InsertEnter' } },
         },
         config = function()
             vim.opt.completeopt = 'menu,menuone,noselect'
