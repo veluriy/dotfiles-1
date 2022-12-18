@@ -25,6 +25,7 @@
 - gitui
 - ripgrep
 - exa
+- bat
 
 ## Contents
 
