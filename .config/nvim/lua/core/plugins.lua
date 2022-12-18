@@ -180,6 +180,12 @@ return require('packer').startup({function(use)
         end,
     }-- auto pairs
     use {
+        'windwp/nvim-ts-autotag',
+        event = 'InsertEnter',
+        config = function()
+	end,
+    }
+    use {
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require'nvim-treesitter.configs'.setup {
