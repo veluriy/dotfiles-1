@@ -140,6 +140,11 @@ install_exa() {
     install "exa" "brew install exa"
 }
 
+install_bat() {
+    arrow_message "Installing bat..."
+    install "bat" "brew install bat"
+}
+
 link_idea() {
     arrow_message "Linking .ideavimrc..."
     ln -snfv $DOTFILES_PATH/.config/idea/.ideavimrc $HOME/.ideavimrc
@@ -162,6 +167,7 @@ main() {
     install_gitui
     install_ripgrep
     install_exa
+    install_bat
     link_idea
 
     arrow_message "Change shell. Please reenter your password."

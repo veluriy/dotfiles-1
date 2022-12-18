@@ -1,6 +1,6 @@
 function fish_prompt
     set -l last_status $status
-    echo -n (set_color eee8d5)' > '(set_color --bold eee8d5;whoami)(set_color eee8d5)' > '(set_color b58900;set -g fish_prompt_pwd_dir_length 3;prompt_pwd)
+    echo -n (set_color eee8d5)' > '(set_color --bold eee8d5;whoami)(set_color eee8d5)' > '(set_color b58900;set -g fish_prompt_pwd_dir_length 3;prompt_pwd)(set_color eee8d5;fish_git_prompt)
     if [ $last_status -gt 0 ]; then
         echo -n (set_color eee8d5)' > '(set_color red)"[$last_status]"
     end
@@ -9,7 +9,7 @@ function fish_prompt
 end
 
 function fish_right_prompt
-    echo (fish_git_prompt)
+    echo
 end
 
 function fish_mode_prompt
