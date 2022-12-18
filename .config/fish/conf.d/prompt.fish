@@ -30,5 +30,4 @@ function fish_mode_prompt
             set_color --bold red
             echo '[?]'
     end
-    set_color eee8d5
 end
