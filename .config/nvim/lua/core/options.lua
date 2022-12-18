@@ -1,120 +1,62 @@
--- base.lua
+local function load_options()
+    local global_local = {
+        termguicolors = true,
+        errorbells = true,
+        visialbell = true,
+        hidden = true,
+        fileformats = "unix,mac,dos",
+        magic = true,
+        virtualedit = "block",
+        encoding = "utf-8",
+        viewoptions = "folds,cursor,curdir,slash,unix",
+        sessionoptions = "curdir,help,tabpages,winsize",
+        clipboard = "unnamedplus",
+        wildignorecase = true,
+        wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
+        swapfile = false,
+        history = 2000,
+        shada = "!,'300,<50,@100,s10,h",
+        backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
+        smarttab = true,
+        shiftround = true,
+        updatetime = 100,
+        redrawtime = 1500,
+        ignorecase = true,
+        smartcase = true,
+        infercase = true,
+        incsearch = true,
+        hlsearch = true,
+        wrapscan = true,
+        inccommand = "split",
+        number = true,
+        relativenumber = true,
+        showmatch = 1,
+        expandtab = true,
+        tabstop = 4,
+        title = true,
+        scrolloff = 7,
+        sidescrolloff = 5,
+        display = "lastline",
+        pumheight = 10,
+        autoindent = true,
+        smartindent = true,
+        cindent = true,
+        showcmd = true,
+        list = true,
+        listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%",
+        backup = true,
+        swapfile = true,
+        undofile = true,
+        wildmenu = true,
+        ambiwidth = "single",
+        winblend = 20,
+        pumblend = 20,
+        shell = "fish",
+        cmdheight = 0,
+    }
+	for name, value in pairs(global_local) do
+		vim.o[name] = value
+	end
+end
 
----- helper
-
-local cmd = vim.cmd
-local fn = vim.fn
-local g = vim.g
-local opt = vim.opt
-
----- mouse
-
-opt.mouse = ''
-
----- line number
-
-opt.number = true
-opt.relativenumber = true
-
----- searching settings
-
-opt.ignorecase = true
-opt.smartcase = true
-opt.incsearch = true
-opt.hlsearch = true
-opt.inccommand = 'split'
-opt.wrapscan = true
-
----- highlight brackets
-
-opt.showmatch = true
-opt.matchtime = 1
-
----- tab
-
-opt.expandtab = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-
----- title
-
-opt.title = true
-
----- line
-
-opt.display = 'lastline'
-
----- scroll
-
-opt.scrolloff = 7
-
----- menu height
-
-opt.pumheight = 10
-
----- cursor
-
-opt.cursorline = true
-
----- indent
-
-opt.autoindent = true
-opt.smartindent = true
-opt.cindent = true
-
----- show command
-
-opt.showcmd = true
-
----- regular expressions
-
-opt.regexpengine = 0
-
----- show invisible chars
-
-opt.list = true
-opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
-
----- backup, swap, undo
-
-opt.backup = false
-opt.swapfile = true
-opt.undofile = false
-
----- command mode tab
-
-opt.wildmenu = true
-opt.wildmode = { list = 'longest', 'full' }
-
----- hidden
-
-opt.hidden = true
-
----- char code
-
-opt.fileformat = 'unix'
-opt.fileencodings = { 'utf-8', 'sjis' }
-
----- width
-
-opt.ambiwidth = 'single'
-
----- blend
-
-opt.winblend = 20
-opt.pumblend = 20
-opt.termguicolors = true
-
----- shell
-
-opt.shell = 'fish'
-
----- cmdheight
-
-opt.cmdheight = 0
-
----- spell
-
-opt.spell = true
-opt.spelllang = { 'en_us' }
+load_options()
