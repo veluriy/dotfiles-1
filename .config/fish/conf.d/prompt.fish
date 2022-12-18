@@ -1,11 +1,11 @@
 function fish_prompt
     set -l last_status $status
-    echo -n (set_color normal)' > '(set_color yellow;whoami)(set_color normal)' > '(set_color green;set -g fish_prompt_pwd_dir_length 3;prompt_pwd)
+    echo -n (set_color eee8d5)' > '(set_color --bold eee8d5;whoami)(set_color eee8d5)' > '(set_color b58900;set -g fish_prompt_pwd_dir_length 3;prompt_pwd)
     if [ $last_status -gt 0 ]; then
-        echo -n (set_color normal)' > '(set_color red)"[$last_status]"
+        echo -n (set_color eee8d5)' > '(set_color red)"[$last_status]"
     end
     echo
-    echo (set_color normal;)'> '
+    echo (set_color eee8d5;)'> '
 end
 
 function fish_right_prompt
@@ -30,5 +30,5 @@ function fish_mode_prompt
             set_color --bold red
             echo '[?]'
     end
-    set_color normal
+    set_color eee8d5
 end
