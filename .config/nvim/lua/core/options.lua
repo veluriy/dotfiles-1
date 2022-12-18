@@ -1,120 +1,67 @@
--- base.lua
+local global = require("core.global")
 
----- helper
+local function load_options()
+    local global_local = {
+        ambiwidth = "single",
+        autoindent = true,
+        backup = true,
+        backupdir = global.cache_dir .. "backup/",
+        backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
+        cindent = true,
+        clipboard = "unnamedplus",
+        cmdheight = 0,
+        directory = global.cache_dir .. "swap/",
+        display = "lastline",
+        encoding = "utf-8",
+        errorbells = true,
+        expandtab = true,
+        fileformats = "unix,mac,dos",
+        hidden = true,
+        history = 2000,
+        hlsearch = true,
+        ignorecase = true,
+        inccommand = "split",
+        incsearch = true,
+        infercase = true,
+        list = true,
+        listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%",
+        magic = true,
+        number = true,
+        pumblend = 20,
+        pumheight = 10,
+        redrawtime = 1500,
+        relativenumber = true,
+        scrolloff = 7,
+        sessionoptions = "curdir,help,tabpages,winsize",
+        shada = "!,'300,<50,@100,s10,h",
+        shell = "fish",
+        shiftwidth = 4,
+        showcmd = true,
+        showmatch = 1,
+        sidescrolloff = 5,
+        smartcase = true,
+        smartindent = true,
+        softtabstop = 4,
+        swapfile = false,
+        swapfile = true,
+        tabstop = 4,
+        termguicolors = true,
+        title = true,
+        undodir = global.cache_dir .. "undo/",
+        undofile = true,
+        updatetime = 100,
+        viewoptions = "folds,cursor,curdir,slash,unix",
+        virtualedit = "block",
+        visialbell = true,
+        wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
+        wildignorecase = true,
+        wildmenu = true,
+        winblend = 20,
+        wrapscan = true,
+    }
+    for name, value in pairs(global_local) do
+        vim.o[name] = value
+    end
+end
 
-local cmd = vim.cmd
-local fn = vim.fn
-local g = vim.g
-local opt = vim.opt
-
----- mouse
-
-opt.mouse = ''
-
----- line number
-
-opt.number = true
-opt.relativenumber = true
-
----- searching settings
-
-opt.ignorecase = true
-opt.smartcase = true
-opt.incsearch = true
-opt.hlsearch = true
-opt.inccommand = 'split'
-opt.wrapscan = true
-
----- highlight brackets
-
-opt.showmatch = true
-opt.matchtime = 1
-
----- tab
-
-opt.expandtab = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-
----- title
-
-opt.title = true
-
----- line
-
-opt.display = 'lastline'
-
----- scroll
-
-opt.scrolloff = 7
-
----- menu height
-
-opt.pumheight = 10
-
----- cursor
-
-opt.cursorline = true
-
----- indent
-
-opt.autoindent = true
-opt.smartindent = true
-opt.cindent = true
-
----- show command
-
-opt.showcmd = true
-
----- regular expressions
-
-opt.regexpengine = 0
-
----- show invisible chars
-
-opt.list = true
-opt.listchars = { tab = '»-', trail = '-', eol = '↲', extends = '»', precedes = '«', nbsp = '%' }
-
----- backup, swap, undo
-
-opt.backup = false
-opt.swapfile = true
-opt.undofile = false
-
----- command mode tab
-
-opt.wildmenu = true
-opt.wildmode = { list = 'longest', 'full' }
-
----- hidden
-
-opt.hidden = true
-
----- char code
-
-opt.fileformat = 'unix'
-opt.fileencodings = { 'utf-8', 'sjis' }
-
----- width
-
-opt.ambiwidth = 'single'
-
----- blend
-
-opt.winblend = 20
-opt.pumblend = 20
-opt.termguicolors = true
-
----- shell
-
-opt.shell = 'fish'
-
----- cmdheight
-
-opt.cmdheight = 0
-
----- spell
-
-opt.spell = true
-opt.spelllang = { 'en_us' }
+load_options()

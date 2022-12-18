@@ -6,3 +6,9 @@
 
 # fish underbar
 _*.fish
+
+# backupfile
+*~
+
+# logfile
+*.log
