@@ -145,6 +145,11 @@ install_bat() {
     install "bat" "brew install bat"
 }
 
+install_httpie() {
+    arrow_message "Installing httpie..."
+    install "httpie" "brew install httpie"
+}
+
 link_idea() {
     arrow_message "Linking .ideavimrc..."
     ln -snfv $DOTFILES_PATH/.config/idea/.ideavimrc $HOME/.ideavimrc
@@ -168,6 +173,7 @@ main() {
     install_ripgrep
     install_exa
     install_bat
+    install_httpie
     link_idea
 
     arrow_message "Change shell. Please reenter your password."
