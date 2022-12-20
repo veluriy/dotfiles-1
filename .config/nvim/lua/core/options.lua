@@ -26,6 +26,7 @@ local function load_options()
         list = true,
         listchars = "tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%",
         magic = true,
+        mouse = false,
         number = true,
         pumblend = 20,
         pumheight = 10,
