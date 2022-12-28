@@ -38,6 +38,7 @@
 ## Supported OS
 
 - Mac OS
+- Ubuntu
 
 ## Install
 
