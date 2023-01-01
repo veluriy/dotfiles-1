@@ -69,6 +69,7 @@ alias dp "docker ps"
 alias dcu "docker compose up -d"
 alias dcd "docker compose down"
 alias dcl "docker compose logs -f"
+alias dce "docker compose exec"
 
 # shutdown
 alias shutnow "shutdown -h now"
