@@ -43,7 +43,7 @@
 ## Install
 
 ```shell
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/main/bootstrap)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/main/bootstrap)"
 ```
 
 ## LICENSE
