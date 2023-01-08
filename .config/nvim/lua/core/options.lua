@@ -43,7 +43,6 @@ local function load_options()
         smartcase = true,
         smartindent = true,
         softtabstop = 4,
-        swapfile = false,
         swapfile = true,
         tabstop = 4,
         termguicolors = true,
