@@ -121,6 +121,11 @@ install_btop() {
     install "btop" "brew install btop"
 }
 
+install_htop() {
+    arrow_message "Installing htop..."
+    install "htop" "brew install htop"
+}
+
 install_gitui() {
     arrow_message "Installing and linking gitui..."
     install "gitui" "brew install gitui"
@@ -169,6 +174,7 @@ main() {
     install_tmux
     install_nvim
     install_btop
+    install_htop
     install_gitui
     install_ripgrep
     install_exa
