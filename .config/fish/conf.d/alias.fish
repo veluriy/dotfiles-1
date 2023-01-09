@@ -71,6 +71,10 @@ alias dcd "docker compose down"
 alias dcl "docker compose logs -f"
 alias dce "docker compose exec"
 
+# vim-startuptime
+
+alias nvim-startuptime "vim-startuptime -vimpath nvim"
+
 # shutdown
 alias shutnow "shutdown -h now"
 
