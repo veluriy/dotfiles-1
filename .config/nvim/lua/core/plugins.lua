@@ -55,13 +55,6 @@ return require('packer').startup({function(use)
         end,
     }
     use {
-        'b0o/incline.nvim',
-        event = { 'FocusLost', 'CursorHold' },
-        config = function()
-            require'incline'.setup {}
-        end,
-    }-- show file name
-    use {
         'petertriho/nvim-scrollbar',
         event = {
             'BufWinEnter',
@@ -137,7 +130,7 @@ return require('packer').startup({function(use)
         'windwp/nvim-ts-autotag',
         event = 'InsertEnter',
         config = function()
-	end,
+        end,
     }
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -476,6 +469,9 @@ return require('packer').startup({function(use)
             vim.keymap.set('n', '<Leader>b', function ()
                 require('FTerm'):new({ ft = 'fterm_btop', cmd = 'btop' }):toggle()
             end)
+            vim.keymap.set('n', '<Leader>h', function ()
+                require('FTerm'):new({ ft = 'fterm_htop', cmd = 'htop' }):toggle()
+            end)
             vim.keymap.set('n', '<Leader>g', function ()
                 require('FTerm'):new({ ft = 'fterm_gitui', cmd = 'gitui' }):toggle()
             end)
@@ -519,6 +515,7 @@ return require('packer').startup({function(use)
     }-- cmdheight = 0
     use {
         'rust-lang/rust.vim',
+        ft = { 'rust' },
         config = function ()
             vim.g.rustfmt_autosave = 1
         end
