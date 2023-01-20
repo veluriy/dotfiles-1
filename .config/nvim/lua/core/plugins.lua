@@ -520,6 +520,9 @@ return require('packer').startup({function(use)
             vim.g.rustfmt_autosave = 1
         end
     }-- rust
+    use {
+        'qnighy/satysfi.vim',
+    }
 
     if packer_bootstrap then
         require('packer').sync()
