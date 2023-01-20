@@ -66,10 +66,12 @@ alias gd "git diff"
 
 alias dp "docker ps"
 
+alias dc "docker compose"
 alias dcu "docker compose up -d"
 alias dcd "docker compose down"
 alias dcl "docker compose logs -f"
 alias dce "docker compose exec"
+alias dcb "docker compose build"
 
 # vim-startuptime
 
