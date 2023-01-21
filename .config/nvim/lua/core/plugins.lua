@@ -532,6 +532,12 @@ return require('packer').startup({function(use)
             require'lualine'.setup {}
         end
     }
+    use {
+        'karb94/neoscroll.nvim',
+        config = function()
+            require('neoscroll').setup {}
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
