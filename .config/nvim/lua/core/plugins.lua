@@ -557,6 +557,12 @@ return require('packer').startup({function(use)
             require('Comment').setup {}
         end
     }
+    use {
+        'Djancyp/better-comments.nvim',
+        config = function ()
+            require('better-comment').setup {}
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
