@@ -543,6 +543,13 @@ return require('packer').startup({function(use)
             require('neoscroll').setup {}
         end
     }
+    use {
+        'numToStr/Comment.nvim',
+        event = { 'BufWinEnter' },
+        config = function ()
+            require('Comment').setup {}
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
