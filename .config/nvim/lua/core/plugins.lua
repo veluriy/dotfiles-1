@@ -522,6 +522,13 @@ return require('packer').startup({function(use)
     }-- rust
     use {
         'qnighy/satysfi.vim',
+    }-- satysfi
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = {
+            require'lualine'.setup {}
+        }
     }
 
     if packer_bootstrap then
