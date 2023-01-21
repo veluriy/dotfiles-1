@@ -47,11 +47,18 @@ return require('packer').startup({function(use)
 --            Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
 --        end,
 --    }-- color scheme
+    -- use {
+    --     'nyoom-engineering/oxocarbon.nvim',
+    --     config = function ()
+    --         vim.opt.background = "dark"
+    --         vim.cmd.colorscheme "oxocarbon"
+    --     end
+    -- }
     use {
-        'nyoom-engineering/oxocarbon.nvim',
+        'katawful/kat.nvim',
         config = function ()
             vim.opt.background = "dark"
-            vim.cmd.colorscheme "oxocarbon"
+            vim.cmd.colorscheme "kat.nvim"
         end
     }
     use {
