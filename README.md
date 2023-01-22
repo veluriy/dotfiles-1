@@ -46,6 +46,10 @@
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Wurzeit/dotfiles/main/bootstrap)"
 ```
 
+# Usage
+
+[/doc/keybind.md](/doc/keybind.md)
+
 ## LICENSE
 
 MIT
