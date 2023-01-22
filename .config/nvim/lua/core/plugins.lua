@@ -363,6 +363,7 @@ return require('packer').startup({function(use)
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim' }
     use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
     use {
         'williamboman/mason-lspconfig.nvim',
         requirements = {
@@ -376,8 +377,12 @@ return require('packer').startup({function(use)
             'nvim-dap', 'null-ls.nvim', 'nvim-lint', 'formatter.nvim', 'cmp-nvim-lsp'
         },
         config = function()
+            local navic = require('nvim-navic')
             local on_attach = function(client, bufnr)
                 vim.keymap.set('n', 'gn', function() vim.lsp.buf.references() end)
+                if client.server_capabilities.documentSymbolProvider then
+                    navic.attach(client, bufnr)
+                end
             end
             require('lspconfig').tsserver.setup {
                 on_attach = on_attach,
