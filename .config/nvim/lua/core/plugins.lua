@@ -238,9 +238,6 @@ return require('packer').startup({function(use)
                     layout_config = { height = 40 }
                 })
             end)
-            vim.keymap.set('n', 'sn', function()
-                require('telescope').extensions.notify.notify()
-            end)
         end,
         config = function()
             local actions = require('telescope.actions')
