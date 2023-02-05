@@ -13,40 +13,54 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup({function(use)
     use 'wbthomason/packer.nvim'
+--    use {
+--        'svrana/neosolarized.nvim' ,
+--        requires = { 'tjdevries/colorbuddy.nvim' },
+--        config = function()
+--            require'neosolarized'.setup {
+--                comment_italics = true,
+--            }
+--            local cb = require('colorbuddy.init')
+--            local Color = cb.Color
+--            local colors = cb.colors
+--            local Group = cb.Group
+--            local groups = cb.groups
+--            local styles = cb.styles
+--
+--            Color.new('black', '#000000')
+--            Group.new('CursorLine', colors.none, colors.base03, styles.NONE, colors.base1)
+--            Group.new('CursorLineNr', colors.yellow, colors.black, styles.NONE, colors.base1)
+--            Group.new('Visual', colors.none, colors.base03, styles.reverse)
+--
+--            local cError = groups.Error.fg
+--            local cInfo = groups.Information.fg
+--            local cWarn = groups.Warning.fg
+--            local cHint = groups.Hint.fg
+--
+--            Group.new('DiagnosticVirtualTextError', cError, cError:dark():dark():dark():dark(), styles.NONE)
+--            Group.new('DiagnosticVirtualTextInfo', cInfo, cInfo:dark():dark():dark(), styles.NONE)
+--            Group.new('DiagnosticVirtualTextWarn', cWarn, cWarn:dark():dark():dark(), styles.NONE)
+--            Group.new('DiagnosticVirtualTextHint', cHint, cHint:dark():dark():dark(), styles.NONE)
+--            Group.new('DiagnosticUnderlineError', colors.none, colors.none, styles.undercurl, cError)
+--            Group.new('DiagnosticUnderlineWarn', colors.none, colors.none, styles.undercurl, cWarn)
+--            Group.new('DiagnosticUnderlineInfo', colors.none, colors.none, styles.undercurl, cInfo)
+--            Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
+--        end,
+--    }-- color scheme
+    -- use {
+    --     'nyoom-engineering/oxocarbon.nvim',
+    --     config = function ()
+    --         vim.opt.background = "dark"
+    --         vim.cmd.colorscheme "oxocarbon"
+    --     end
+    -- }
     use {
-        'svrana/neosolarized.nvim' ,
-        requires = { 'tjdevries/colorbuddy.nvim' },
-        config = function()
-            require'neosolarized'.setup {
-                comment_italics = true,
-            }
-            local cb = require('colorbuddy.init')
-            local Color = cb.Color
-            local colors = cb.colors
-            local Group = cb.Group
-            local groups = cb.groups
-            local styles = cb.styles
-
-            Color.new('black', '#000000')
-            Group.new('CursorLine', colors.none, colors.base03, styles.NONE, colors.base1)
-            Group.new('CursorLineNr', colors.yellow, colors.black, styles.NONE, colors.base1)
-            Group.new('Visual', colors.none, colors.base03, styles.reverse)
-
-            local cError = groups.Error.fg
-            local cInfo = groups.Information.fg
-            local cWarn = groups.Warning.fg
-            local cHint = groups.Hint.fg
-
-            Group.new('DiagnosticVirtualTextError', cError, cError:dark():dark():dark():dark(), styles.NONE)
-            Group.new('DiagnosticVirtualTextInfo', cInfo, cInfo:dark():dark():dark(), styles.NONE)
-            Group.new('DiagnosticVirtualTextWarn', cWarn, cWarn:dark():dark():dark(), styles.NONE)
-            Group.new('DiagnosticVirtualTextHint', cHint, cHint:dark():dark():dark(), styles.NONE)
-            Group.new('DiagnosticUnderlineError', colors.none, colors.none, styles.undercurl, cError)
-            Group.new('DiagnosticUnderlineWarn', colors.none, colors.none, styles.undercurl, cWarn)
-            Group.new('DiagnosticUnderlineInfo', colors.none, colors.none, styles.undercurl, cInfo)
-            Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
-        end,
-    }-- color scheme
+        'katawful/kat.nvim',
+        config = function ()
+            vim.opt.background = "dark"
+            vim.cmd.colorscheme "kat.nvim"
+        end
+    }
     use {
         'norcalli/nvim-colorizer.lua',
         event = { 'FocusLost', 'CursorHold' },
@@ -224,9 +238,6 @@ return require('packer').startup({function(use)
                     layout_config = { height = 40 }
                 })
             end)
-            vim.keymap.set('n', 'sn', function()
-                require('telescope').extensions.notify.notify()
-            end)
         end,
         config = function()
             local actions = require('telescope.actions')
@@ -349,6 +360,7 @@ return require('packer').startup({function(use)
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim' }
     use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'SmiteshP/nvim-navic', requires = 'neovim/nvim-lspconfig' }
     use {
         'williamboman/mason-lspconfig.nvim',
         requirements = {
@@ -362,8 +374,12 @@ return require('packer').startup({function(use)
             'nvim-dap', 'null-ls.nvim', 'nvim-lint', 'formatter.nvim', 'cmp-nvim-lsp'
         },
         config = function()
+            local navic = require('nvim-navic')
             local on_attach = function(client, bufnr)
                 vim.keymap.set('n', 'gn', function() vim.lsp.buf.references() end)
+                if client.server_capabilities.documentSymbolProvider then
+                    navic.attach(client, bufnr)
+                end
             end
             require('lspconfig').tsserver.setup {
                 on_attach = on_attach,
@@ -520,6 +536,36 @@ return require('packer').startup({function(use)
             vim.g.rustfmt_autosave = 1
         end
     }-- rust
+    use {
+        'qnighy/satysfi.vim',
+    }-- satysfi
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            local navic = require('nvim-navic')
+            require'lualine'.setup {
+                sections = {
+                    lualine_c = {
+                        { navic.get_location, cond = navic.is_available }
+                    }
+                }
+            }
+        end
+    }
+    use {
+        'karb94/neoscroll.nvim',
+        config = function()
+            require('neoscroll').setup {}
+        end
+    }
+    use {
+        'numToStr/Comment.nvim',
+        event = { 'BufWinEnter' },
+        config = function ()
+            require('Comment').setup {}
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
