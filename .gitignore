@@ -12,3 +12,6 @@ _*.fish
 
 # logfile
 *.log
+
+# DS Store
+.DS_Store
