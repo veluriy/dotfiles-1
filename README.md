@@ -56,4 +56,4 @@ MIT
 
 ## About me
 
-[Homepage](https://wurzeit.com/about)
+[Homepage](https://wurzeit.github.io/about)
